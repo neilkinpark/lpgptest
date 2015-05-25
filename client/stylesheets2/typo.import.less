@@ -1,0 +1,65 @@
+body {
+  background: #e9eef3;
+}
+#regionHeader {
+
+}
+.regionFooter {
+  background: #2a3744;
+  color: #a2a7aa;
+  min-height: 65px;
+  > .container {
+    padding-top: 25px;
+  }
+}
+hr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;	
+}
+.nav-tabs.nav-xs {
+  > li > {
+  	a {
+  	  padding: 4px 6px;
+  	  border-color: transparent; 
+  	  border-radius: 0;
+  	}
+  }	
+  > li.active > {
+  	a {
+  	  background-color: @brand-info;
+  	  color: #fff;
+  	  border-color: transparent transparent darken(@brand-info, 20%);  	  
+  	}
+  }
+}
+.navbar-toggle.collapsed {
+  border-color: transparent;
+  .glyphicon-align-justify {
+    font-size: 16px;
+    color: @brand-info;
+  }
+}
+
+// custom components
+.pageTitle {
+  margin: 0 0 0.5em 0;
+} 
+.pageFundProfile {
+  .panel-default > .btn.btn-sm.btn-block.btn-primary {
+  	border-radius: 0;
+  }
+}
+.panel-heading {
+  .btnMiniMenu {
+    color: #fff; 
+    &:active, &:hover, &:focus {
+      color: #aaa;
+    }  
+  }  
+}
+
+.formSearchBar {
+  background: @gray-lighter;
+  padding: @padding-xs-horizontal @padding-xs-horizontal;
+  margin: @padding-large-vertical 0;
+}
