@@ -1,0 +1,75 @@
+<template name="pageConnections">
+  <div class="container-fluid">
+	<h3 class="pageTitle">Connections</h3>
+	<div class="panel panel-default">
+      <a href="#boxMyGPConn" data-toggle="collapse" class="btn btn-sm btn-block btn-primary">
+        <div class="text-left"><span class="caret"></span> My GP Connections</div>
+      </a>
+      <div id="boxMyGPConn" class="panel-body collapse in">
+      	<div class="row">
+      	  {{#each connections}}	
+      	    {{> boxConnection}}
+      	  {{/each}}
+      	</div>
+      </div>	
+	</div>
+
+	<div class="panel panel-default">
+      <a href="#boxMyLPConn" data-toggle="collapse" class="btn btn-sm btn-block btn-primary">
+        <div class="text-left"><span class="caret"></span> My LP Connections</div>
+      </a>
+      <div id="boxMyLPConn" class="panel-body collapse in">
+      	<div class="row">
+      	  {{#each lpconnections}}	
+      	    {{> boxConnection}}
+      	  {{/each}}
+      	</div>
+      </div>	
+	</div>	
+
+
+  </div>
+</template>
+
+<template name="boxConnection">
+  <div class="col-sm-6 col-md-4 col-lg-3">
+  	<!--
+  	<div class="panel panel-info">
+  	  <div class="panel-body">
+  	  	<div class="row">
+  	  	  <div class="col-xs-3"><img class="img-responsive" src="images/default_pic.png" width="30px"/></div>
+  	  	  <div class="col-xs-9"><strong>{{fullname}}</strong><br><small>Senior Analyst</small><div class="text-info"><strong>GP IR Pro</strong></div></div>
+  	  	</div>
+  	  	<hr>
+  	  	<table class="table btn-xs">
+  	  	  <tr>
+  	  	    <td>Firm Name:</td><td>Top Rank Inc</td>
+  	  	  </tr>
+  	  	  <tr>  
+  	  	    <td>Type:</td><td>Agriculture</td>
+  	  	  </tr>
+  	  	  <tr>  
+  	  	    <td>Status:</td><td>Pre-Marketing</td>
+  	  	  </tr>	
+  	  	</table>
+		<div class="btn-group btn-group-xs" role="group" aria-label="...">
+		  <button type="button" class="btn btn-info"><span aria-hidden="true" class="glyphicon glyphicon-triangle-right"></span> More Info</button>
+		  <button type="button" class="btn btn-success"><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span> Message</button>
+		  <button type="button" class="btn btn-danger"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span> Disconnect</button>
+		</div>	  	
+  	  </div>	
+  	</div>
+    -->
+    <div class="media clearfix">
+      <div class="media-left"><img class="img-responsive pull-left" src="images/default_pic.png" width="30px"/></div>
+      <div class="media-body"><strong>{{fullname}}</strong> <small>Senior Analyst</small> <strong class="">(GP IR Pro)</strong>
+      <br><span class="text-muted">Top Rank Inc<small>(Agriculture, Pre-Marketing)</small></span></div>
+    </div>
+		<div class="btn-group btn-group-xs" role="group" aria-label="...">
+		  <button type="button" class="btn btn-info"><span aria-hidden="true" class="glyphicon glyphicon-triangle-right"></span> More Info</button>
+		  <button type="button" class="btn btn-success"><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span> Message</button>
+		  <button type="button" class="btn btn-danger"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span> Disconnect</button>
+		</div>    	
+    <hr>
+  </div>	
+</template>	

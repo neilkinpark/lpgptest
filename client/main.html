@@ -1,0 +1,79 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">  
+  <title>LPGP</title>
+</head>
+
+<body>
+  
+
+</body>
+
+<template name="pageloggedInBasic">
+  <div id="regionHeader" class="navbar navbar-default" role="banner">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span>
+        </button>
+        <a class="navbar-brand" href="../"><img src="logo.png"></a>
+      </div>
+      
+      <nav class="navbar-collapse bs-navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+        <ul class="nav navbar-nav navMain">
+          <li class="active"><a href="/"><small>HOME</small></a></li>
+          <li class="dropdown">
+            <a href="/fund-profile" data-toggle="dropdown"><small>FUNDS</small> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu" >
+              <li><a href="/fund-profile"><small>FUND PROFILES</small></a></li>
+              <li><a href=""><small>FUND PERFORMANCE</small></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="/members" data-toggle="dropdown"><small>MEMBERS</small> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu" >
+              <li><a href="/members"><small>ALL MEMBERS</small></a></li>
+              <li><a href="/connections"><small>CONNECTIONS</small></a></li>
+            </ul>
+          </li>
+          <li><a href=""><small>LP MAGAZINE</small></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right navIcons">
+          <li><a href="myprofile"><i class="fa fa-user"></i> <small class="visible-xs-inline"> My Profile</small></a></li>
+          <li><a href="myprofile"><i class="fa fa-envelope"></i> <small class="visible-xs-inline"> Messages</small></a></li>
+          <li><a href="/news"><i class="fa fa-newspaper-o"></i> <small class="visible-xs-inline"> News</small></a></li>
+          <li><a href="myprofile"><i class="fa fa-sign-out"></i> <small class="visible-xs-inline"> Log out</small></a></li>
+          <li class="loggedUser"><a href="myprofile"><img class="img-circle" src="images/baby.jpg" WIDTH="43px" /> <span class="txtName">Amour Bébé</span></a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <hr>
+  </div>
+
+  <div id="regionMain" class="" role="main">
+    {{ > yield }}
+  </div>
+
+  <footer class="regionFooter">
+    <div class="container">
+      <div class="row">
+        <div class="boxCopyright col-xs-3"><SPAN class="pull-left">COPYRIGHTS 2015</SPAN></div>
+        <div class="col-xs-9">
+          <div class="pull-right">
+            <ul class="list-inline">
+              <li>HELP</li>
+              <li>ABOUT</li>
+              <li>LOG OUT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>  

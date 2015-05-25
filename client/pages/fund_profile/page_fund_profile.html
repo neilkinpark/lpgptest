@@ -1,0 +1,83 @@
+<template name="pageFundProfile">
+
+  <div data-spy="affix" data-offset-top="50" data-offset-bottom="0" id="boxPageTitle" class="container-fluid">   
+    <h3 class="pageTitle">Sample Fund</h3>
+    <ul class="nav nav-tabs nav-xs">
+      <li role="presentation" class="active"><a role="tab" data-toggle="tab" href="#boxSummary">Summary</a></li>
+      <li role="presentation"><a role="tab" data-toggle="tab" href="#boxDetails">Details</a></li>
+      <li role="presentation"><a role="tab" data-toggle="tab" href="#boxNews">News</a></li>
+      <li role="presentation"><a role="tab" data-toggle="tab" href="#boxMore">More Info</a></li>
+    </ul>
+    <br />
+  </div>
+
+  <div class="container-fluid pageFundProfile">
+    <div class="row">
+      <div class="col-md-12">
+	    <div class="tab-content">
+	      <div role="tabpanel" class="tab-pane active" id="boxSummary">{{> boxFundMainSummary }}</div>
+	      <div role="tabpanel" class="tab-pane" id="boxDetails">{{> boxFundDetails }}</div>
+	      <div role="tabpanel" class="tab-pane" id="boxNews">{{> boxFundNews }}</div>
+	      <div role="tabpanel" class="tab-pane" id="boxMore">{{> boxFundMore }}</div>
+	    </div>
+      </div>
+    </div>
+   </div>
+	
+</template>
+
+<template name="boxFundMainSummary">
+  <div class="row">
+    <div class="col-md-5 col-sm-7">
+      {{> boxFundSummary}}
+      {{> boxFirmAddress}} 
+    </div>
+
+    <div class="col-md-7 col-sm-5">
+      {{> boxKeyContacts}}
+      {{> boxTeamBios}}
+    </div>
+
+  </div>
+</template>
+
+<template name="boxFundDetails">
+  <div id="boxFundDetails" class="row">
+    <div class="col-sm-4">
+      {{> boxFundSizeandClosings}}  
+    </div>
+    <div class="col-sm-4">
+      {{> boxInvestmentStrategy}}   
+    </div>
+    <div class="col-sm-4">
+      {{> boxOtherFunds}}   
+    </div>
+  </div>
+</template>
+
+<template name="boxFundNews">
+  <div class="row">
+    <div class="col-md-6">
+      {{> boxFundLatestNews}}
+      {{> boxVideos }}
+    </div>
+
+    <div class="col-md-6">
+      {{> boxFundBroadcasts}}
+      {{> boxFundPR}}
+    </div>  
+  </div>  
+</template>
+
+<template name="boxFundMore">
+  <div class="row">
+    <div class="col-md-6">
+      {{> boxAboutFund}}
+    </div>
+
+    <div class="col-md-6">
+      {{> boxPortfolioCompanies}}
+      {{> boxHistoricalInvestments}}
+    </div>  
+  </div>  
+</template>

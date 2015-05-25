@@ -1,0 +1,183 @@
+<template name="pageSecondaries">
+  <div class="container-fluid pageSecondaries">
+  	<h3 class="pageTitle">Secondaries
+      <span class="dropdown pull-right">
+        <button id="btnWWYLTD" class="btn btn-primary btn-sm dropdown-toggle" href="" data-toggle="dropdown">What would you like to do? <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="btnWWYLTD">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+        </ul>
+      </span>
+    </h3>
+
+    <div class="row">
+      <div class="col-sm-4 col-md-3">
+        <div class="">
+          <a class="btn btn-info btn-sm btn-block" data-toggle="collapse" data-target="#boxOfferVal">Offer Valuation <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span></a>
+          <div id="boxOfferVal" class="collapse">
+            <div class="alert alert-info">
+              <ol class="list-unstyled">
+                <li>1. Offer valuations of funds you are interested in.</li>
+                <li>2. Connect with owners of those funds.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-3">
+        <div class="">
+          <a class="btn btn-info btn-sm btn-block" data-toggle="collapse" data-target="#boxOfferVal2">Request Valuation <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span></a>
+          <div id="boxOfferVal2" class="collapse">
+            <div class="alert alert-info">
+              <ol>
+                <li>Offer valuations of funds you are interested in.</li>
+                <li>Connect with owners of those funds.</li>
+              </ol>
+            </div>
+          </div>                  
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-3">
+        <div class=" bg-info">
+          <a class="btn btn-info btn-sm btn-block" data-toggle="collapse" data-target="#boxOfferVal3">Review Funds <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span></a>
+          <div id="boxOfferVal3" class="collapse">
+            <div class="alert alert-info">
+              <ol>
+                <li>Offer valuations of funds you are interested in.</li>
+                <li>Connect with owners of those funds.</li>
+              </ol>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+    <form class="form-horizontal formSearchBar">
+      <label>Filter by:</label>
+      <div class="row">
+        <div class="col-sm-3 col-xs-6"><input type="text" class="form-control input-sm" placeholder="FUND NAME"></div>
+        <div class="col-sm-3 col-xs-6"><input type="text" class="form-control input-sm" placeholder="ALL TYPES"></div>
+        <div class="col-sm-3 col-xs-6"><input type="text" class="form-control input-sm" placeholder="VINTAGES"></div>
+        <div class="col-sm-3 col-xs-6"><button type="submit" class="btn btn-sm btn-success">Search <span aria-hidden="true" class="glyphicon glyphicon-search"></span></button></div>
+      </div>
+    </form>
+  	<div class="">
+  	  <ul class="nav nav-tabs nav-xs">
+        <li class="active" role="presentation"><a href="#boxSummary" data-toggle="tab" role="tab">Top 50 Liquid Funds</a></li>
+        <li role="presentation"><a href="#boxDetails" data-toggle="tab" role="tab">Other Funds</a></li>
+        <li role="presentation"><a href="#boxNews" data-toggle="tab" role="tab">Newest</a></li>
+        <li role="presentation"><a href="#boxMore" data-toggle="tab" role="tab">Most Viewed</a></li>
+        <li role="presentation"><a href="#boxMore" data-toggle="tab" role="tab">My Valuations</a></li>
+        <li role="presentation"><a href="#boxMore" data-toggle="tab" role="tab">My Funds</a></li>
+      </ul>
+      <br>
+      <div class="clearfix">
+        <span class="text-muted">Browse the Top 50 listed funds on the platform. Click 'offer valuation' to set a price and follow the fund or click 'request valuation to anonymously view followers.</span>
+        <ul class="pull-right list-inline">
+          <li><a class="text-muted" data-toggle="tab" href="#boxCardView"><span aria-hidden="true" class="glyphicon glyphicon-th"></span></a></li>
+		      <li ><a class="text-muted" data-toggle="tab" href="#boxTableView"><span aria-hidden="true" class="glyphicon glyphicon-th-list"></span></a></li>
+        </ul>
+      </div>
+
+      <div class="tab-content">
+
+        <div class="table-responsive boxTableView tab-pane" role="tabpanel" id="boxTableView">
+          <table class="table table-bordered">
+            <thead>
+              <tr class="text-muted info">
+                <th>LOGO</th>
+                <th>FIRM</th>
+                <th>FUND NAME</th>
+                <th>VINTAGE</th>
+                <th>TYPE</th>
+                <th>PRICE</th>
+                <th>UNFUNDED</th>
+                <th>DISTRIBUTIONS</th>
+                <th>IRR</th>
+                <th>MULTIPLE</th>
+                <th>ACTIONS</th>            
+              </tr>   
+            </thead>
+            <tbody>
+              {{#each companies}}
+                <tr>
+                  {{> rowSecondariesFirm }}
+                </tr> 
+              {{/each}}
+            </tbody>  
+          </table>
+        </div>
+
+        <div class="boxCardView tab-pane active" role="tabpanel" id="boxCardView">
+          <div class="row">
+            {{#each companies}}
+             {{> boxSecondariesCardView }}
+            {{/each}}
+          </div>
+        </div>
+
+      </div>
+  	</div>
+  </div>
+</template>	
+
+<template name="rowSecondariesFirm">
+  <td><img class="image-responsive" src="http://www.2kgames.com/misc/2klogo_username.png"></td>
+  <td><small>{{firm}}</small></td>
+  <td><small>{{fund}}</small></td>
+  <td><small>2012</small></td>
+  <td><small>Buyout</small></td>
+  <td><small>98.90% NAV</small></td>
+  <td><small>0.00%</small></td>
+  <td><small>186.02%</small></td>
+  <td><small>17.03%</small></td>
+  <td><small>1.90x</small></td>
+  <td><small>ACTIONS</small></td>
+</template> 
+
+<template name="boxSecondariesCardView">
+  <div class="col-sm-4 col-md-3">
+    <div class="panel panel-primary">
+
+      <div class="panel-heading clearfix">
+        <!--
+        <span class="dropdown">
+          <a id="" class="btnMiniMenu" href="" data-toggle="dropdown"><span aria-hidden="true" class="glyphicon glyphicon-option-vertical"></span></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="btnMiniMenu">
+            <li><a class="" href="">Offer Valuation</a></li>
+            <li><a class="" href="">Request Valuation</a></li>  
+          </ul>
+        </span> -->
+        <small>{{firm}}</small>
+      </div>
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-2"><img class="image-responsive" src="http://www.2kgames.com/misc/2klogo_username.png"></div>
+          <div class="col-xs-5">
+            <small><span class="text-muted">TYPE:</span> Buyout</small><BR />
+            <small><span class="text-muted">VINTAGE:</span> 2006</small>
+          </div>
+          <div class="col-xs-5">
+            <small><span class="text-muted">PRICE:</span> 96.50% NAV</small><BR />
+            <small><span class="text-muted">LIQUIDITY:</span> 9</small>
+          </div>          
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="btn-group btn-group-justified btn-group-xs">
+              <a class="btn btn-info" href="">Offer Valuation</a>
+              <a class="btn btn-warning" href="">Request Valuation</a>          
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>    
+  </div>
+
+</template>  
+

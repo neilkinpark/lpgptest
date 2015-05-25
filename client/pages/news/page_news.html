@@ -1,0 +1,41 @@
+<template name="pageNews">
+  <div class="container-fluid">
+    <h3 class="pageTitle">News</h3>
+    <form class="form-horizontal formSearchBar">
+      <label>Search by:</label>
+      <div class="row">
+        <div class="col-sm-4 col-xs-9"><input type="text" placeholder="SEARCH NEWS FROM ALTASSETS" class="form-control input-sm"></div>
+        <div class="col-sm-2 col-xs-3"><button class="btn btn-sm btn-success" type="submit"><span class="hidden-xs">Search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></div>
+      </div>
+    </form>    
+	  {{#each newstypes}}
+      {{>rowNews}}
+    {{/each}} 
+  </div>
+</template>
+
+<template name="rowNews">
+  <div class="panel panel-default">
+    <a class="btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#box{{id}}Collapsible">
+      <div class="text-left"><span class="caret"></span> {{title}}</div>
+    </a>
+    <div id="box{{id}}Collapsible" class="collapse in">
+      <div class="panel-body">
+        <div id="owl{{id}}" class="owl-news owl-carousel">
+          {{#each news}}
+            {{>boxNewsTeaser}}
+          {{/each}}
+        </div>  
+      </div>
+    </div>  
+  </div>  
+</template> 
+
+<template name="boxNewsTeaser">
+  <div class="item">
+    <div class="inner">
+      <img class="img-responsive" src="{{img}}">
+      <div class="box-title"><a href="">{{title}}</a></div>
+    </div>
+  </div>
+</template>  
