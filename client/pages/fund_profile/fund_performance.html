@@ -1,0 +1,87 @@
+<template name="pageFundPerformance">
+  <div class="container-fluid regionFilter">
+  	<form>
+      <div class="row">
+        <div class="col-xs-3">
+          <label>Fund name</label><input type="text" class="form-control" placeholder="filter by fund name">
+        </div>
+        <div class="col-xs-3">
+          <label>Fund type</label><input type="text" class="form-control" placeholder="All types">
+        </div>
+        <div class="col-xs-3">
+          <label>Fund status</label><input type="text" class="form-control" placeholder="All">
+        </div>
+        <div class="col-xs-3">
+          <label>Vintage year</label><input type="text" class="form-control" placeholder="1999">
+        </div>        
+      </div>
+  	</form>
+  </div>	
+  <div class="container-fluid pageFundPerformance">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4"><h1 class="pageTitle">Fund Performance</h1></div>
+      <div class="col-xs-12 col-sm-8 pageTitleNav">  
+      	<ul class="nav nav-pills pull-right">
+      	  <li class="active"><a id="linkCardView" href="#cardView" role="tab" data-toggle="pill"><span aria-hidden="true" class="glyphicon glyphicon-th-large"></span></a></li>
+      	  <li><a id="linkTableView" href="#tableView" role="tab" data-toggle="pill"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a></li>		
+      	</ul>
+        <ul class="nav nav-pills pull-right">
+          <li><a href="">Buyout</a></li>
+          <li><a href="">Venture</a></li>
+          <li><a href="">Growth Capital</a></li>
+          <li><a href="">Secondaries</a></li>
+          <li><a href="">FoF</a></li>
+          <li><a href="">Infrastructure</a></li>
+        </ul>        
+      </div> 
+    </div>
+    
+    <div class="tab-content">
+      <div id="cardView" class="tab-pane active">
+      	<div class="row">
+      	  {{#each items}}
+      	  	{{>boxFundPerformanceItem}}
+      	  {{/each}}
+          <div class="col-xs-12">
+            <div class="linkLoadMore">
+              <a href="" class="">load more</a>
+            </div>
+          </div>      	  
+      	</div>
+      </div>
+      <div id="tableView" class="tab-pane">
+      	<p>TABLE VIEW</p>
+      </div>
+    </div>
+  </div>  	
+</template>
+
+<template name="boxFundPerformanceItem">
+  <div class="item boxFundPerformanceItem col-xs-12 col-sm-6 col-lg-4">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4><a href="/fund-profile">{{name}}</a></h4></div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-6"><img class="thumbnail img-responsive" src="http://www.icvillar.es/img/logo_villar.gif"></div>
+          <div class="col-xs-6">
+            <ul class="list-unstyled listDetails">
+               <li><span class="text-muted txtLabel">IRR:</span> <span class="txtVal">92%</span></li>
+               <li><span class="text-muted txtLabel">Multiple:</span> <span class="txtVal">3x</span></li>            
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+      <table class="table boxMoreDetails">
+        <tr>
+          <td><div class="text-muted txtLabel">TYPE:</div><span class="txtVal">Buyout</span></td>
+          <td><div class="text-muted txtLabel">YEAR:</div><span class="txtVal">1999</span></td>
+          <td><div class="text-muted txtLabel">SIZE:</div><span class="txtVal">$ 120m</span></td>
+          <td><div class="text-muted txtLabel">VAL. DATE:</div><span class="txtVal">Dec 2016</span></td>
+        </tr>
+      </table>
+           
+    </div>
+    
+  </div>  
+</template>

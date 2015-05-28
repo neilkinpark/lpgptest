@@ -1,44 +1,44 @@
-<template name="pageConnections">
+<template name="pageMembers">
   <div class="container-fluid regionFilter">
-    <form>
+  	<form>
       <div class="row">
         <div class="col-xs-3">
-          <label>Connection's name</label><input type="text" class="form-control" placeholder="Enter name">
+          <label>Member's name</label><input type="text" class="form-control" placeholder="Enter name">
         </div>
         <div class="col-xs-3">
           <label>Firm Name</label><input type="text" class="form-control" placeholder="Enter firm">
         </div>       
       </div>
-    </form>
-  </div>  
-  <div class="container-fluid pageConnections">
+  	</form>
+  </div>	
+  <div class="container-fluid pageMembers">
     <div class="row">
-      <div class="col-xs-12 col-sm-4"><h1 class="pageTitle">CONNECTIONS</h1></div>
+      <div class="col-xs-12 col-sm-4"><h1 class="pageTitle">Members</h1></div>
       <div class="col-xs-12 col-sm-8">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a id="linkCardView" href="#tabPaneGPMembers" role="tab" data-toggle="pill">GP Connections <span class="hidden-xs">(20 connections)</span></a></li>
-          <li><a id="linkTableView" href="#tabPaneLPMembers" role="tab" data-toggle="pill">LP Connections <span class="hidden-xs">(75 connections)</span></a></li>    
-        </ul> 
+      	<ul class="nav nav-pills pull-right">
+      	  <li class="active"><a id="linkCardView" href="#tabPaneGPMembers" role="tab" data-toggle="pill">GP Members <span class="hidden-xs">(500 available to connect)</span></a></li>
+      	  <li><a id="linkTableView" href="#tabPaneLPMembers" role="tab" data-toggle="pill">LP Members <span class="hidden-xs">(1,788 available to connect)</span></a></li>		
+      	</ul>	
       </div>
     </div>
     
     <div class="tab-content">
       <div id="tabPaneGPMembers" class="tab-pane active">
-        <div class="row">
-          {{#each items}}
-            {{>boxConnection}}
-          {{/each}}
+      	<div class="row">
+      	  {{#each items}}
+      	  	{{>boxMember}}
+      	  {{/each}}
           <div class="col-xs-12">
             <div class="linkLoadMore">
               <a href="" class="">load more</a>
             </div>
-          </div>          
-        </div>
+          </div>      	  
+      	</div>
       </div>
       <div id="tabPaneLPMembers" class="tab-pane">
         <div class="row">
           {{#each items}}
-            {{>boxConnection}}
+            {{>boxMember}}
           {{/each}}
           <div class="col-xs-12">
             <div class="linkLoadMore">
@@ -48,19 +48,19 @@
         </div>
       </div>
     </div>
-  </div>    
+  </div>  	
 </template>
 
-<template name="boxConnection">
-  <div class="item boxConnection boxMember col-xs-12 col-sm-6 col-md-4 col-lg-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
+<template name="boxMember">
+  <div class="item boxMember col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  	<div class="panel panel-default">
+  	  <div class="panel-heading">
         <div class="row">
-          <div class="col-xs-8 col-xs-offset-4"><h4><a href="/fund-profile">{{fullname}}</a></h4><h6>Global Cheif Marketing,</h6></div>
+          <div class="col-xs-8 col-xs-offset-4"><h4><a href="/user-profile">{{fullname}}</a></h4><h6>Global Cheif Marketing,</h6></div>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="row">
+  	  <div class="panel-body">
+  	  	<div class="row">
           <div class="col-xs-4"><img class="imgProfilePic img-responsive" src="images/baby.jpg" HEIGHT="90px"></div>
         </div>
         <div class="row">  
@@ -76,15 +76,14 @@
         </div>  
         <div class="row">  
           <div class="col-xs-4"><div class="text-muted txtLabel text-right">Status:</div></div><div class="col-xs-8"><span class="txtVal">Active</span></div>
-        </div>
-        
-      </div>
+  	  	</div>
+  	  	
+  	  </div>
       <div class="btn-group btn-group-justified">
-        <a class="btn btn-default btn-lg btnFirst" href="">PROFILE</a>
-        <a class="btn btn-default btn-lg" href="">REMOVE</a>
-        <a class="btn btn-default btn-lg btnLast" href=""><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span></a>
-      </div>      
-    </div>
-    
-  </div>	
-</template>	
+  	    <a class="btn btn-default btn-lg btnFirst" href="">VIEW PROFILE</a>
+  	    <a class="btn btn-default btn-lg btnLast" href="">CONNECT</a>
+  	  </div> 	  	
+  	</div>
+  	
+  </div>  
+</template>

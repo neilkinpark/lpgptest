@@ -1,18 +1,40 @@
 <template name="pageNews">
-  <div class="container-fluid">
-    <h3 class="pageTitle">News</h3>
-    <form class="form-horizontal formSearchBar">
-      <label>Search by:</label>
-      <div class="row">
-        <div class="col-sm-4 col-xs-9"><input type="text" placeholder="SEARCH NEWS FROM ALTASSETS" class="form-control input-sm"></div>
-        <div class="col-sm-2 col-xs-3"><button class="btn btn-sm btn-success" type="submit"><span class="hidden-xs">Search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></div>
-      </div>
-    </form>    
-	  {{#each newstypes}}
-      {{>rowNews}}
-    {{/each}} 
+  <div class="container-fluid pageNews">
+    <div class="row">
+      <div class="col-sm-3"><h1 class="pageTitle">News</h1></div>
+      <div class="col-sm-9">{{>tabNews}}</div>
+    </div>
+    
+    {{>boxTabNewsContent}}
   </div>
 </template>
+
+<template name="tabNews">
+  <ul class="nav nav-pills pull-right">
+    {{#each items}}
+    <li class="{{cssclass}}"><a id="link{{id}}" href="#{{id}}News" role="tab" data-toggle="pill">{{title}}</a></li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="boxTabNewsContent">
+  <div class="tab-content boxTabNewsContent">
+    {{#each items}}
+    <div role="tabpanel" class="tab-pane {{cssclass}}" id="{{id}}News">
+      <div class="row">
+        {{#each news}}  
+          {{>boxNewsTeaser}}
+        {{/each}}
+        <div class="col-xs-12">
+          <div class="linkLoadMore">
+            <a href="" class="">load more</a>
+          </div>
+        </div>
+      </div>   
+    </div>
+    {{/each}}
+  </div>  
+</template> 
 
 <template name="rowNews">
   <div class="panel panel-default">
@@ -32,9 +54,8 @@
 </template> 
 
 <template name="boxNewsTeaser">
-  <div class="item">
-    <div class="inner">
-      <img class="img-responsive" src="{{img}}">
+  <div class="item col-xs-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="inner" style="background-image: url('{{img}}')">
       <div class="box-title"><a href="">{{title}}</a></div>
     </div>
   </div>

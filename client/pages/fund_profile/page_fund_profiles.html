@@ -1,0 +1,90 @@
+<template name="pageFundProfiles">
+  <div class="container-fluid regionFilter">
+  	<form>
+      <div class="row">
+        <div class="col-xs-3">
+          <label>Fund name</label><input type="text" class="form-control" placeholder="filter by fund name">
+        </div>
+        <div class="col-xs-3">
+          <label>Fund type</label>
+          <select class="form-control">
+            <option>All types</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-xs-3">
+          <label>Fund status</label>
+          <select class="form-control">
+            <option>All</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>          
+        </div>
+        <div class="col-xs-3">
+          <label>Geographical focus</label><input type="text" class="form-control" placeholder="All Regions">
+        </div>        
+      </div>
+  	</form>
+  </div>	
+  <div class="container-fluid pageFundProfiles">
+    <div class="row">
+      <div class="col-xs-6 col-sm-10"><h1 class="pageTitle">Fund Profiles</h1></div>
+      <div class="col-xs-6 col-sm-2">
+      	<ul class="nav nav-pills pull-right">
+      	  <li class="active"><a id="linkCardView" href="#cardView" role="tab" data-toggle="pill"><span aria-hidden="true" class="glyphicon glyphicon-th-large"></span></a></li>
+      	  <li><a id="linkTableView" href="#tableView" role="tab" data-toggle="pill"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a></li>		
+      	</ul>	
+      </div>
+    </div>
+    
+    <div class="tab-content">
+      <div id="cardView" class="tab-pane active">
+      	<div class="row">
+      	  {{#each items}}
+      	  	{{>boxFundItemCard}}
+      	  {{/each}}
+          <div class="col-xs-12">
+            <div class="linkLoadMore">
+              <a href="" class="">load more</a>
+            </div>
+          </div>      	  
+      	</div>
+      </div>
+      <div id="tableView" class="tab-pane">
+      	<p>TABLE VIEW</p>
+      </div>
+    </div>
+  </div>  	
+</template>
+
+<template name="boxFundItemCard">
+  <div class="item boxFundItemCard col-xs-12 col-sm-6 col-lg-4">
+  	<div class="panel panel-default">
+  	  <div class="panel-heading"><h4><a href="/fund-profile">{{name}}</a></h4></div>
+  	  <div class="panel-body">
+  	  	<div class="row">
+  	  	  <div class="col-xs-6"><img class="thumbnail img-responsive" src="http://www.icvillar.es/img/logo_villar.gif"></div>
+  	  	  <div class="col-xs-6">
+  	  	  	<ul class="list-unstyled listDetails">
+  	  	  	   <li><span class="text-muted txtLabel">Type:</span> <span class="txtVal">Buyout</span></li>
+  	  	  	   <li><span class="text-muted txtLabel">Status:</span> <span class="txtVal">Active</span></li>
+  	  	  	   <li><span class="text-muted txtLabel">Size:</span> <span class="txtVal">$ 40m</span></li>
+  	  	  	   <li><span class="text-muted txtLabel">Target:</span> <span class="txtVal">$ 100m</span></li>  	  	  		
+  	  	  	</ul>
+  	  	  </div>
+  	  	</div>
+  	  	
+  	  </div>
+      <div class="btn-group btn-group-justified">
+  	    <a class="btn btn-default btn-lg btnFirst" href="">FOLLOW</a>
+  	    <a class="btn btn-default btn-lg btnLast" href="">CONNECT</a>
+  	  </div> 	  	
+  	</div>
+  	
+  </div>  
+</template>

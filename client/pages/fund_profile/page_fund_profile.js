@@ -64,5 +64,53 @@ if (Meteor.isClient) {
       { name: "Top Rank Inc"},
       { name: "Groove Street Families"}
     ]
-  });   
+  });
+
+  // PAGE > FUND PROFILES
+  Template.pageFundProfiles.helpers({
+    items : [
+      { name: "3Com Corp" },
+      { name: "3M Company" },
+      { name: "A.G. Edwards Inc." },
+      { name: "Abbott Laboratories" },
+      { name: "Abercrombie & Fitch Co." },
+      { name: "ABM Industries Incorporated" },
+      { name: "Ace Hardware Corporation" },
+      { name: "ACT Manufacturing Inc." },
+      { name: "Acterna Corp." },
+      { name: "Adams Resources & Energy, Inc." },
+      { name: "ADC Telecommunications, Inc." },
+      { name: "Adelphia Communications Corporation" },
+      { name: "Administaff, Inc." },
+      { name: "Adobe Systems Incorporated" },
+      { name: "Adolph Coors Company" },
+      { name: "Advance Auto Parts, Inc." },
+      { name: "Advanced Micro Devices, Inc." },
+      { name: "Gonzaga Capital Prime XIV" }
+    ]
+  }); 
+
+  // PAGE > FUND PROFILES
+  Template.pageFundPerformance.helpers({
+    items : [
+      { name: "3Com Corp" },
+      { name: "3M Company" },
+      { name: "A.G. Edwards Inc." },
+      { name: "Abbott Laboratories" },
+      { name: "Abercrombie & Fitch Co." },
+      { name: "ABM Industries Incorporated" },
+      { name: "Ace Hardware Corporation" },
+      { name: "ACT Manufacturing Inc." },
+      { name: "Acterna Corp." },
+      { name: "Adams Resources & Energy, Inc." },
+      { name: "ADC Telecommunications, Inc." },
+      { name: "Adelphia Communications Corporation" },
+      { name: "Administaff, Inc." },
+      { name: "Adobe Systems Incorporated" },
+      { name: "Adolph Coors Company" },
+      { name: "Advance Auto Parts, Inc." },
+      { name: "Advanced Micro Devices, Inc." },
+      { name: "Gonzaga Capital Prime XIV" }
+    ]
+  });     
 }

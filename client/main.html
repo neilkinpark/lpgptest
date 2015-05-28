@@ -13,7 +13,7 @@
 </body>
 
 <template name="pageloggedInBasic">
-  <div id="regionHeader" class="navbar navbar-default" role="banner">
+  <div id="regionHeader" class="navbar navbar-default navbar-fixed-top" role="banner">
     <div class="container-fluid">
       <div class="navbar-header">
         <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
@@ -27,10 +27,10 @@
         <ul class="nav navbar-nav navMain">
           <li class="active"><a href="/"><small>HOME</small></a></li>
           <li class="dropdown">
-            <a href="/fund-profile" data-toggle="dropdown"><small>FUNDS</small> <span class="caret"></span></a>
+            <a href="/fund-profiles" data-toggle="dropdown"><small>FUNDS</small> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu" >
-              <li><a href="/fund-profile"><small>FUND PROFILES</small></a></li>
-              <li><a href=""><small>FUND PERFORMANCE</small></a></li>
+              <li><a href="/fund-profiles"><small>FUND PROFILES</small></a></li>
+              <li><a href="/fund-performance"><small>FUND PERFORMANCE</small></a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -60,7 +60,7 @@
     {{ > yield }}
   </div>
 
-  <footer class="regionFooter">
+  <footer class="regionFooter footer">
     <div class="container">
       <div class="row">
         <div class="boxCopyright col-xs-3"><SPAN class="pull-left">COPYRIGHTS 2015</SPAN></div>

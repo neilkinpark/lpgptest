@@ -1,13 +1,41 @@
+// stikcy footer css 
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 65px;
+}
+a {
+  color: @brand-info;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 65px;
+}
+
 body {
   background: #e9eef3;
+  color: @gray;
+  padding-top: 70px;
 }
 #regionHeader {
-
+  border: none;
+  hr {
+    margin: 0;
+    border-color: #e7e7e7;
+  }
+}
+#regionMain .page-header {
+   margin-top: 20px;
 }
 .regionFooter {
   background: #2a3744;
   color: #a2a7aa;
-  min-height: 65px;
   > .container {
     padding-top: 25px;
   }
@@ -40,15 +68,61 @@ hr {
   }
 }
 
-// custom components
-.pageTitle {
-  margin: 0 0 0.5em 0;
-} 
-.pageFundProfile {
-  .panel-default > .btn.btn-sm.btn-block.btn-primary {
-  	border-radius: 0;
+// BOOTSTRAP'S 3 COMPONENTS
+label {
+  font-weight: normal;
+  color: @gray-light;
+  font-family: @font-family-gillsans;
+}
+.alert {
+  border: none;
+}
+.form-control,
+.thumbnail,
+.btn-default {
+  border-radius: 0;
+  border-color: @gray-lighter;
+  color: @gray-light;
+  box-shadow: none;
+}
+.text-muted {
+  color: #8a8a8a;
+}
+.nav-pills {
+  > li + li {
+    margin-left: @padding-xs-horizontal;
+  }
+  > li > a {
+    background-color: #fff;
+    color: #a1a1a1;
+  }
+  > li.active > a, 
+  > li.active > a:hover, 
+  > li.active > a:focus {
+    background-color: @brand-info;
+  }  
+}
+.panel {
+  border: none;
+  box-shadow: none;
+}
+.panel-default > .panel-heading {
+  background-color: @gray-dark;
+  color: #fff;
+  a {
+    color: #fff;
   }
 }
+
+
+// CUSTOM COMPONENTS
+.pageTitle {
+  margin: 0 0 0.5em 0;
+  font-family: @font-family-sans-serif;
+  font-size: @font-size-h1;
+  color: @gray-light;
+  font-weight: 300;
+} 
 .panel-heading {
   .btnMiniMenu {
     color: #fff; 
@@ -57,9 +131,119 @@ hr {
     }  
   }  
 }
-
+.linkLoadMore {
+  border-top: 1px dashed #aaa;
+  margin-top: 3em;
+  a {
+    background-color: #e9eef3;
+    color: #777;
+    display: block;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    top: -18px;
+    width: 170px;    
+  }
+}
 .formSearchBar {
-  background: @gray-lighter;
+  background: #fff;
   padding: @padding-xs-horizontal @padding-xs-horizontal;
   margin: @padding-large-vertical 0;
+}
+.pageTitleNav {
+  .nav-pills.pull-right {
+    margin-left: 3em;
+  }
+}
+.btn-group-justified {
+  .btnFirst {
+    border-left: 0;
+  }
+  .btnLast {
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+// REGION > FILTER
+.regionFilter {
+  background: #fff;
+  margin-top: -@navbar-margin-bottom;
+  margin-bottom: @navbar-margin-bottom;
+  padding-top: @navbar-margin-bottom;
+  padding-bottom: @navbar-margin-bottom;
+}
+
+// PAGE > NEWS //
+.pageNews .boxTabNewsContent .item {
+  .inner {
+    background-size: cover;
+    background-position: center;
+    height: 265px;
+    margin-bottom: @grid-gutter-width;
+    .box-title {
+      background: rgb(200, 200, 200); /* The Fallback */
+      background: rgba(255, 255, 255, 0.7);
+      height: 100%;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: @font-size-large;
+      display: table;
+      a {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: @padding-small-horizontal;
+        color: @gray;
+      }
+    }   
+  }
+}
+// PAGE > FUND PROFILE
+.pageFundProfile {
+  .panel-default > .btn.btn-sm.btn-block.btn-primary {
+    border-radius: 0;
+  }
+}
+// PAGE > FUND PROFILES
+.pageFundProfiles {
+  .boxFundItemCard {
+    .listDetails {
+      li {
+        margin: @padding-small-vertical 0;
+      }
+    }
+  }
+}
+
+// PAGE > FUND PERFORMANCE
+.pageFundPerformance {
+  .boxFundPerformanceItem {
+    .listDetails {
+      padding: @padding-large-vertical 0;
+    }
+    .boxMoreDetails {
+      border-color: @gray-lighter;
+      td {
+        padding: @padding-large-vertical;
+        text-align: center;
+        border-right: 1px solid @gray-lighter;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }      
+  }
+}
+
+// PAGE > MEMBERS & CONNECTIONS
+.boxMember {
+  .panel .imgProfilePic {
+    margin-bottom: -60px;
+    position: relative;
+    top: -70px;
+  }
 }
