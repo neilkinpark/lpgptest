@@ -61,15 +61,11 @@ if (Meteor.isClient) {
       { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
       { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
       { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },      
       { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) }
     ]
   });
-}
 
-$(function () {
-  $('[data-toggle="popover"]').popover();
-})
+  Template.pageSecondaries.onRendered({
+
+  });
+}

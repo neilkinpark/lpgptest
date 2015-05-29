@@ -77,6 +77,9 @@ label {
 .alert {
   border: none;
 }
+.btn {
+  border-radius: 0;
+}
 .form-control,
 .thumbnail,
 .btn-default {
@@ -84,6 +87,16 @@ label {
   border-color: @gray-lighter;
   color: @gray-light;
   box-shadow: none;
+}
+.btn-default:hover, 
+.btn-default:focus, 
+.btn-default.focus,
+.btn-default:active, 
+.btn-default.active {
+  color: @brand-info;
+  background-color: #fff;
+  box-shadow: none;
+  border-color: @gray-lighter;
 }
 .text-muted {
   color: #8a8a8a;
