@@ -8,6 +8,10 @@ Router.route('/', function () {
   this.render('pageUnderCons');
 });
 
+Router.route('/user-profile', function () {
+  this.render('pageLPProfile');
+});
+
 Router.route('/fund-profiles', function(){
   this.render('pageFundProfiles');
 });
