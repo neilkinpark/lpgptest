@@ -8,6 +8,10 @@ Router.route('/', function () {
   this.render('pageUnderCons');
 });
 
+Router.route('/inbox', function () {
+  this.render('pageInbox');
+});
+
 Router.route('/user-profile', function () {
   this.render('pageLPProfile');
 });

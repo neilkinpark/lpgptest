@@ -183,6 +183,22 @@ label {
     border-right: 0;
   }
 }
+.table-hr {
+  > tbody {
+    > tr {
+      background: #fff;
+      border: 1px solid #e2e5e9;
+      > td {
+        padding: @padding-large-vertical @padding-large-horizontal;
+        font-size: @font-size-h5;
+        border-top: none;
+        &.colName {
+          font-size: @font-size-h4;
+        }
+      }
+    }    
+  }
+}
 
 // REGION > FILTER
 .regionFilter {
