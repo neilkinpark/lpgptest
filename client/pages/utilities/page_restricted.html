@@ -21,3 +21,25 @@
   
   </div>  	
 </template>
+
+<template name="pageNotFound">
+  <div class="container-fluid page404">
+    <h1 class="pageTitle text-center">Page not found.</h1>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Error (404)</h4>
+          </div>
+          <div class="panel-body">
+            <div class="jumbotron text-center">
+              <span class="lead">Sorry, the requested page "{{url}}" could not be found.</span>
+            </div>
+            <a class="btn btn-default btn-block btn-lg" href="/"> <span>RETURN TO HOME PAGE.</span></a>            
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>    
+</template>

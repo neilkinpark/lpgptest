@@ -129,7 +129,9 @@ label {
     color: #fff;
   }
 }
-
+.navbar-brand {
+  padding: 13px;
+}
 
 // CUSTOM COMPONENTS
 .pageTitle {
@@ -138,6 +140,18 @@ label {
   font-size: @font-size-h1;
   color: @gray-light;
   font-weight: 300;
+}
+.panel-clean {
+  background: transparent;
+  .panel-body,
+  .panel-heading {
+    border: 1px solid #e2e5e9;
+    border-radius: 0;
+    background: #fff;
+  }
+  .panel-heading {
+    margin-bottom: 2px;
+  }
 } 
 .panel-heading {
   .btnMiniMenu {
@@ -285,7 +299,28 @@ label {
   .thumbnail.boxProfilePic {
     padding: @padding-large-horizontal;
   }
-}  
+}
+
+// PAGE > MESSAGE
+.pageMessages {
+  .panel-clean {
+    .dl-horizontal {
+      margin: 0;
+      dt {
+        width: 50px;
+        float: left;
+        font-weight: normal;
+      }
+      dd {
+        margin-left: 70px;
+      }
+    }
+  }
+  .btn,
+  textarea {
+    border: 1px solid #e2e5e9;
+  }
+}
 
 // MEDIA QUERIES
 @media (max-width: @screen-xs-max) {
@@ -293,6 +328,9 @@ label {
   .pageTitle {
     margin-top: @padding-large-vertical;
     font-size: @font-size-h4;
+  }
+  .footer {
+    font-size: @font-size-small;
   }
 }
 @media (min-width: @screen-sm-min) {

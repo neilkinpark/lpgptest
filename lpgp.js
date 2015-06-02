@@ -8,8 +8,16 @@ Router.route('/', function () {
   this.render('pageUnderCons');
 });
 
+Router.route('/page-404', function () {
+  this.render('pageNotFound');
+});
+
 Router.route('/inbox', function () {
   this.render('pageInbox');
+});
+
+Router.route('/message', function () {
+  this.render('pageMessage');
 });
 
 Router.route('/user-profile', function () {
@@ -69,6 +77,7 @@ if (Meteor.isClient) {
       { link: "/fund-profile", page: "Fund Open Room"},
       { link: "/page-results", page: "Search Results"},
       { link: "/access-denied", page: "Restricted Content"},
+      { link: "/page-404", page: "404"},
       { link: "/loadingdemo", page: "Loading state"}
   	]
   });
