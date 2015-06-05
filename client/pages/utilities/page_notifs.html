@@ -1,0 +1,96 @@
+<template name="pageNotifs">	
+  <div class="container-fluid pageNotifs">
+    <h1 class="pageTitle">Sample Page: App Notifications</h1>
+    
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4><i class="fa fa-envelope"></i> New Message.  </h4>You have 4 new messages. <a class="alert-link" href="/inbox">go to inbox</a>
+    </div>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4><i class="fa fa-check-circle"></i> Message sent. </h4>You have successfully sent a message to LP Premium User 11. <a class="alert-link" href="/inbox">return to inbox</a>
+    </div>
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4><i class="fa fa-warning"></i> Warning. </h4>This is just a sample warning. <a class="alert-link" href="/">back to previous page</a>
+    </div>
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4><i class="fa fa-wrench"></i> Sending failed. </h4>Sorry, but we can't seem to send your message at the moment. Please try again at a later time. <a class="alert-link" href="/">back to previous page</a>
+    </div>
+    <br><br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Click the buttons to view the modal message:</div>
+      <div class="panel-body">
+        <div class="btn-group-horizontal">
+          <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modalInfo">Info</button>
+          <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modalSuccess">Success</button>
+          <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modalAlert">Warning</button>
+          <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modalError">Error</button>
+        </div>        
+      </div>
+    </div>
+
+    <div id="modalInfo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalInfo" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content panel panel-default">
+          <div class="panel-heading">
+            <i class="fa fa-envelope fa-2x text-info"></i>&nbsp;&nbsp;&nbsp;<span class="lead">New message</span>
+            <a href="" class="pull-right" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></a>
+          </div>
+          <div class="panel-body">
+            You have 4 new messages. <a class="alert-link" href="/inbox">go to inbox</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalSuccess" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalSuccess" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content panel panel-default">
+          <div class="panel-heading">
+            <i class="fa fa-check-circle fa-2x text-success"></i>&nbsp;&nbsp;&nbsp;<span class="lead">Message sent</span>
+            <a href="" class="pull-right" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></a>
+          </div>
+          <div class="panel-body">
+            You have successfully sent a message to LP Premium User 11. <a class="alert-link" href="/inbox">return to inbox</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalAlert" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalAlert" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content panel panel-default">
+          <div class="panel-heading">
+            <i class="fa fa-warning fa-2x text-warning"></i>&nbsp;&nbsp;&nbsp;<span class="lead">Warning</span>
+            <a href="" class="pull-right" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></a>
+          </div>
+          <div class="panel-body">
+            Are you sure you want to delete this message? Once deleted your message can't be restored. 
+          </div>
+          <div class="btn-group btn-group-justified">
+            <a href="" class="btn btn-default btnFirst">REMOVE</a>
+            <a href="" class="btn btn-gray btnFirst">CANCEL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalError" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalError" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content panel panel-default">
+          <div class="panel-heading">
+            <i class="fa fa-wrench fa-2x text-danger"></i>&nbsp;&nbsp;&nbsp;<span class="lead">Sending failed</span>
+            <a href="" class="pull-right" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></a>
+          </div>
+          <div class="panel-body">
+            Sorry, but we can't seem to send your message at the moment. Please try again at a later time. <a class="alert-link" href="/inbox">return to inbox</a>
+          </div>
+        </div>
+      </div>
+    </div>             
+  
+  </div>  	
+</template>

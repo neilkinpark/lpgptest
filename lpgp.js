@@ -8,8 +8,16 @@ Router.route('/', function () {
   this.render('pageUnderCons');
 });
 
+Router.route('/login', function () {
+  this.render('pageLogin');
+});
+
 Router.route('/page-404', function () {
   this.render('pageNotFound');
+});
+
+Router.route('/page-notifications', function () {
+  this.render('pageNotifs');
 });
 
 Router.route('/inbox', function () {
@@ -18,6 +26,10 @@ Router.route('/inbox', function () {
 
 Router.route('/message', function () {
   this.render('pageMessage');
+});
+
+Router.route('/new-message', function () {
+  this.render('pageCreateMessage');
 });
 
 Router.route('/user-profile', function () {
@@ -64,6 +76,10 @@ Router.route('/access-denied', function(){
   this.render('pageRestricted'); 
 });
 
+Router.route('/access-denied-user', function(){
+  this.render('pageRestrictedUser'); 
+});
+
 Router.route('/news', function(){
   this.render('pageNews'); 
 });
@@ -76,7 +92,9 @@ if (Meteor.isClient) {
       { link: "/subscription-upgrade-request", page: "Subsription Upgrade Request"},
       { link: "/fund-profile", page: "Fund Open Room"},
       { link: "/page-results", page: "Search Results"},
+      { link: "/page-notifications", page: "Notifications"},
       { link: "/access-denied", page: "Restricted Content"},
+      { link: "/access-denied-user", page: "Restricted Content 2"},
       { link: "/page-404", page: "404"},
       { link: "/loadingdemo", page: "Loading state"}
   	]

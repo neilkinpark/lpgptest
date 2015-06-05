@@ -148,6 +148,9 @@ label {
     border: 1px solid #e2e5e9;
     border-radius: 0;
     background: #fff;
+    > .form-control {
+      border: transparent;
+    }
   }
   .panel-heading {
     margin-bottom: 2px;
@@ -164,7 +167,8 @@ label {
 .linkLoadMore {
   border-top: 1px dashed #aaa;
   margin-top: 3em;
-  a {
+  > span,
+  > a {
     background-color: #e9eef3;
     color: #777;
     display: block;
@@ -187,6 +191,9 @@ label {
   .nav-pills.pull-right {
     margin-left: 3em;
   }
+}
+.btn-gray {
+  background: #f0f1f2;
 }
 .btn-group-justified {
   .btnFirst {
@@ -304,10 +311,14 @@ label {
 // PAGE > MESSAGE
 .pageMessages {
   .panel-clean {
+    > .panel-body,
+    > .panel-heading {
+      padding: @padding-large-horizontal;
+    }
     .dl-horizontal {
       margin: 0;
       dt {
-        width: 50px;
+        width: auto;
         float: left;
         font-weight: normal;
       }
