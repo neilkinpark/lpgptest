@@ -84,6 +84,10 @@ Router.route('/news', function(){
   this.render('pageNews'); 
 });
 
+Router.route('/help', function(){
+  this.render('pageHelp'); 
+});
+
 if (Meteor.isClient) {
   Template.pageUnderCons.helpers({
   	links:[
