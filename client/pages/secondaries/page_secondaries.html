@@ -1,6 +1,11 @@
 <template name="pageSecondaries">
   <div class="container-fluid regionFilter pageSecondaries">
-    <form>
+    <div class="clearfix visible-xs-block">
+      <h1 class="pageTitle visible-xs-inline">Secondaries</h1>
+      <a class="pull-right text-muted" data-toggle="collapse" href="#boxFilters">Filters &raquo;</a>
+    </div>
+    <form id="boxFilters" class="collapse mobile-collapse">
+      <br class="visible-xs-inline">
       <div class="row">
         <div class="col-xs-12 col-sm-3">
           <label>Fund name</label><input type="text" class="form-control" placeholder="filter by fund name">
@@ -27,19 +32,15 @@
   </div>
    
   <div class="container-fluid pageSecondaries">
-    <div class="row">
-      <div class="col-sm-4"><h1 class="pageTitle">Secondaries</h1></div>
-      <div class="col-sm-8 pageTitleNav">
+    <div class="row hidden-xs">
+      <div class="col-sm-3"><h1 class="pageTitle">Secondaries</h1></div>
+      <div class="col-sm-9 pageTitleNav">
         <ul class="nav nav-pills pull-right">
-          <li>
-            <a href="#" class="linkOfferVal" data-toggle="modal" data-target="#boxOfferVal">
-              OFFER VALUATION <i class="fa fa-info-circle"></i>
-            </a>
-          </li>
+          <li><a href="#" class="linkOfferVal" data-toggle="modal" data-target="#boxOfferVal">OFFER VALUATION <i class="fa fa-info-circle"></i></a></li>
           <li><a href="#" class="linkOfferVal" data-toggle="modal" data-target="#boxOfferVal2">REQUEST VALUATION <i class="fa fa-info-circle"></i></a></li>
           <li><a href="#" class="linkOfferVal" data-toggle="modal" data-target="#boxOfferVal3">REVIEW FUNDS <i class="fa fa-info-circle"></i></a></li>
         </ul>
-        <ul class="nav nav-pills pull-right">
+        <ul class="nav nav-pills pull-right hidden-xs hidden-sm">
           <li>
             <a id="btnWWYLTD" class="dropdown-toggle" href="" data-toggle="dropdown">What would you like to do? <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="btnWWYLTD">
@@ -50,6 +51,20 @@
             </ul>
           </li>          
         </ul>
+      </div>
+    </div>
+
+    <div class="visible-xs-block boxValuationInfos">
+      <div class="list clearfix">
+        <div class="item">
+          <a href="#" class="linkOfferVal btn btn-block btn-default" data-toggle="modal" data-target="#boxOfferVal">OFFER VALUATION <i class="fa fa-info-circle"></i></a>
+        </div>
+        <div class="item">
+          <a href="#" class="linkOfferVal btn btn-block btn-default" data-toggle="modal" data-target="#boxOfferVal2">REQUEST VALUATION <i class="fa fa-info-circle"></i></a>
+        </div>
+        <div class="item">
+          <a href="#" class="linkOfferVal btn btn-block btn-default" data-toggle="modal" data-target="#boxOfferVal3">REVIEW FUNDS <i class="fa fa-info-circle"></i></a>
+        </div>
       </div>
     </div>
 
@@ -104,7 +119,39 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div class="btn-group btn-group-justified btn-group-lg">
+    <div class="row visible-xs-block visible-sm-block">
+      <div class="col-sm-6">
+        <div class="dropdown mobile-marginBottom">
+            <button id="" class="btn btn-block btn-lg btn-default lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              What would you like to do?
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="btnWWYLTD">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+        </div>
+      </div>      
+      <div class="col-sm-6">
+        <div class="dropdown mobile-marginBottom">
+          <button id="" class="btn btn-block btn-info btn-lg lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Top 50 Liquid Funds
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="">
+            <li><a href="" class="">Other Funds</a></li>
+            <li><a href="" class="">Newest</a></li>
+            <li><a href="" class="">Most Viewed</a></li>
+            <li><a href="" class="">My Valuations</a></li>
+            <li><a href="" class="">My Funds</a></li>
+          </ul>
+        </div>        
+      </div>
+    </div>
+
+    <div class="hidden-xs hidden-sm btn-group btn-group-justified btn-group-lg">
       <a href="" class="active btn btn-default">Top 50 Liquid Funds</a>
       <a href="" class="btn btn-default">Other Funds</a>
       <a href="" class="btn btn-default">Newest</a>
@@ -128,14 +175,15 @@
 </template>
 
 <template name="boxSecondariesCardView">
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+  <div id="{{id}}" class="col-xs-12 col-sm-6 col-lg-4">
     <div class="panel panel-default">
 
       <div class="panel-heading clearfix">
-        <h4>{{firm}}</h4>
+        <h4 class="hidden-xs">{{firm}}</h4>
+        <a class="visible-xs-block lpgpDropdown" href="#collapse{{id}}" data-toggle="collapse">{{firm}} <span class="fakeCaret">&raquo;</span></a>
       </div>
 
-      <div class="panel-body">
+      <div id="collapse{{id}}" class="panel-body collapse mobile-collapse">
         <div class="row">
           <div class="col-xs-6"><img class="thumbnail img-responsive" src="http://www.icvillar.es/img/logo_villar.gif"></div>
           <div class="col-xs-6">

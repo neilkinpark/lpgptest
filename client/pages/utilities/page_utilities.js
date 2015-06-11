@@ -7,4 +7,11 @@ if (Meteor.isClient) {
     url: newURL
   });
 
+  Template.pageLogin.events({
+  	"click .linkPSReset": function (event, template){
+  	  window.location.href = '/password-reset';
+  	  //Router.go('pagePasswordReset');
+  	}
+  });
+
 }

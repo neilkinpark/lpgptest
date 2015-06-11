@@ -56,12 +56,12 @@ if (Meteor.isClient) {
   // This code only runs on the client
   Template.pageSecondaries.helpers({ 
     companies:[
-      { firm: "Firm Name Sample", fund: "Fund Name Sample" },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
-      { firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) }
+      { id: Fake.word(), firm: "Firm Name Sample", fund: "Fund Name Sample" },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) }
     ]
   });
 

@@ -16,8 +16,8 @@ if (Meteor.isClient) {
 
   Template.pageMessage.helpers({ 
     message:[
-      { sender: "John Neal", receiver: "me", msg: "Hello there.", date: "March 16" },
-      { sender: "me", receiver: "John Neal", msg: "Im alright, how are you? " + Fake.paragraph(10), date: "March 20" }
+      { sender: "John Neal", receiver: "You", msg: "Hello there.", date: "March 16" },
+      { sender: "You", receiver: "John Neal", msg: "Im alright, how are you? " + Fake.paragraph(10), date: "March 20" }
     ]
   });  
 

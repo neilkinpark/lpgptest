@@ -23,16 +23,16 @@
                     <div class="col-sm-10">
                       <input type="password" class="form-control" id="inputEmail" placeholder="Enter password">
                       <br>
-                      <a class="pull-right text-muted" href="">Forgot password?</a>
+                      <a class="pull-right text-muted" href="/password-reset">Forgot password?</a>
                       <br class="hidden-xs">
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-5 col-xs-6">
-                      <button type="submit" class="btn btn-info btn-block btn-lg">SIGN IN</button>
+                      <a href="#" id="btnSignIn" type="submit" class="btn btn-info btn-block btn-lg" data-toggle="modal" data-target="#modalError">SIGN IN</a>
                     </div>
                     <div class="col-sm-5 col-xs-6">  
-                      <button type="submit" class="btn btn-gray btn-block btn-lg">SIGN UP HERE</button>
+                      <a href="/signup" type="submit" class="btn btn-gray btn-block btn-lg">SIGN UP HERE</a>
                     </div>  
                   </div>
                 </form>
@@ -52,4 +52,48 @@
       </div>
     </div>
   </div>
+
+
+    <!-- MODAL -->
+    <div id="modalError" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalError" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content panel panel-default">
+          <div class="panel-heading">
+            <i class="fa fa-exclamation-circle fa-2x text-danger"></i>&nbsp;&nbsp;&nbsp;<span class="lead">Authentication failed</span>
+            <a href="" class="pull-right" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></a>
+          </div>
+          <div class="panel-body">
+            Sorry, unrecognized username or password.  <a class="linkPSReset" href="/password-reset" data-dismiss="modal">Have you forgotten your password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </template>	
+
+
+<template name="pagePasswordReset">
+  <div class="container-fluid">
+    <br>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="text-center">Password Reset</h4>
+          </div>
+          <div class="panel-body text-center">
+            <P>To reset your password, enter your email address.</P>
+            <br class="hidden-xs">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Enter email">
+            <br class="">
+            <div class="btn-group btn-group-justified">
+              <a href="" class="submit btn btn-default btn-lg btn-block">SUBMIT</a>
+              <a href="/login" class="submit btn btn-gray btn-lg btn-block">CANCEL</a>
+            </DIV>
+          </div>
+        </div>
+
+      </div>
+    </div>    
+  </div>
+</template>  

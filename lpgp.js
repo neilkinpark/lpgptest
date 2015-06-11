@@ -12,6 +12,10 @@ Router.route('/login', function () {
   this.render('pageLogin');
 });
 
+Router.route('/password-reset', function () {
+  this.render('pagePasswordReset');
+});
+
 Router.route('/page-404', function () {
   this.render('pageNotFound');
 });
@@ -80,6 +84,10 @@ Router.route('/access-denied-user', function(){
   this.render('pageRestrictedUser'); 
 });
 
+Router.route('/account-verification', function(){
+  this.render('pageAccountVerification'); 
+});
+
 Router.route('/news', function(){
   this.render('pageNews'); 
 });
@@ -99,6 +107,7 @@ if (Meteor.isClient) {
       { link: "/page-notifications", page: "Notifications"},
       { link: "/access-denied", page: "Restricted Content"},
       { link: "/access-denied-user", page: "Restricted Content 2"},
+      { link: "/account-verification", page: "Account Verification"},
       { link: "/page-404", page: "404"},
       { link: "/loadingdemo", page: "Loading state"}
   	]
