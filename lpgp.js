@@ -8,6 +8,10 @@ Router.route('/', function () {
   this.render('pageUnderCons');
 });
 
+Router.route('/temp-filter', function () {
+  this.render('tempFilter');
+});
+
 Router.route('/login', function () {
   this.render('pageLogin');
 });
@@ -37,7 +41,15 @@ Router.route('/new-message', function () {
 });
 
 Router.route('/user-profile', function () {
+  this.render('pageMyProfile');
+});
+
+Router.route('/lp-profile', function () {
   this.render('pageLPProfile');
+});
+
+Router.route('/gp-profile', function () {
+  this.render('pageGPProfile');
 });
 
 Router.route('/fund-profiles', function(){

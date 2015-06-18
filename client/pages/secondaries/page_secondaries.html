@@ -7,10 +7,10 @@
     <form id="boxFilters" class="collapse mobile-collapse">
       <br class="visible-xs-inline">
       <div class="row">
-        <div class="col-xs-12 col-sm-3">
+        <div class="col-xs-12 col-sm-3 mobile-marginBottom">
           <label>Fund name</label><input type="text" class="form-control" placeholder="filter by fund name">
         </div>
-        <div class="col-xs-12 col-sm-3">
+        <div class="col-xs-12 col-sm-3 mobile-marginBottom">
           <label>Fund type</label>
           <select class="form-control">
             <option>All types</option>
@@ -20,7 +20,7 @@
             <option>5</option>
           </select>
         </div>
-        <div class="col-xs-12 col-sm-3">
+        <div class="col-xs-12 col-sm-3 mobile-marginBottom">
           <label>Vintage</label><input type="text" class="form-control" placeholder="enter vintage year">         
         </div>
         <div class="col-xs-12 col-sm-3">
@@ -32,7 +32,7 @@
   </div>
    
   <div class="container-fluid pageSecondaries">
-    <div class="row hidden-xs">
+    <div class="row hidden-xs margin-sm">
       <div class="col-sm-3"><h1 class="pageTitle">Secondaries</h1></div>
       <div class="col-sm-9 pageTitleNav">
         <ul class="nav nav-pills pull-right">
@@ -122,7 +122,7 @@
     <div class="row visible-xs-block visible-sm-block">
       <div class="col-sm-6">
         <div class="dropdown mobile-marginBottom">
-            <button id="" class="btn btn-block btn-lg btn-default lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="" class="btn btn-block btn-default lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               What would you like to do?
               <span class="caret"></span>
             </button>
@@ -136,7 +136,7 @@
       </div>      
       <div class="col-sm-6">
         <div class="dropdown mobile-marginBottom">
-          <button id="" class="btn btn-block btn-info btn-lg lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button id="" class="btn btn-block btn-info lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Top 50 Liquid Funds
             <span class="caret"></span>
           </button>
@@ -159,7 +159,7 @@
       <a href="" class="btn btn-default">My Valuations</a>
       <a href="" class="btn btn-default">My Funds</a>        
     </div>
-    <br>
+    <br class="hidden-xs">
     <div class="row">
       {{#each companies}}
         {{> boxSecondariesCardView }}

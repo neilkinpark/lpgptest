@@ -20,14 +20,14 @@
       <div class="col-xs-12 col-sm-4"><h1 class="pageTitle">Members</h1></div>
       <div class="col-xs-12 col-sm-8">
       	<ul class="nav nav-pills pull-right">
-      	  <li class="active"><a id="linkCardView" href="#tabPaneGPMembers" role="tab" data-toggle="pill">GP Members <span class="hidden-xs">(500 available to connect)</span></a></li>
-      	  <li><a id="linkTableView" href="#tabPaneLPMembers" role="tab" data-toggle="pill">LP Members <span class="hidden-xs">(1,788 available to connect)</span></a></li>		
+      	  <li><a id="linkCardView" href="#tabPaneGPMembers" role="tab" data-toggle="pill">GP Members <span class="hidden-xs">(500 available to connect)</span></a></li>
+      	  <li class="active"><a id="linkTableView" href="#tabPaneLPMembers" role="tab" data-toggle="pill">LP Members <span class="hidden-xs">(1,788 available to connect)</span></a></li>		
       	</ul>	
       </div>
     </div>
     
     <div class="tab-content">
-      <div id="tabPaneGPMembers" class="tab-pane active">
+      <div id="tabPaneGPMembers" class="tab-pane">
       	<div class="row">
       	  {{#each items}}
       	  	{{>boxMember}}
@@ -39,7 +39,7 @@
           </div>      	  
       	</div>
       </div>
-      <div id="tabPaneLPMembers" class="tab-pane">
+      <div id="tabPaneLPMembers" class="tab-pane active">
         <div class="row">
           {{#each items}}
             {{>boxMember}}
@@ -60,7 +60,7 @@
   	<div class="panel panel-default">
   	  <div class="panel-heading">
         <div class="row">
-          <div class="col-xs-8 col-xs-offset-4"><h4><a href="/user-profile">{{fullname}}</a></h4><h6>Global Cheif Marketing,</h6></div>
+          <div class="col-xs-8 col-xs-offset-4"><h4><a href="/lp-profile">{{fullname}}</a></h4><h6>Global Cheif Marketing,</h6></div>
         </div>
       </div>
   	  <div class="panel-body">
@@ -84,7 +84,7 @@
   	  	
   	  </div>
       <div class="btn-group btn-group-justified">
-  	    <a class="btn btn-default btn-lg btnFirst" href="/user-profile">VIEW PROFILE</a>
+  	    <a class="btn btn-default btn-lg btnFirst" href="/lp-profile">VIEW PROFILE</a>
   	    <a class="btn btn-default btn-lg btnLast" href="">CONNECT</a>
   	  </div> 	  	
   	</div>

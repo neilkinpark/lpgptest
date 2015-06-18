@@ -1,14 +1,29 @@
 <template name="pageFundProfile">
 
-  <div data-spy="affix" data-offset-top="50" data-offset-bottom="0" id="boxPageTitle" class="container-fluid">   
-    <h3 class="pageTitle">Sample Fund</h3>
-    <ul class="nav nav-tabs nav-xs">
-      <li role="presentation" class="active"><a role="tab" data-toggle="tab" href="#boxSummary">Summary</a></li>
-      <li role="presentation"><a role="tab" data-toggle="tab" href="#boxDetails">Details</a></li>
-      <li role="presentation"><a role="tab" data-toggle="tab" href="#boxNews">News</a></li>
-      <li role="presentation"><a role="tab" data-toggle="tab" href="#boxMore">More Info</a></li>
-    </ul>
-    <br />
+  <div class="container-fluid pageFundProfile">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4"><h1 class="pageTitle text-inline">Sample Fund</h1></div>
+      <div class="col-xs-12 col-sm-8">
+        <ul class="nav nav-pills pull-right hidden-xs">
+          <li role="presentation" class="active"><a role="tab" data-toggle="tab" href="#boxSummary">Summary</a></li>
+          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxDetails">Details</a></li>
+          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxNews">News</a></li>
+          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxMore">More Info</a></li>      
+        </ul>
+        <div class="dropdown margin-sm margin-xs visible-xs">
+          <button id="" class="btn btn-block btn-info lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Summary
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="">
+            <li><a data-toggle="tab" href="#boxSummary">Summary</a></li>
+            <li><a data-toggle="tab" href="#boxDetails">Details</a></li>
+            <li><a data-toggle="tab" href="#boxNews">News</a></li>
+            <li><a data-toggle="tab" href="#boxMore">More Info</a></li>
+          </ul>
+        </div>       
+      </div>
+    </div>
   </div>
 
   <div class="container-fluid pageFundProfile">

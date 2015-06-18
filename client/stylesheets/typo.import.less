@@ -135,6 +135,9 @@ label {
 .navbar-brand {
   padding: 13px;
 }
+strong.lead {
+  font-weight: 400;
+}
 
 // CUSTOM COMPONENTS
 .pageTitle {
@@ -207,6 +210,10 @@ label {
 .btn-gray {
   background: #f0f1f2;
 }
+.btn-trans {
+  background: transparent;
+  border-color: #eeeeee;
+}
 .btn-group-justified {
   .btnFirst {
     border-left: 0;
@@ -232,7 +239,34 @@ label {
     }    
   }
 }
+.alert-panel {
+  padding: 0;
+  > .close {
+    margin-right: @alert-padding;
+    margin-top: @alert-padding;
+  }
+  .alert-title {
+    padding: @alert-padding;
+    text-align: center;
+  }
+  .alert-body {
+    padding: @alert-padding;
+  }
+}
+.alert-panel.alert-warning .alert-title {
+  background: #f6f0dc;
+}
+.alert-list-group {
+  > div {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: @padding-large-vertical @padding-base-horizontal;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
 .lpgpDropdown {
+  border-radius: @nav-pills-border-radius;
   text-align: left;
   .fakeCaret,
   .caret {
@@ -367,6 +401,13 @@ label {
 }  
 
 // MEDIA QUERIES
+@media (max-width: @screen-sm-max) {
+   /* rules for tablet and phones */
+  .pageTitle {
+    padding-bottom: @padding-large-vertical;
+    font-size: @font-size-h3;
+  }   
+}
 @media (max-width: @screen-xs-max) {
 /* RULES for mobile phones */  
   .pageTitle {
@@ -376,9 +417,16 @@ label {
   .footer {
     font-size: @font-size-small;
   }
+  .thumbnail,
   .mobile-marginBottom,
+  .margin-xs,
   .panel {
     margin-bottom: @padding-xs-horizontal;
+  }
+  .block-title-responsive {
+    font-size: @font-size-h5;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 @media (min-width: @screen-xs-max) {
@@ -391,6 +439,9 @@ label {
 }
 @media (min-width: @screen-sm-min) {
    /* rules for tablet (768 > 992) */
+  .margin-sm {
+    margin-bottom: @padding-small-vertical;
+  } 
 }
 @media (min-width: @screen-md-min) {
    /* rules for desktop (992 > 1200) */

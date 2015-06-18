@@ -78,18 +78,19 @@
 </template>
 
 <template name="boxContact">
-  <div class="col-xs-6 col-sm-6 col-md-4">
+  <div class="boxContact margin-xs margin-sm">
     <div class="row">
-      <div class="col-xs-4 col-sm-12">
-      	<img class="img-responsive" src="images/default_pic.png" width="30px"/>
+      <div class="col-xs-4">
+        <img class="img-responsive" src="{{img}}" />
       </div>
-      <div class="col-xs-8 col-sm-12">
-      	<a href="">{{name}}</a><br>
-      	<small class="text-muted">Position</small>
-      </div>	
+      <div class="col-xs-8">
+        <strong class="lead">{{name}}</strong><br>
+        <small class="text-muted">Position</small>
+      </div>  
     </div>
-    <hr >
-  </div>	
+    <BR>
+    <button class="btn btn-default btn-block">VIEW PROFILE</button>   
+  </div>
 </template>
 
 <template name="boxFundSizeandClosings">

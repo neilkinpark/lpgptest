@@ -1,0 +1,98 @@
+<template name="pageGPProfile">
+  <div class="container-fluid pageProfile">
+    <h1 class="pageTitle">Frank Edgar's Profile</h1>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="thumbnail boxProfilePic">
+          <div class="row">
+            <div class="col-xs-5 col-sm-6">
+              <img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/vinthomas/128.jpg" /><br>
+            </div>
+            <div class="col-xs-7 col-sm-6">
+              <strong class="lead">Frank Edgar</strong><br><span class="text-muted">LP Premium</span>
+              <BR><BR><strong>Firm Name</strong><br><span class="text-muted">United Kingdom</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5 col-sm-6">
+              <button class="btn btn-default btn-block">MESSAGE</button>
+            </div>
+            <div class="col-xs-7 col-sm-6">
+              <button class="btn btn-info btn-block">CONNECT</button>
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="panel panel-default">
+          <div class="panel-heading clearfix">
+            <h4 class="block-title-responsive text-inline">
+              About me (Bio)
+              <a class="visible-xs-block pull-right" href="#collapse1" data-toggle="collapse"><span class="fakeCaret">&raquo;</span></a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-body collapse mobile-collapse">
+            <p>Frank Edgar notices LP Premium. The discarded steam writes in the burnt universe. The window nests? Can the reflected uncle rail across a likelihood? How can LP Premium drill a counsel? The address shortens LP Premium.</p> 
+          </div>
+        </div>
+      </div>      
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading clearfix">
+            <h4 class="block-title-responsive text-inline">
+              Sample Fund
+              <a class="visible-xs-block pull-right" href="#collapse3" data-toggle="collapse"><span class="fakeCaret">&raquo;</span></a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-body collapse mobile-collapse">
+            <div class="row">
+              <div class="col-sm-3">
+                <h4>Type</h4><hr>
+                <strong class="">Generalist, Agriculture, Buyout, Co-Investment, Credit, Deal by Deal, Distressed, Fund of Funds, Growth Capital</strong>
+                <br class="visible-xs-inline"><br class="visible-xs-inline">
+              </div>
+              <div class="col-sm-3">
+                <h4>Status</h4><hr>
+                <strong class="">Pre-Marketing</strong>
+                <br class="visible-xs-inline"><br class="visible-xs-inline">
+              </div>
+              <div class="col-sm-3">
+                <h4>Size</h4><hr>
+                <strong class="">100m USD</strong>
+                <br class="visible-xs-inline"><br class="visible-xs-inline">
+              </div>
+              <div class="col-sm-3">
+                <h4>Target</h4><hr>
+                <strong class="">300m USD</strong> 
+              </div>                                          
+            </div>
+          </div>
+        </div>        
+      </div>
+
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading clearfix">
+            <h4 class="block-title-responsive text-inline">
+              Other Key Contacts in this Fund
+              <a class="visible-xs-block pull-right" href="#collapse4" data-toggle="collapse"><span class="fakeCaret">&raquo;</span></a>
+            </h4>
+          </div>
+          <div id="collapse4" class="panel-body collapse mobile-collapse">
+            <div class="listCarouselContact">
+              {{#each contacts}}
+                {{> boxContact}}
+              {{/each}}                                     
+            </div>       
+          </div>
+        </div>        
+      </div>
+
+    </div>  
+  </div>  
+</template> 

@@ -93,24 +93,24 @@ if (Meteor.isClient) {
   // PAGE > FUND PROFILES
   Template.pageFundPerformance.helpers({
     items : [
-      { name: "3Com Corp" },
-      { name: "3M Company" },
-      { name: "A.G. Edwards Inc." },
-      { name: "Abbott Laboratories" },
-      { name: "Abercrombie & Fitch Co." },
-      { name: "ABM Industries Incorporated" },
-      { name: "Ace Hardware Corporation" },
-      { name: "ACT Manufacturing Inc." },
-      { name: "Acterna Corp." },
-      { name: "Adams Resources & Energy, Inc." },
-      { name: "ADC Telecommunications, Inc." },
-      { name: "Adelphia Communications Corporation" },
-      { name: "Administaff, Inc." },
-      { name: "Adobe Systems Incorporated" },
-      { name: "Adolph Coors Company" },
-      { name: "Advance Auto Parts, Inc." },
-      { name: "Advanced Micro Devices, Inc." },
-      { name: "Gonzaga Capital Prime XIV" }
+      { id:Fake.word(), name: "3Com Corp" },
+      { id:Fake.word(), name: "3M Company" },
+      { id:Fake.word(), name: "A.G. Edwards Inc." },
+      { id:Fake.word(), name: "Abbott Laboratories" },
+      { id:Fake.word(), name: "Abercrombie & Fitch Co." },
+      { id:Fake.word(), name: "ABM Industries Incorporated" },
+      { id:Fake.word(), name: "Ace Hardware Corporation" },
+      { id:Fake.word(), name: "ACT Manufacturing Inc." },
+      { id:Fake.word(), name: "Acterna Corp." },
+      { id:Fake.word(), name: "Adams Resources & Energy, Inc." },
+      { id:Fake.word(), name: "ADC Telecommunications, Inc." },
+      { id:Fake.word(), name: "Adelphia Communications Corporation" },
+      { id:Fake.word(), name: "Administaff, Inc." },
+      { id:Fake.word(), name: "Adobe Systems Incorporated" },
+      { id:Fake.word(), name: "Adolph Coors Company" },
+      { id:Fake.word(), name: "Advance Auto Parts, Inc." },
+      { id:Fake.word(), name: "Advanced Micro Devices, Inc." },
+      { id:Fake.word(), name: "Gonzaga Capital Prime XIV" }
     ]
   });     
 }
