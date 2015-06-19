@@ -1,0 +1,28 @@
+<template name="pageNewsArticle">
+  <div class="container pageNews">
+  	<h1>News</h1>
+
+  	<div class="body">
+      <div class="boxNewsFeature">
+        <div class="inner" style="background-image: url('{{img}}')">
+          <div class="box-title"><h3 class="lead">{{title}}</h3></div>
+        </div>
+      </div>
+  	  <br>
+  	  {{#each body}}
+  	  	<p>{{p}}</p>
+  	  {{/each}}	
+  	</div>
+
+  	<br>
+  	<div class="row">
+  	  <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+  	  	<a class="btn btn-default btn-block" href="/news-article">PREV</a>
+  	  </div>	
+  	  <div class="col-xs-6 col-sm-4 col-md-3">
+  	  	<a class="btn btn-default btn-block" href="/news-article">NEXT</a>
+  	  </div>
+  	</div>
+  	<br>
+  </div>
+</template>	

@@ -289,29 +289,47 @@ strong.lead {
 }
 
 // PAGE > NEWS //
-.pageNews .boxTabNewsContent .item {
-  .inner {
-    background-size: cover;
-    background-position: center;
-    height: 265px;
-    margin-bottom: @grid-gutter-width;
-    .box-title {
-      background: rgb(200, 200, 200); /* The Fallback */
-      background: rgba(255, 255, 255, 0.7);
-      height: 100%;
-      width: 100%;
-      text-transform: uppercase;
-      font-size: @font-size-large;
-      display: table;
-      a {
-        display: table-cell;
-        vertical-align: middle;
-        text-align: center;
-        padding: @padding-small-horizontal;
-        color: @gray;
-      }
-    }   
+.pageNews {
+  .boxNewsTeaser,
+  .boxNewsFeature {
+    position: relative;
+    .inner {
+      height: 200px;
+      background-position: center center;
+      background-size: cover;      
+    }
   }
+  .boxNewsTeaser {
+    position: relative;
+    padding-bottom: @padding-base-horizontal + @padding-base-horizontal + @padding-base-horizontal;
+    .box-title {
+      background: #fff;
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      padding: @padding-base-horizontal;
+      width: 100%;
+      a {
+        color: @text-color;
+        font-weight: bold;
+      }
+    }
+  }
+  .boxNewsFeature {
+    .box-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(1, 35, 105, 0.5);
+      color: #fff;
+      padding: @padding-large-vertical @padding-large-horizontal;
+      text-transform: uppercase;
+      .lead {
+        font-weight: 400;
+      }
+    }
+  }  
 }
 // PAGE > FUND PROFILE
 .pageFundProfile {
@@ -428,6 +446,20 @@ strong.lead {
     margin-top: 0;
     margin-bottom: 0;
   }
+  .pageNews {
+    .boxNewsFeature {
+      .inner {
+        height: 100px;
+      }
+      .box-title {
+        padding: @padding-small-vertical @padding-small-horizontal;
+        .lead {
+          margin: 0;
+        }
+      }
+    }
+  }
+
 }
 @media (min-width: @screen-xs-max) {
 /* RULES for all except mobile screens */  

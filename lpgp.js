@@ -104,6 +104,10 @@ Router.route('/news', function(){
   this.render('pageNews'); 
 });
 
+Router.route('/news-article', function(){
+  this.render('pageNewsArticle'); 
+});
+
 Router.route('/help', function(){
   this.render('pageHelp'); 
 });

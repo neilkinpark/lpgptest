@@ -11,62 +11,53 @@ var newsDummy = [
 ];
 
 if (Meteor.isClient) {
-  Template.pageNews.helpers({
-  	newstypes: [
-      { id: "Deal", title: "Deal News", news: lpgpFakeNews(8)},	
-      { id: "Fund", title: "Fund News", news: lpgpFakeNews(28)},
-      { id: "People", title: "People News", news: lpgpFakeNews(18)},
+  Template.boxRowNews.helpers({
+    items: [
+      { id: "Deal", title: "Deal News", news: lpgpFakeNews(25), cssclass: "active"},  
+      { id: "Fund", title: "Fund News", news: lpgpFakeNews(18)},
+      { id: "People", title: "People News", news: lpgpFakeNews(16)},
       { id: "Features", title: "Features", news: lpgpFakeNews(12)},
-      { id: "LP", title: "LP Profiles", news: lpgpFakeNews(8)},
-      { id: "Knowledge", title: "Knowledge Bank", news: lpgpFakeNews(3)}
-  	]
-  });
-
-  Template.tabNews.helpers({
-    items: [
-      { id: "Deal", title: "Deal News", news: lpgpFakeNews(28), cssclass: "active" },  
-      { id: "Fund", title: "Fund News", news: lpgpFakeNews(28)},
-      { id: "People", title: "People News", news: lpgpFakeNews(28)},
-      { id: "Features", title: "Features", news: lpgpFakeNews(28)},
-      { id: "LP", title: "LP Profiles", news: lpgpFakeNews(28)},
-      { id: "Knowledge", title: "Knowledge Bank", news: lpgpFakeNews(28)}
-    ]
-  });
-
-  Template.boxTabNewsContent.helpers({
-    items: [
-      { id: "Deal", title: "Deal News", news: lpgpFakeNews(6), cssclass: "active"},  
-      { id: "Fund", title: "Fund News", news: lpgpFakeNews(6)},
-      { id: "People", title: "People News", news: lpgpFakeNews(6)},
-      { id: "Features", title: "Features", news: lpgpFakeNews(6)},
       { id: "LP", title: "LP Profiles", news: lpgpFakeNews(6)},
-      { id: "Knowledge", title: "Knowledge Bank", news: lpgpFakeNews(6)}
+      { id: "Knowledge", title: "Knowledge Bank", news: lpgpFakeNews(3)}
     ]
-  });  
+  });
+ 
+  Template.pageNewsArticle.helpers({
+    img: "http://www.1wallpaperhd.com/wp-content/uploads/Financial/FTP1/1280x720/Finance%20bill%20Wallpaper%2003%201280x720.jpg",
+    title: "LBO France sell cargo handler WFS to Platinum Equity",
+    body : [
+      { p: Fake.paragraph(5)  },
+      { p: Fake.paragraph(15)  },
+      { p: Fake.paragraph(10)  },
+      { p: Fake.paragraph(7)  },
+      { p: Fake.paragraph(15)  }
+    ]
+  }); 
 
   Template.pageNews.onRendered(function() {
     var owl = $(".owl-news");
 
     owl.owlCarousel({
-      loop:true,
-      margin:0,
-      responsive:{
-          0:{
+        loop:true,
+        nav: true,
+        dots: false,
+        responsive:{
+            0:{
               items:1
-          },
-          400:{
+            },
+            400: {
               items:2
-          },
-          600: {
-            items: 3
-          },
-          1000:{
+            },           
+            600:{
+              items:3
+            },
+            800:{
+              items:4
+            },
+            1000:{
               items:5
-          },
-          1600: {
-            items: 8
-          }
-      }   
+            }                       
+        }
     });
 
   });
