@@ -18,8 +18,6 @@
   </div>
     
   <div class="container-fluid pageNews">
-    <h1 class="pageTitle hidden-xs">News</h1>
-    
     {{>boxRowNews}}
   </div>
 </template>
@@ -55,19 +53,18 @@
 
 <template name="boxRowNews">
   {{#each items}}
-  <div class="panel panel-default">
-    <div class="panel-heading clearfix">
-      <h4 class="block-title-responsive text-inline">
-        {{title}}
-        <a class="pull-right" href="#box{{id}}Collapsible" data-toggle="collapse"><span class="fakeCaret">&raquo;</span></a>
-      </h4>
-    </div>
-    <div id="box{{id}}Collapsible" class="panel-body collapse in">
-      <div id="owl{{id}}" class="owl-news owl-carousel">
-        {{#each news}}
-          {{>boxNewsTeaser}}
-        {{/each}}
-      </div> 
+  <a class="text-muted" href="#box{{id}}Collapsible" data-toggle="collapse">
+    <h4 class="block-title-responsive text-inline">
+      {{title}}
+      <span class="fakeCaret">&raquo;</span>
+    </h4>
+  </a>
+
+  <div id="box{{id}}Collapsible" class="collapse in">
+    <div id="owl{{id}}" class="owl-news owl-carousel">
+      {{#each news}}
+        {{>boxNewsTeaser}}
+      {{/each}}
     </div> 
   </div>
   {{/each}} 
@@ -79,4 +76,28 @@
       <div class="box-title"><a href="/news-article">{{title}}</a></div>
     </div>
   </div>
-</template>  
+</template>
+
+<template name="widgetNewsList">
+  <div class="clearfix"><i class="pull-right">from AltAssets</i></div><br>
+  <ul class="list-unstyled clearfix">
+    {{#each news}}
+      {{> boxNews}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="boxNews">
+  <li>
+    <div class="media">
+      <div class="media-left">
+        <img src="https://www.altassets.net/wp-content/uploads/2015/06/chair-89156_640-e1435164690441-70x70.jpg">
+      </div>
+      <div class="media-body">
+        <a class="text-info" href="#">{{title}}</a>
+        <small class="text-muted">- 04 May 2014</small>        
+      </div>
+    </div>
+    <hr />
+  </li>
+</template>

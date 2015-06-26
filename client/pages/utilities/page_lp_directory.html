@@ -1,0 +1,28 @@
+<template name="pageLPDirectory">
+  <div class="container pageDashboard">
+    <div class="row">
+  	{{#each itemone}}
+  	  {{>rowDirectory}}
+  	{{/each}}
+    </div><br>
+    <div class="row">
+  	{{#each itemtwo}}
+  	  {{>rowDirectory}}
+  	{{/each}}
+    </div><br>
+    <div class="row">
+  	{{#each itemthree}}
+  	  {{>rowDirectory}}
+  	{{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="rowDirectory">
+  <div class="col-xs-4 text-center">
+    <a href="/{{url}}" class="text-muted">
+  	  <img src="/icons/{{img}}" class="img img-thumbnail img-responsive img-circle">
+      <h5>{{title}}</h5>
+    </a>  	
+  </div>
+</template>	

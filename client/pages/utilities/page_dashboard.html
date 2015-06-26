@@ -1,0 +1,19 @@
+<template name="pageBetaDashboard">
+  <div class="container pageDashboard">
+  	<br>
+  	<div class="row">
+  	  {{#each item}}
+  	    {{> rowBetaDashboard}}
+  	  {{/each}} 
+  	</div>
+  </div>  
+</template>
+
+<template name="rowBetaDashboard">
+  <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-0 text-center">
+    <a href="/{{url}}" class="text-muted">
+  	  <img src="/icons/{{img}}" class="img img-thumbnail img-responsive img-circle">
+      <h3 class="lead">{{title}}</h3>
+    </a> 	
+  </div>
+</template>	

@@ -3,20 +3,68 @@ if (Meteor.isClient) {
   // This code only runs on the client
   Template.boxKeyContacts.helpers({
     contacts: [
-      { name: "John Neal Doe" },
-      { name: "Sarah Pevitkin" },
-      { name: "Annika Kournikova"},
-      { name: "Gianis Antetuokompo" },
-      { name: "Antonis Papodoupulus" }
+      { name: "Stephanie Plarizan", img: "https://s3.amazonaws.com/uifaces/faces/twitter/madysondesigns/128.jpg" },
+      { name: "Jeter Arce", img: "https://s3.amazonaws.com/uifaces/faces/twitter/gerrenlamson/128.jpg" },
+      { name: "Jim Croce", img: "https://s3.amazonaws.com/uifaces/faces/twitter/jlantunez/128.jpg" }
     ]
   });
 
+  Template.boxKeyContacts.onRendered(function() {
+    $('#collapseKey_Contacts .list-carousel').owlCarousel({
+        loop:true,
+        margin: 15,
+        nav: false,
+        dots: true,
+        responsive:{
+            0:{
+              items:1,
+            },
+            980:{
+              items:1
+            },
+            1100: {
+              items: 2
+            },
+            1300:{
+                items:3
+            }                     
+        }
+    });
+
+  });  
+
   Template.boxTeamBios.helpers({
     contacts: [
-      { name: "Micheal Bean" },
-      { name: "Stephano Serano" },
-      { name: "Ray Roberts"}
+      { name: "Desond Miles", img: "https://s3.amazonaws.com/uifaces/faces/twitter/ryanbattles/128.jpg" },
+      { name: "Bordan Bognanovic", img: "https://s3.amazonaws.com/uifaces/faces/twitter/davidburlton/128.jpg" },
+      { name: "Mila Kournikova", img: "https://s3.amazonaws.com/uifaces/faces/twitter/allisongrayce/128.jpg" },
+      { name: "William Putnam", img: "https://s3.amazonaws.com/uifaces/faces/twitter/jodyferry/128.jpg" },
+      { name: "Jenny Wong", img: "https://s3.amazonaws.com/uifaces/faces/twitter/uxceo/128.jpg" }
     ]
+  });
+
+  Template.boxTeamBios.onRendered(function() {
+    $('.list-carousel').owlCarousel({
+        loop:true,
+        margin: 15,
+        nav: false,
+        dots: true,
+        responsive:{
+            0:{
+              items:1,
+            },
+            980:{
+              items:1
+            },
+            1100: {
+              items: 2
+            },
+            1300:{
+                items:3
+            }                     
+        }
+    });
+
   });
 
   Template.boxFundLatestNews.helpers({

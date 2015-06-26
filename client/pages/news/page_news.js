@@ -21,9 +21,13 @@ if (Meteor.isClient) {
       { id: "Knowledge", title: "Knowledge Bank", news: lpgpFakeNews(3)}
     ]
   });
+
+  Template.widgetNewsList.helpers({
+    news: newsDummy
+  });
  
   Template.pageNewsArticle.helpers({
-    img: "http://www.1wallpaperhd.com/wp-content/uploads/Financial/FTP1/1280x720/Finance%20bill%20Wallpaper%2003%201280x720.jpg",
+    img: "http://lpgp-uat.mrkt.it/sites/lpgp-uat.mrkt.it/files/euros_24.jpg",
     title: "LBO France sell cargo handler WFS to Platinum Equity",
     body : [
       { p: Fake.paragraph(5)  },
@@ -32,31 +36,40 @@ if (Meteor.isClient) {
       { p: Fake.paragraph(7)  },
       { p: Fake.paragraph(15)  }
     ]
-  }); 
+  });
+
+  Template.pageLPProfileArticle.helpers({
+    img: "https://www.altassets.net/wp-content/uploads/2015/03/Donald_Pierce_Bio.jpg",
+    title: "LP Profile: Donald Pierce, San Bernardino County Employees’ Retirement Association",
+    body : [
+      { p: Fake.paragraph(3)  },
+      { p: Fake.paragraph(11)  },
+      { p: Fake.paragraph(5)  },
+      { p: Fake.paragraph(5)  },
+      { p: Fake.paragraph(3)  }
+    ]
+  });
 
   Template.pageNews.onRendered(function() {
     var owl = $(".owl-news");
 
     owl.owlCarousel({
         loop:true,
-        nav: true,
+        nav: false,
         dots: false,
         responsive:{
             0:{
-              items:1
-            },
-            400: {
               items:2
-            },           
+            },          
             600:{
               items:3
             },
             800:{
               items:4
             },
-            1000:{
-              items:5
-            }                       
+            1000: {
+              items: 5
+            }                     
         }
     });
 

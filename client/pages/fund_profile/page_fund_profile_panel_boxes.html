@@ -1,80 +1,60 @@
 <template name="boxFundSummary">
-  <div class="panel panel-default">
-    <a href="#boxFundSummary" data-toggle="collapse" class="btn btn-sm btn-block btn-primary">
-      <div class="text-left"><span class="caret"></span> Fund Summary</div>
-    </a>
-    <div id="boxFundSummary" class="panel-body collapse in">
-      <div class="row">
-        <div class="col-xs-4">
-          <img src="http://logoeden.com/wp-content/uploads/2013/01/107.jpg" class="img-responsive" />
-        </div>
-        <div class="col-xs-8">
-          <div class="txtField"><small class="text-muted">TYPE:</small> <br /><span>Venture</span></div>
-          <br>
-          <div class="txtField"><small class="text-muted">STATUS:</small> <br /><span>Investing Funds</span></div>
-        </div> 
+  {{#tempPanelCollapse heading="Fund Summary" id="Fund_Summary"}}
+    <div class="row">
+      <div class="col-xs-4">
+        <img src="http://logoeden.com/wp-content/uploads/2013/01/107.jpg" class="img-responsive" />
       </div>
+      <div class="col-xs-8">
+        <div class="txtField"><small class="text-muted">TYPE:</small> <br /><span>Venture</span></div>
+        <br>
+        <div class="txtField"><small class="text-muted">STATUS:</small> <br /><span>Investing Funds</span></div>
+      </div> 
     </div>
-  </div>
+  {{/tempPanelCollapse}}
 </template>
 
 <template name="boxKeyContacts">
-  <div class="panel panel-default">
-    <a href="#boxKeyContacts" data-toggle="collapse" class="btn btn-sm btn-block btn-primary">
-      <div class="text-left"><span class="caret"></span> Key Contacts</div>
-    </a>        
-    <div id="boxKeyContacts" class="panel-body collapse in">
-  	  <div class="row">
-        {{#each contacts}}
-          {{> boxContact}}
-        {{/each}}
-      </div>
+  {{#tempPanelCollapse heading="Key Contacts" id="Key_Contacts"}}
+    <div class="list-carousel">
+    {{#each contacts}}
+      {{> boxContact}}
+    {{/each}}
     </div>
-  </div>
+  {{/tempPanelCollapse}}
 </template>
 
 <template name="boxTeamBios">
-  <div class="panel panel-default">
-    <a href="#boxTeamBios" data-toggle="collapse" class="btn btn-sm btn-block btn-primary">
-      <div class="text-left"><span class="caret"></span> Team Bios</div>
-    </a>        
-    <div id="boxTeamBios" class="panel-body collapse in">
-  	  <div class="row">
-        {{#each contacts}}
-          {{> boxContact}}
-        {{/each}}
-      </div>
+  {{#tempPanelCollapse heading="Team Bios" id="Team_Bios"}}
+    <div class="list-carousel">
+    {{#each contacts}}
+      {{> boxContact}}
+    {{/each}}
     </div>
-  </div>
+  {{/tempPanelCollapse}}
 </template>
 
 <template name="boxFirmAddress">
-  <div class="panel panel-default">
-    <a href="#boxFirmAddress" data-toggle="collapse" class="btn btn-sm btn-block btn-primary">
-      <div class="text-left"><span class="caret"></span> Firm Address</div>
-    </a>        
-    <div id="boxFirmAddress" class="panel-body collapse in">
-      <span class="label label-primary">Head Office:</span>
-      <br />
-      <br />
-      <div class="row boxHeadOffice">
-        <div class="col-md-8 fieldAddress">
-          Studio 103<BR />
-          The Business Centre<BR />
-          61 Wellfield Road<BR />
-          Roath<BR />
-          Cardiff<BR />
-          CF24 3DG<BR />
-          <div class="fieldCountry">United Kingdom</div>
-        </div>
-        <div class="col-md-4">
-          <span class="txtTelNum">+234-2900</span>
-          <span class="txtTelNum">+234-2901</span>
-          <a href="http://sample.com"><span class="label label-info">website &raquo;</span></a>
-        </div>
-      </div>        	
+  {{#tempPanelCollapse heading="Firm Address" id="Firm_Address"}}
+    <span class="label label-primary">Head Office:</span>
+    <br />
+    <br />
+    <div class="row boxHeadOffice">
+      <div class="col-md-8 fieldAddress">
+        Studio 103<BR />
+        The Business Centre<BR />
+        61 Wellfield Road<BR />
+        Roath<BR />
+        Cardiff<BR />
+        CF24 3DG<BR />
+        <div class="fieldCountry">United Kingdom</div>
+      </div>
+      <div class="col-md-4">
+        <span class="txtTelNum">+234-2900</span><br>
+        <span class="txtTelNum">+234-2901</span><br>
+        <a href="http://sample.com"><span class="label label-info">website &raquo;</span></a>
+      </div>
     </div>
-  </div>	
+  {{/tempPanelCollapse}}	
 </template>
 
 <template name="boxContact">
@@ -85,30 +65,31 @@
       </div>
       <div class="col-xs-8">
         <strong class="lead">{{name}}</strong><br>
-        <small class="text-muted">Position</small>
+        <small class="text-muted">Position</small><br>
+        <a class="lead" href=""><i class="fa fa-linkedin-square fa-lg"></i></a>
       </div>  
     </div>
     <BR>
-    <button class="btn btn-default btn-block">VIEW PROFILE</button>   
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <a href="#" class="btn btn-default" role="button">VIEW PROFILE</a>
+      <a href="#" class="btn btn-default" role="button">INVITE</a>
+    </div>  
+      
   </div>
 </template>
 
 <template name="boxFundSizeandClosings">
-  <div class="panel panel-default">
-    <a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxFundSizeandClosings" >
-      <div class="text-left">Fund Size and Closing(s) <span class="caret"></span></div>
-    </a>
-    <div class="panel-body collapse in" id="boxFundSizeandClosings">
+  {{#tempPanelCollapse heading="Fund Size and Closing(s)" id="Fund_Size_and_Closing"}}
       <div class="boxInner">
         <div class="row">
           <div class="field col-xs-4">
-			<div class="txtField"><small class="text-muted">SIZE:</small> <br><span>190 USD</span></div>
+            <div class="txtField"><small class="text-muted">SIZE:</small> <br><span>190 USD</span></div>
           </div>
           <div class="field col-xs-4">
-          	<div class="txtField"><small class="text-muted">TARGET:</small> <br><span>320m USD</span></div>
+            <div class="txtField"><small class="text-muted">TARGET:</small> <br><span>320m USD</span></div>
           </div>
           <div class="field col-xs-4">
-          	<div class="txtField"><small class="text-muted">VINTAGE:</small> <br><span>2005</span></div>
+            <div class="txtField"><small class="text-muted">VINTAGE:</small> <br><span>2005</span></div>
           </div>          
         </div>
         <BR>
@@ -136,18 +117,13 @@
             </table>  
           </div>
         </div>                   
-      </div>              
-    </div>                
-  </div>
+      </div>
+  {{/tempPanelCollapse}}
 </template>
 
 <template name="boxInvestmentStrategy">
-  <div class="panel panel-default">
-  	<a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxInvestmentStrategy" >
-  	  <div class="text-left">Investment Strategy <span class="caret"></span></div>	
-  	</a>
-  	<div class="panel-body collapse in" id="boxInvestmentStrategy">
-  	  <div class="row">
+  {{#tempPanelCollapse heading="Investment Strategy" id="Investment_Strategy"}}
+      <div class="row">
           <div class="field col-sm-4">
             <div class="txtField"><small class="text-muted">GEOGRAPHICAL FOCUS:</small> 
               <br><span>Africa</span>
@@ -173,17 +149,12 @@
             </div>
           </div>          
       </div>
-  	</div>	
-  </div>	
+  {{/tempPanelCollapse}}	
 </template>
 
 <template name="boxOtherFunds">
-  <div class="panel panel-default">
-  	<a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxOtherFunds" >
-  	  <div class="text-left">Other Funds <span class="caret"></span></div>	
-  	</a>
-  	<div class="panel-body collapse in" id="boxOtherFunds">
-  	  <div class="row">
+  {{#tempPanelCollapse heading="Other Funds" id="Other_Funds"}}
+      <div class="row">
         <div class="field col-xs-6">
           <small class="text-muted">PREVIOUS FUNDS:</small>
           <div>
@@ -231,62 +202,42 @@
           </div>
         </div>  
       </div>
-  	</div>	
-  </div>	
+  {{/tempPanelCollapse}}
 </template>
 
 <template name="boxFundLatestNews">
-  <div class="panel panel-default">
-  	<a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxFundLatestNews" >
-  	  <div class="text-left">Latest News about this Fund <span class="caret"></span></div>	
-  	</a>
-  	<div class="panel-body collapse in" id="boxFundLatestNews">
-  	  <div class="clearfix"><i class="pull-right">from AltAssets</i></div><br>
-  	  <ul class="list-unstyled clearfix">
+  {{#tempPanelCollapse heading="Latest News about this Fund" id="Latest_News"}}
+      <div class="clearfix"><i class="pull-right">from AltAssets</i></div><br>
+      <ul class="list-unstyled clearfix">
         {{#each news}}
           {{> boxNews}}
         {{/each}}
       </ul>
-  	</div>	
-  </div>	
+  {{/tempPanelCollapse}}	
 </template>
 
 <template name="boxFundBroadcasts">
-  <div class="panel panel-default">
-  	<a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxFundBroadcasts" >
-  	  <div class="text-left">Broadcasts <span class="caret"></span></div>	
-  	</a>
-  	<div class="panel-body collapse in" id="boxFundBroadcasts">
-  	  <ul class="list-unstyled">
+  {{#tempPanelCollapse heading="Broadcasts" id="Broadcasts"}}
+      <ul class="list-unstyled">
         {{#each news}}
           {{> boxPR}}
         {{/each}}
       </ul>
-  	</div>	
-  </div>	
+  {{/tempPanelCollapse}}
 </template>
 
 <template name="boxFundPR">
-  <div class="panel panel-default">
-  	<a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxFundPR" >
-  	  <div class="text-left">Press Release <span class="caret"></span></div>	
-  	</a>
-  	<div class="panel-body collapse in" id="boxFundPR">
-  	  <ul class="list-unstyled">
+  {{#tempPanelCollapse heading="Press Release" id="Press_Release"}}
+      <ul class="list-unstyled">
         {{#each news}}
           {{> boxPR}}
         {{/each}}
       </ul>
-  	</div>	
-  </div>	
+  {{/tempPanelCollapse}}	
 </template>
 
 <template name="boxVideos">
-  <div class="panel panel-default">
-    <a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxVideos" >
-      <div class="text-left">Videos <span class="caret"></span></div> 
-    </a>
-    <div class="panel-body collapse in" id="boxVideos">
+  {{#tempPanelCollapse heading="Videos" id="Videos"}}
       <h5>Introduction to AltAssets<small class="text-muted"> - 04 May 2014</small></h5>
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="720" height="405"
@@ -299,17 +250,8 @@ frameborder="0" allowfullscreen></iframe>
         <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="720" height="405"
 src="https://www.youtube.com/embed/GcD60FVQjlg?showinfo=0&color=white&theme=light"
 frameborder="0" allowfullscreen></iframe>
-      </div>      
-    </div>
-  </div>  
-</template>
-
-<template name="boxNews">
-  <li>
-  	<a class="text-info" href="#">{{title}}</a>
-  	<small class="text-muted">- 04 May 2014</small>
-  	<hr />
-  </li>
+      </div>
+  {{/tempPanelCollapse}}  
 </template>
 
 <template name="boxPR">
@@ -322,50 +264,35 @@ frameborder="0" allowfullscreen></iframe>
 
 <!-- @template: boxAboutFund -->
 <template name="boxAboutFund">
-  <div class="panel panel-default">
-    <a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxAboutFund" >
-      <div class="text-left">About this Fund <span class="caret"></span></div> 
-    </a>
-    <div class="panel-body collapse in" id="boxAboutFund">
+  {{#tempPanelCollapse heading="About this Fund" id="About_Fund"}}
       <p>AltAssets retracts! Sample Fund praises the relative protest. Sample Fund convicts the answer. The serious countryside situates AltAssets. Does AltAssets demand her pit?</p>
       <p>AltAssets swears Sample Fund across an economy. Why can't Sample Fund advertise across the bandwagon? The covering cookie approves AltAssets. AltAssets protects Sample Fund above a duck.</p>
       <p>Sample Fund recommends this farewell league underneath the resource. AltAssets drowns Sample Fund. Its weather appendix blows Sample Fund. Sample Fund yields the biological penny outside the spokesman. Your affair constrains AltAssets with a bull.</p>
-    </div>  
-  </div>  
+  {{/tempPanelCollapse}}  
 </template>
 <!-- @template: boxAboutFund -->
 
 <!-- @template: boxPortfolioCompanies -->
 <template name="boxPortfolioCompanies">
-  <div class="panel panel-default">
-    <a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxPortfolioCompanies" >
-      <div class="text-left">Portfolio Companies <span class="caret"></span></div> 
-    </a>
-    <div class="panel-body collapse in" id="boxPortfolioCompanies">
+  {{#tempPanelCollapse heading="Portfolio Companies" id="Portfolio_Companies"}}
       <ul class="clearfix list-unstyled">
       {{#each companies}}
         {{> boxPortfolioCompany}}
       {{/each}}
       </ul>
-    </div>  
-  </div>  
+  {{/tempPanelCollapse}}  
 </template>
 <!-- @template: boxPortfolioCompanies -->
 
 <!-- @template: boxHistoricalInvestments -->
 <template name="boxHistoricalInvestments">
-  <div class="panel panel-default">
-    <a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxHistoricalInvestments" >
-      <div class="text-left">Historical Investments <span class="caret"></span></div> 
-    </a>
-    <div class="panel-body collapse in" id="boxHistoricalInvestments">
+  {{#tempPanelCollapse heading="Historical Investments" id="Historical_Investments"}}
       <ul class="clearfix list-unstyled">
       {{#each companies}}
         {{> boxPortfolioCompany}}
       {{/each}}
       </ul>
-    </div>  
-  </div>  
+  {{/tempPanelCollapse}}  
 </template>
 <!-- @template: boxHistoricalInvestments -->
 
@@ -373,16 +300,11 @@ frameborder="0" allowfullscreen></iframe>
   <li class="item clearfix">
     <div class="media">
       <div class="media-left">
-        <img class="img-responsive img-thumbnail" src="images/default_logo.png" WIDTH="30px" />
+        <img class="img-responsive img-thumbnail" src="http://drh.img.digitalriver.com/DRHM/Storefront/Site/Tk22k/cm/images/Logo/t2_logo_ful_onBLK.png" WIDTH="50px" />
       </div>
       <div class="media-body">
-        <h4 class="txtTitle">{{name}}</h4>
-        <div class="boxPostSummary">
-          <p>
-            Etiam nec lacus iaculis velit rutrum ultrices. Cras imperdiet ligula ac leo consectetur vulputate. Proin in magna sit amet erat condimentum consectetur vitae non libero! Pellentesque euismod lectus ligula, viverra gravida felis egestas eget. Fusce ultrices egestas enim, non fringilla ligula...                        
-          </p>                        
-        </div>  
-        <a class="btn btn-info btn-xs" href="">VIEW MORE <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
+        <h4 class="txtTitle">{{name}}</h4>  
+        <a class="btn btn-default" href="">VIEW MORE</a>
       </div>
     </div><BR><HR>
   </li>

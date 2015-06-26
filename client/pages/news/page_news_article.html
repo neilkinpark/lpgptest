@@ -1,20 +1,28 @@
 <template name="pageNewsArticle">
   <div class="container pageNews">
-  	<h1>News</h1>
+    <br>
+  	<h1 class="pageTitle">{{title}}</h1>
 
-  	<div class="body">
-      <div class="boxNewsFeature">
-        <div class="inner" style="background-image: url('{{img}}')">
-          <div class="box-title"><h3 class="lead">{{title}}</h3></div>
-        </div>
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/news">News</a></li>
+      <li class="active">News Article</li>
+    </ol>
+
+
+  	<div class="row">
+      <div class="col-sm-3 col-md-2"><img class="img-responsive img-thumbnail img-featured" src="{{img}}"><br><br></div>
+      <div class="col-sm-9 col-md-10">
+        <div class="text-muted">20th of March, 2014</div>
+        <p><strong>Investors have been attracted to European firm Mantra Invest’s first dedicated secondaries fund after seeing the previous vehicle make a two-times return, said partner at the firm Fabrice Moyne.</strong></p>
+        {{#each body}}
+          <p>{{p}}</p>
+        {{/each}}
+        <span class="text-muted">Copyright © 2015 AltAssets</span>
       </div>
-  	  <br>
-  	  {{#each body}}
-  	  	<p>{{p}}</p>
-  	  {{/each}}	
   	</div>
-
-  	<br>
+    
+  	<br><br>
   	<div class="row">
   	  <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
   	  	<a class="btn btn-default btn-block" href="/news-article">PREV</a>

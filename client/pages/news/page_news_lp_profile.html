@@ -1,0 +1,42 @@
+<template name="pageLPProfileArticle">
+  <div class="container-fluid pageNews">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="pageTitle">{{title}}</h1> 
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- body -->
+      <div class="col-md-8">
+        <ol class="breadcrumb">
+          <li><a href="/">Home</a></li>
+          <li><a href="/lp-org-search">LP Profiles</a></li>
+          <li class="active">News Article</li>
+        </ol>        
+        <div class="row">
+          <div class="col-xs-4 col-sm-3 col-md-2">
+            <img class="img-responsive img-thumbnail img-featured" src="{{img}}"><br><br>
+          </div>
+          <div class="col-sm-9 col-md-10">
+            <div class="text-muted">20th of March, 2014</div>
+            <p><strong>If you want money from Donald Pierce, chief investment officer of the San Bernardino County Employees’ Retirement Association (SBCERA), you’d better be prepared to have a proper relationship with him.</strong></p>
+            {{#each body}}
+              <p>{{p}}</p>
+            {{/each}}
+            <span class="text-muted">Copyright © 2015 AltAssets</span>
+          </div>
+        </div>
+        <br>
+      </div>
+
+      <!-- sidebar -->
+      <div class="col-md-4">
+        {{#tempPanelCollapse heading="Latest ALtAssets News" id="news_block"}}
+          {{ >widgetNewsList}}
+        {{/tempPanelCollapse}}
+      </div>
+    </div>
+
+  </div>
+</template>	

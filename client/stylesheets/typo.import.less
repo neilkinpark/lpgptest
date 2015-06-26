@@ -7,6 +7,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 65px;
 }
+body:before { content: 'lg'; display: none; } 
 a {
   color: @brand-info;
 }
@@ -146,6 +147,18 @@ strong.lead {
   font-size: @font-size-h1;
   color: @gray-light;
   font-weight: 300;
+}
+.pager-breadcrumb {
+  background: #f5f5f5;
+  padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
+  border-radius: @border-radius-base;
+  margin: @padding-small-vertical 0;
+  li > a,
+  li > span {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
 }
 .panel-hr {
   background: transparent;
@@ -288,26 +301,49 @@ strong.lead {
   padding-bottom: @navbar-margin-bottom;
 }
 
+// FEILD > TRANSACTION TYPE
+.boxTransType {
+  ul {
+    li {
+      line-height: @font-size-h2;
+      font-size: @font-size-h4;
+      margin-bottom: @padding-base-vertical;
+      min-width: 200px;
+      img {
+        width: @font-size-h2;
+        height: @font-size-h2;
+        margin-right: 1em;
+      }
+    }
+  }
+} 
+
+// PAGE > DASHBOARD
+.pageDashboard {
+    a {
+      line-height: 1em;
+    }
+}
 // PAGE > NEWS //
 .pageNews {
   .boxNewsTeaser,
   .boxNewsFeature {
     position: relative;
     .inner {
-      height: 200px;
+      height: 100px;
       background-position: center center;
       background-size: cover;      
     }
   }
   .boxNewsTeaser {
     position: relative;
-    padding-bottom: @padding-base-horizontal + @padding-base-horizontal + @padding-base-horizontal;
+    padding-bottom: @padding-base-horizontal * 4;
     .box-title {
       background: #fff;
       position: absolute;
       bottom: 1px;
       left: 0;
-      padding: @padding-base-horizontal;
+      padding: @padding-xs-horizontal;
       width: 100%;
       a {
         color: @text-color;
@@ -427,12 +463,17 @@ strong.lead {
   }   
 }
 @media (max-width: @screen-xs-max) {
-/* RULES for mobile phones */  
+/* RULES for mobile phones */ 
+  body:before { content: 'xs'; display: none; }   
   .pageTitle {
     margin-top: @padding-large-vertical;
     font-size: @font-size-h4;
   }
   .footer {
+    height: auto;
+    .container {
+      padding: @padding-small-vertical @padding-small-horizontal;
+    }
     font-size: @font-size-small;
   }
   .thumbnail,
@@ -445,6 +486,17 @@ strong.lead {
     font-size: @font-size-h5;
     margin-top: 0;
     margin-bottom: 0;
+    .fa {
+      font-size: 14px;
+    }
+  }
+  .linkLoadMore {
+    margin-top: 2em;
+    > span,
+    > a {
+      font-size: @font-size-h4;
+      margin-top: @font-size-h4 / 2;
+    }
   }
   .pageNews {
     .boxNewsFeature {
@@ -452,7 +504,7 @@ strong.lead {
         height: 100px;
       }
       .box-title {
-        padding: @padding-small-vertical @padding-small-horizontal;
+        padding: @padding-xs-vertical @padding-xs-horizontal;
         .lead {
           margin: 0;
         }
@@ -465,6 +517,14 @@ strong.lead {
 /* RULES for all except mobile screens */  
   // CUSTOM COMPONENTS
   .mobile-collapse {
+    display: block;
+    height: auto !important;
+  }
+}
+@media (min-width: @screen-sm-max) {
+/* RULES for all except xs and sm screens */  
+  // CUSTOM COMPONENTS
+  .tablet-collapse {
     display: block;
     height: auto !important;
   }

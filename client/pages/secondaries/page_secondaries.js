@@ -65,7 +65,44 @@ if (Meteor.isClient) {
     ]
   });
 
-  Template.pageSecondaries.onRendered({
+  Template.pageOfferValuations.helpers({
+    valuations: function () {
+      return ValuedFunds.find({});
+    }, 
+    companies:[
+      { id: Fake.word(), firm: "Firm Name Sample", fund: "Fund Name Sample" },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) },
+      { id: Fake.word(), firm: Fake.fromArray(firm), fund: Fake.fromArray(fund) }
+    ]
+  });
 
+  Template.pageOfferValuations.events({
+    "click .boxResults .btn-add": function(event) {
+      ValuedFunds.remove(this._id);
+    },
+    "click .btn-search": function (event) {
+      
+      var text = document.getElementById('txtfundname').value;
+
+      ValuedFunds.insert({
+        fund: "Glo" + text + " " + Fake.fromArray(fund),
+        firm: Fake.fromArray(firm)
+      });
+      ValuedFunds.insert({
+        fund: "Re" + text + " " + Fake.fromArray(fund),
+        firm: Fake.fromArray(firm)
+      });
+      ValuedFunds.insert({
+        fund: "Tech" + text + " " + Fake.fromArray(fund),
+        firm: Fake.fromArray(firm)
+      });          
+    }
+  });
+
+  Template.rowOfferValuations.onRendered(function () {
+    $('.text-slider').slider();
   });
 }
