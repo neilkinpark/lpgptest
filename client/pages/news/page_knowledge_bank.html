@@ -1,0 +1,58 @@
+<template name="pageKBank">
+  <div class="container">
+
+      <h1 class="text-center pageTitle">Knowledge Bank</h1>
+      <form class="thumbnail formSearch">
+        <div class="row">
+          <div class="col-xs-9">
+            <input type="text" class="form-control" place="Search">
+          </div>
+          <div class="col-xs-3">
+            <a href="/knowledge-bank-results" class="btn btn-info btn-block">Search</a>
+          </div>
+        </div>
+      </form>
+      <div class="text-center">
+        <h4 class="lead">Search for news, features & research from AltAssets Knowledge Bank of over 20,000 items.</h4>
+      </div>
+
+  </div>
+</template>
+
+
+<template name="pageKBankResults">
+  <div class="container">
+
+      <h1 class="text-center pageTitle">Knowledge Bank</h1>
+      <form class="thumbnail formSearch">
+        <div class="row">
+          <div class="col-xs-9">
+            <input type="text" class="form-control" place="Search">
+          </div>
+          <div class="col-xs-3">
+            <button class="btn btn-info btn-block">Search</button>
+          </div>
+        </div>
+      </form>
+      <div class="panel">
+        <div class="panel panel-body">
+          <div class="list-results row">
+            {{#each news}}
+            <div class="col-sm-6 col-md-4">
+              <div class="media">
+                <div class="media-left">
+                  <img src="{{img}}" class="" WIDTH="97PX" HEIGHT="97PX">
+                </div>
+                <div class="media-body">
+                  <a href="/news-article">{{title}}</a><br>
+                  <span class="text-muted">20th of March, 2014</span>
+                </div>
+              </div><hr>            
+            </div>
+            {{/each}}
+          </div>
+
+        </div>
+      </div>
+  </div>
+</template>

@@ -1,0 +1,40 @@
+<template name="pageInbox">
+  <div class="container-fluid pageMessages pageInbox">
+  	<div class="row">
+  	  <div class="col-xs-4"><h1 class="pageTitle">Messages</h1></div>
+      <div class="col-xs-8 pageTitleNav">  
+      	<ul class="nav nav-pills pull-right">
+      	  <li><a id="" href="#" ><i class="fa fa-square-o fa-lg"></i></a></li>
+      	  <li><a id="" href="/new-message" ><i class="fa fa-pencil fa-lg"></i></a></li>
+      	  <li><a id="" href="#" ><i class="fa fa-check fa-lg"></i></a></li>
+      	  <li><a id="" href="#" ><i class="fa fa-trash-o fa-lg"></i></a></li>		
+      	</ul>        
+      </div>  	  	
+  	</div>
+  	<table class="table table-hr">
+  	  <tbody>
+        <tr>
+          <td class="colCheck"><input type="checkbox"></td>
+          <td class="colName">John Neal</td>
+          <td class="colMsg"><span class="label label-success">new</span> <a class="text-muted" href="/message">Hello World.</a></td>
+          <td class="colDate">15 May 2015</td>
+        </tr>        
+  	  {{#each message}}
+  	  	{{ >boxRowInbox }}
+  	  {{/each}}
+  	  </tbody>	
+  	</table>
+    <div class="linkLoadMore">
+      <a href="" class="">load more</a>
+    </div>  	
+  </div>
+</template>
+
+<template name="boxRowInbox">
+  <tr>
+  	<td class="colCheck"><input type="checkbox"></td>
+  	<td class="colName">{{name}}</td>
+  	<td class="colMsg"><a class="text-muted" href="/message">{{msg}}</a></td>
+  	<td class="colDate">15 May 2015</td>
+  </tr>	
+</template> 

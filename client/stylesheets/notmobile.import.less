@@ -1,0 +1,41 @@
+body {
+  padding-top: 112px;
+}
+#regionHeader {
+  .navMain > li {
+    margin-left: @padding-large-horizontal;
+    margin-right: @padding-large-horizontal;
+    border-bottom: 5px solid transparent;
+    &.active, &:hover, &:focus, &.open {
+      border-bottom: 5px solid @brand-info;
+      a {
+        background: inherit;
+        color: @brand-info;
+      }
+    } 
+    > a {
+      padding: 3em @padding-large-vertical; //49px 25px;
+      font-family: @font-family-gillsans;
+    }
+  }
+  .navIcons > li > a {
+    padding: @padding-base-vertical @padding-base-horizontal;
+    color: #a8a8a8;
+  }
+  .navIcons {
+    > li a {
+      padding-top: 3em;   
+    }
+    .loggedUser a {
+      padding-top: 22px;
+      .txtName {
+        margin-left: @padding-small-horizontal;
+      }
+    }
+  }  
+}
+#regionHeader .navbar-brand {
+  margin: 1.8em 3em 1em 8px;
+  height: 30px;
+  padding: 0;
+}

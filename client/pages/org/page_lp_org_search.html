@@ -1,0 +1,95 @@
+<template name="pageLPOrgSearch">
+  <div class="container-fluid regionFilter pageLPOrg">
+    <div class="clearfix visible-xs-block filter-title visible-sm-block">
+      <h1 class="pageTitle visible-xs-inline">Active LP Database</h1>
+      <a class="pull-right text-muted" data-toggle="collapse" href="#boxFilters">Search &raquo;</a>
+    </div>
+    <form id="boxFilters" class="collapse tablet-collapse">
+      <br class="visible-xs-inline">
+      <div class="row">
+      	<div class="col-sm-12 col-md-3 mobile-marginBottom">
+      	  <label>Organization name</label>	
+      	  <input type="text" class="form-control" placeholder="filter by organization name">
+      	  <br class="visible-sm-inline">
+      	</div>
+      	<div class="col-sm-3 col-md-2">
+      	  <label>Activity Category</label>
+      	  <select class="form-control">
+      	  	<option>All Categories</option>
+      	  </select>	
+      	</div>
+      	<div class="col-sm-3 col-md-2">
+      	  <label>Geographical Focus</label>
+      	  <select class="form-control">
+      	  	<option>All Regions</option>
+      	  </select>	
+      	</div>
+      	<div class="col-sm-3 col-md-2">
+      	  <label>LP Type</label>
+      	  <select class="form-control">
+      	  	<option>All LP Types</option>
+      	  </select>	
+      	</div>
+      	<div class="col-sm-3 col-md-2">
+      	  <label>Investment Type</label>
+      	  <select class="form-control">
+      	  	<option>All Investment Types</option>
+      	  </select>	
+      	</div>      	      	      	
+      	<div class="col-sm-3 col-sm-offset-9 col-md-offset-0 col-md-1">
+		  <br>
+		  <button class="btn btn-default btn-block btn-lg">SEARCH</button>
+		</div>
+      </div>
+    </form>    		
+  </div>
+
+  <div class="container-fluid pageLPOrg">
+  	<h1 class="pageTitle hidden-xs">Active LP Database</h1>
+
+    <div class="row">
+      {{#each orgs}}
+        {{> boxLPOrgCardView }}
+      {{/each}}
+      <div class="col-xs-12">
+        <div class="linkLoadMore">
+          <a href="" class="">load more</a>
+        </div>
+      </div>          
+    </div>
+
+  </div>	
+</template>
+
+<template name="boxLPOrgCardView">
+  <div id="{{id}}" class="col-xs-12 col-sm-6 col-lg-4">
+    <div class="panel panel-default">
+      <a class="panel-heading btn-block" href="/lp-org">
+        <h4 class="block-title-responsive">{{org}} Inc.</h4>
+      </a>
+      <div id="panel-{{id}}" class="panel-body">
+        <div class="row">
+          <div class="col-xs-3"><img class="img-responsive" src="http://www.icvillar.es/img/logo_villar.gif"></div>
+          <div class="col-xs-9">
+            <ul class="list-unstyled listDetails">
+              <li>
+                <span class="text-muted txtLabel">LP Type:</span> <span class="txtVal">Buyout</span>
+              </li>
+              <li>
+                <span class="text-muted txtLabel">Activity Category:</span> <span class="txtVal">Agriculture</span>
+              </li>
+              <li>
+                <span class="text-muted txtLabel">Transaction Type:</span>
+                <span class="txtVal">
+                  <img class="img" src="icons/investment_types/c.png" WIDTH="20PX" HEIGHT="20PX" data-toggle="tooltip" title="Co-Invest">
+                  <img class="img" src="icons/investment_types/d.png" WIDTH="20PX" HEIGHT="20PX" data-toggle="tooltip" title="Co-Invest">
+                  <img class="img" src="icons/investment_types/f.png" WIDTH="20PX" HEIGHT="20PX" data-toggle="tooltip" title="Co-Invest">
+                </span>
+              </li>           
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</template> 

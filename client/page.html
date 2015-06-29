@@ -1,0 +1,23 @@
+<template name="pageUnderCons">
+  <div class="container-fluid">	
+    <div class="row">
+    	<div class="col-xs-12">
+        <div class="">
+          <p class="lead text-center">
+            <i class="fa fa-cubes fa-3x"></i><br />Page Under Construction.
+          </p>
+        </div>
+    	</div>
+    	<div class="col-xs-12">
+    	  <div class="">
+    	  	<strong>Page Links:</strong>
+            <ul >
+              {{#each links}}
+                <li><a href="{{link}}">{{page}}</a> </li>
+              {{/each}}
+            </ul>    	  	
+    	  </div>
+    	</div>
+    </div>	
+  </div>
+</template>	

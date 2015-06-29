@@ -1,0 +1,202 @@
+<template name="pageLPOrg">
+  <div class="container-fluid pageLPOrg">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4"><h1 class="pageTitle text-inline">Sample Organisation</h1></div>
+      <div class="col-xs-12 col-sm-8">
+        <ul class="nav nav-pills pull-right hidden-xs">
+          <li role="presentation" class="active"><a role="tab" data-toggle="tab" href="#boxSummary">Summary</a></li>
+          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxDetails">Investment Strategy</a></li>
+          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxMore">More Info</a></li>      
+        </ul>      
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid pageFundProfile">
+    <div class="row">
+      <div class="col-md-12">
+	    <div class="tab-content">
+	      <div role="tabpanel" class="tab-pane active" id="boxSummary">
+          <nav class="visible-xs-block">
+            <ul class="pager pager-breadcrumb">
+              <li class="previous"><a data-toggle="tab" href="#boxMore"><span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span></a></li>
+              <li><h3 class="block-title-responsive visible-xs-inline">Summary</h3></li>
+              <li class="next"><a data-toggle="tab" href="#boxDetails"><span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span></a></li>
+            </ul>
+          </nav>          
+          {{> boxOrgMainSummary }}
+        </div>
+	      <div role="tabpanel" class="tab-pane" id="boxDetails">
+          <nav class="visible-xs-block">
+            <ul class="pager pager-breadcrumb">
+              <li class="previous"><a data-toggle="tab" href="#boxSummary"><span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span></a></li>
+              <li><h3 class="block-title-responsive visible-xs-inline">Investment Strategy</h3></li>
+              <li class="next"><a data-toggle="tab" href="#boxMore"><span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span></a></li>
+            </ul>
+          </nav>          
+          {{> boxInvestmentStrategies }}
+        </div>
+	      <div role="tabpanel" class="tab-pane" id="boxMore">
+          <nav class="visible-xs-block">
+            <ul class="pager pager-breadcrumb">
+              <li class="previous"><a data-toggle="tab" href="#boxDetails"><span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span></a></li>
+              <li><h3 class="block-title-responsive visible-xs-inline">More Info</h3></li>
+              <li class="next"><a data-toggle="tab" href="#boxSummary"><span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span></a></li>
+            </ul>
+          </nav>          
+          {{> boxOrgMore }}
+        </div>
+	    </div>
+      </div>
+    </div>
+   </div>
+</template>	
+
+<template name="boxOrgMainSummary">
+  <div class="row">
+    <div class="col-md-5 col-sm-7">
+      {{#tempPanelCollapse heading="Organisation Summary" id="Fund_Summary"}}
+        <div class="row">
+          <div class="col-xs-4">
+            <img src="http://logoeden.com/wp-content/uploads/2013/01/107.jpg" class="img-responsive" />
+          </div>
+          <div class="col-xs-8">
+            <div class="txtField"><small class="text-muted">TYPE:</small> <br /><span>Venture</span></div>
+            <br>
+            <div class="txtField"><small class="text-muted">STATUS:</small> <br /><span>Investing Funds</span></div>
+          </div> 
+        </div>
+      {{/tempPanelCollapse}}
+      {{> boxFirmAddress}} 
+    </div>
+    <div class="col-md-7 col-sm-5">
+      {{#tempPanelCollapse heading="About the Organisation" id="about_org"}}
+        <p>AltAssets retracts! Sample Fund praises the relative protest. Sample Fund convicts the answer. The serious countryside situates AltAssets. Does AltAssets demand her pit?</p>
+        <p>AltAssets swears Sample Fund across an economy. Why can't Sample Fund advertise across the bandwagon? The covering cookie approves AltAssets. AltAssets protects Sample Fund above a duck.</p>
+        <p>Sample Fund recommends this farewell league underneath the resource. AltAssets drowns Sample Fund. Its weather appendix blows Sample Fund. Sample Fund yields the biological penny outside the spokesman. Your affair constrains AltAssets with a bull.</p>
+      {{/tempPanelCollapse}}
+      {{> boxKeyContacts}}
+    </div>
+  </div>
+</template>
+
+<template name="boxInvestmentStrategies">
+  <div class="boxInvestmentStrategies row">
+  	<div class="col-sm-12 boxTransType">
+      {{#tempPanelCollapse heading="Transaction Type" id="Transaction_Type"}}
+        <span>This LP invests in:</span><hr><br>
+        <div class="row">
+          <div class="col-xs-6">
+            <ul class="list-unstyled">
+              {{#each ttype}}
+              <li>
+                <img class="img img-responsive pull-left" src="icons/investment_types/{{img}}" data-toggle="tooltip" title="{{title}}">
+                <span class="block-title-responsive">{{title}}</span>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class="col-xs-6">
+            <ul class="list-unstyled">
+              {{#each ttype2}}
+              <li>
+                <img class="img img-responsive pull-left" src="icons/investment_types/{{img}}" data-toggle="tooltip" title="{{title}}">
+                <span class="block-title-responsive">{{title}}</span>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      {{/tempPanelCollapse}}
+
+      {{#tempPanelCollapse heading="Geographical Focus" id="Geographical_Focus"}}
+        <ul>
+          <li>Europe
+            <ul>
+              <li>Ireland</li>
+              <li>Iceland</li>
+              <li>Hungary</li>
+              <li>United Kingdom</li>
+            </ul>
+          </li>
+          <li>
+            Sample Gegraphical Region
+            <ul>
+              <li>Sample Country</li>
+              <li>Sample Country 2</li>
+            </ul>
+          </li>
+        </ul> 
+      {{/tempPanelCollapse}} 		
+  	</div>
+
+    <div class="col-sm-12 hidden">
+      {{#tempPanelCollapse heading="Investment Charts" id="Investment_Charts"}}
+        <div class="row">
+          <div class="col-xs-4">
+            <h4>Investment Type</h4><hr>
+            <img class="" src="http://static4.businessinsider.com/image/4d514257ccd1d5bd1c190000/cotton.png" WIDTH="300px">
+          </div>
+          <div class="col-xs-4">
+            <h4>Fund Size</h4><hr>
+            <img class="" src="http://static4.businessinsider.com/image/4d514257ccd1d5bd1c190000/cotton.png" WIDTH="300px">
+          </div>
+          <div class="col-xs-4">
+            <h4>Investment Size</h4><hr>
+            <img class="" src="http://static4.businessinsider.com/image/4d514257ccd1d5bd1c190000/cotton.png" WIDTH="300px">
+          </div>                  
+        </div>                       
+      {{/tempPanelCollapse}}
+    </div>
+
+
+  	<div class="col-sm-12">
+  	  <div class="row">
+  	  	<div class="col-sm-6">
+          {{#tempPanelCollapse heading="Investment Type" id="Investment_Type"}}
+            <div class="text-center">
+              <img class="img" src="http://static4.businessinsider.com/image/4d514257ccd1d5bd1c190000/cotton.png" WIDTH="300px">
+            </div>
+          {{/tempPanelCollapse}}  	  		
+  	  	</div>
+  	  	<div class="col-sm-6">
+          {{#tempPanelCollapse heading="Fund Size" id="Fund_Size"}}
+            <div class="text-center">
+              <img class="img" src="http://static4.businessinsider.com/image/4d514257ccd1d5bd1c190000/cotton.png" WIDTH="300px">
+            </div>
+          {{/tempPanelCollapse}}  	  		
+  	  	</div>  	  	
+  	  </div>
+  	  <div class="row">
+  	  	<div class="col-sm-6">
+          {{#tempPanelCollapse heading="Investment Size" id="Investment_Size"}}
+            <div class="text-center">
+              <img class="img" src="http://static4.businessinsider.com/image/4d514257ccd1d5bd1c190000/cotton.png" WIDTH="300px">
+            </div>
+          {{/tempPanelCollapse}}  	  		
+  	  	</div>
+  	  	<div class="col-sm-6">
+          {{#tempPanelCollapse heading="Asset Allocation" id="Asset_Allocation"}}
+            <div class="text-center">
+              <img class="img" src="http://static4.businessinsider.com/image/4d514257ccd1d5bd1c190000/cotton.png" WIDTH="300px">
+            </div>
+          {{/tempPanelCollapse}}  	  		
+  	  	</div>  	  	
+  	  </div>  	  
+  	</div>
+  </div>	
+	
+</template>	
+
+<template name="boxOrgMore">
+  <div class="row">
+  	<div class="col-sm-6">
+      {{#tempPanelCollapse heading="AltAsset News on LP" id="Latest_News"}}
+          {{> widgetNewsList}}
+      {{/tempPanelCollapse}}  	  	
+  	</div>
+  	<div class="col-sm-6">
+  	  {{> boxHistoricalInvestments}}
+  	</div>
+  </div>	
+</template>	

@@ -1,0 +1,69 @@
+<template name="tempFilter">
+  <div class="container-fluid regionFilter">
+    <div class="clearfix visible-xs-block filter-title">
+      <h1 class="pageTitle visible-xs-inline">Page Title</h1>
+      <a class="pull-right text-muted" data-toggle="collapse" href="#boxFilters">Filters &raquo;</a>
+    </div>
+    <form id="boxFilters" class="collapse mobile-collapse">
+      <br class="visible-xs-inline">
+      <div class="row">
+      	<div class="col-sm-6 mobile-marginBottom"><input type="text" class="form-control" placeholder="sample input"></div>
+      	<div class="col-sm-6"><button class="btn btn-default btn-block btn-lg">SEARCH</button></div>
+      </div>
+    </form>
+  </div>
+  <div class="container">
+    {{>tempPanelCollapse}}
+  </div>
+</template>
+
+<!-- TOP COLLAPSIBLE PANEL -->
+<template name="tempTopPanelCollapse">
+  <div class="panel panel-default">
+    <a class="panel-heading clearfix btn-block" href="#collapse{{this.id}}" data-toggle="collapse">
+      <h4 class="block-title-responsive">
+        {{this.heading}}
+        <i class="fa fa-angle-double-down pull-right"></i>
+      </h4>
+    </a>
+    <div id="collapse{{this.id}}" class="panel-body collapse in">
+      {{> UI.contentBlock}}
+    </div>
+  </div>
+</template>
+
+<!-- COMMON COLLAPSIBLE PANEL -->
+<template name="tempPanelCollapse">
+  <div class="panel panel-default">
+    <a class="panel-heading clearfix btn-block" href="#collapse{{this.id}}" data-toggle="collapse">
+      <h4 class="block-title-responsive">
+        {{this.heading}}
+        <i class="fa fa-angle-double-down pull-right"></i>
+      </h4>
+    </a>
+    <div id="collapse{{this.id}}" class="panel-body collapse in mobile-collapsed">
+      {{> UI.contentBlock}}
+    </div>
+  </div>
+</template>
+
+<!-- COLLAPSED COLLAPSIBLE PANEL -->
+<template name="tempPanelCollapsed">
+  <div class="panel panel-default">
+    <a class="panel-heading clearfix btn-block collapsed" href="#collapse{{this.id}}" data-toggle="collapse">
+      <h4 class="block-title-responsive">
+        {{this.heading}}
+        <i class="fa fa-angle-double-down pull-right"></i>
+      </h4>
+    </a>
+    <div id="collapse{{this.id}}" class="panel-body collapse">
+      {{> UI.contentBlock}}
+    </div>
+  </div>
+</template>
+
+<template name="tempPanelCollapseUsage">
+  {{#tempPanelCollapse heading="TITLE" id="ID"}}
+    <p>CONTENT</p>
+  {{/tempPanelCollapse}}
+</template>

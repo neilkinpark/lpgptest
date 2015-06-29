@@ -1,0 +1,324 @@
+<template name="boxFundSummary">
+  {{#tempPanelCollapse heading="Fund Summary" id="Fund_Summary"}}
+    <div class="row">
+      <div class="col-xs-4">
+        <img src="http://logoeden.com/wp-content/uploads/2013/01/107.jpg" class="img-responsive" />
+      </div>
+      <div class="col-xs-8">
+        <div class="txtField"><small class="text-muted">TYPE:</small> <br /><span>Venture</span></div>
+        <br>
+        <div class="txtField"><small class="text-muted">STATUS:</small> <br /><span>Investing Funds</span></div>
+      </div> 
+    </div>
+  {{/tempPanelCollapse}}
+</template>
+
+<template name="boxKeyContacts">
+  {{#tempPanelCollapsed heading="Key Contacts" id="Key_Contacts"}}
+    <div class="list-carousel">
+    {{#each contacts}}
+      {{> boxContact}}
+    {{/each}}
+    </div>
+  {{/tempPanelCollapsed}}
+</template>
+
+<template name="boxTeamBios">
+  {{#tempPanelCollapse heading="Team Bios" id="Team_Bios"}}
+    <div class="list-carousel">
+    {{#each contacts}}
+      {{> boxContact}}
+    {{/each}}
+    </div>
+  {{/tempPanelCollapse}}
+</template>
+
+<template name="boxFirmAddress">
+  {{#tempPanelCollapsed heading="Firm Address" id="Firm_Address"}}
+    <span class="label label-primary">Head Office:</span>
+    <br />
+    <br />
+    <div class="row boxHeadOffice">
+      <div class="col-md-8 fieldAddress">
+        Studio 103, 
+        The Business Centre, 
+        61 Wellfield Road, 
+        Roath, 
+        Cardiff, 
+        CF24 3DG
+        <div class="fieldCountry">United Kingdom</div>
+      </div>
+      <div class="col-md-4">
+        <span class="txtTelNum">+234-2900</span><br>
+        <span class="txtTelNum">+234-2901</span><br>
+        <a href="http://sample.com"><span class="label label-info">website &raquo;</span></a>
+      </div>
+    </div>
+  {{/tempPanelCollapsed}}	
+</template>
+
+<template name="boxContact">
+  <div class="boxContact margin-xs margin-sm">
+    <div class="row">
+      <div class="col-xs-4">
+        <img class="img-responsive" src="{{img}}" />
+      </div>
+      <div class="col-xs-8">
+        <strong class="lead">{{name}}</strong><br>
+        <small class="text-muted">Position</small><br>
+        <a class="lead" href=""><i class="fa fa-linkedin-square fa-lg"></i></a>
+      </div>  
+    </div>
+    <BR>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <a href="#" class="btn btn-default" role="button">VIEW PROFILE</a>
+      <a href="#" class="btn btn-default" role="button">INVITE</a>
+    </div>  
+      
+  </div>
+</template>
+
+<template name="boxFundSizeandClosings">
+  {{#tempPanelCollapse heading="Fund Size and Closing(s)" id="Fund_Size_and_Closing"}}
+      <div class="boxInner">
+        <div class="row">
+          <div class="field col-xs-4">
+            <div class="txtField"><small class="text-muted">SIZE:</small> <br><span>190 USD</span></div>
+          </div>
+          <div class="field col-xs-4">
+            <div class="txtField"><small class="text-muted">TARGET:</small> <br><span>320m USD</span></div>
+          </div>
+          <div class="field col-xs-4">
+            <div class="txtField"><small class="text-muted">VINTAGE:</small> <br><span>2005</span></div>
+          </div>          
+        </div>
+        <BR>
+        <div class="field fieldClosings">
+          <small class="text-muted">CLOSING(s):</small>
+          <div class="txtValue">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td>Jul 2005</td>
+                  <td>100m USD</td>
+                  <td>First</td>
+                </tr>
+                <tr>
+                  <td>Jan 2008</td>
+                  <td>175m USD</td>
+                  <td>Second</td>
+                </tr>
+                <tr>
+                  <td>Apr 2014</td>
+                  <td>210m USD</td>
+                  <td>Final</td>
+                </tr>                                
+              </tbody>
+            </table>  
+          </div>
+        </div>                   
+      </div>
+  {{/tempPanelCollapse}}
+</template>
+
+<template name="boxInvestmentStrategy">
+  {{#tempPanelCollapse heading="Investment Strategy" id="Investment_Strategy"}}
+      <div class="row">
+          <div class="field col-sm-4">
+            <div class="txtField"><small class="text-muted">GEOGRAPHICAL FOCUS:</small> 
+              <br><span>Africa</span>
+              <br><span>Asia</span>
+              <br><span>Australia</span>
+              <br><span>Europe</span>
+              <br><span>North America</span>
+              <br><span>South America</span>
+            </div>
+            <br />
+          </div>
+          <div class="field col-sm-4">
+            <div class="txtField"><small class="text-muted">SECTOR FOCUS:</small> 
+              <br><span>Agriculture</span>
+              <br><span>Business Venture</span>
+              <br><span>Information Technology</span>
+            </div>
+            <br />
+          </div>
+          <div class="field col-sm-4">
+            <div class="txtField"><small class="text-muted">INVESTMENT SIZE:</small> 
+              <br><span>20m to 400m USD</span>
+            </div>
+          </div>          
+      </div>
+  {{/tempPanelCollapse}}	
+</template>
+
+<template name="boxOtherFunds">
+  {{#tempPanelCollapse heading="Other Funds" id="Other_Funds"}}
+      <div class="row">
+        <div class="field col-xs-6">
+          <small class="text-muted">PREVIOUS FUNDS:</small>
+          <div>
+            <table class="table table-striped">
+              <thead>
+                <tr class="info">
+                  <td colspan="2">Tech Capital I</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vintage: </td>
+                  <td>2004</td>
+                </tr>
+                <tr>
+                  <td>Size (in millions):</td>
+                  <td>10 USD</td>
+                </tr>                  
+              </tbody>
+            </table>
+          </div>
+          <br />
+        </div>  
+        
+        <div class="field col-xs-6">
+          <small class="text-muted">CONCURRENT FUNDS:</small>
+          <div>
+            <table class="table table-striped">
+              <thead>
+                <tr class="info">
+                  <td colspan="2">Tech Capital II</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vintage: </td>
+                  <td>2004</td>
+                </tr>
+                <tr>
+                  <td>Size (in millions):</td>
+                  <td>10 USD</td>
+                </tr>                  
+              </tbody>
+            </table>
+          </div>
+        </div>  
+      </div>
+  {{/tempPanelCollapse}}
+</template>
+
+<template name="boxFundLatestNews">
+  {{#tempPanelCollapse heading="Latest News about this Fund" id="Latest_News"}}
+      <div class="clearfix"><i class="pull-right">from AltAssets</i></div><br>
+      <ul class="list-unstyled clearfix">
+        {{#each news}}
+          {{> boxNews}}
+        {{/each}}
+      </ul>
+  {{/tempPanelCollapse}}	
+</template>
+
+<template name="boxFundBroadcasts">
+  {{#tempPanelCollapse heading="Broadcasts" id="Broadcasts"}}
+      <ul class="list-unstyled">
+        {{#each news}}
+          {{> boxPR}}
+        {{/each}}
+      </ul>
+  {{/tempPanelCollapse}}
+</template>
+
+<template name="boxFundPR">
+  {{#tempPanelCollapse heading="Press Release" id="Press_Release"}}
+      <ul class="list-unstyled">
+        {{#each news}}
+          {{> boxPR}}
+        {{/each}}
+      </ul>
+  {{/tempPanelCollapse}}	
+</template>
+
+<template name="boxVideos">
+  {{#tempPanelCollapse heading="Videos" id="Videos"}}
+      <h5>Introduction to AltAssets<small class="text-muted"> - 04 May 2014</small></h5>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="720" height="405"
+src="https://www.youtube.com/embed/jfLifgtJj28?showinfo=0&color=white&theme=light"
+frameborder="0" allowfullscreen></iframe>
+      </div>
+      <hr />
+      <h5>Fund Performance Tutorial<small class="text-muted"> - 04 May 2014</small></h5>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="720" height="405"
+src="https://www.youtube.com/embed/GcD60FVQjlg?showinfo=0&color=white&theme=light"
+frameborder="0" allowfullscreen></iframe>
+      </div>
+  {{/tempPanelCollapse}}  
+</template>
+
+<template name="boxPR">
+  <li>
+  	<a class="text-info" href="#"><i class="fa fa-bullhorn"></i>&nbsp; {{title}}</a>
+  	<small class="text-muted">- 04 May 2014</small>
+  	<hr />
+  </li>
+</template>
+
+<!-- @template: boxAboutFund -->
+<template name="boxAboutFund">
+  {{#tempPanelCollapse heading="About this Fund" id="About_Fund"}}
+      <p>AltAssets retracts! Sample Fund praises the relative protest. Sample Fund convicts the answer. The serious countryside situates AltAssets. Does AltAssets demand her pit?</p>
+      <p>AltAssets swears Sample Fund across an economy. Why can't Sample Fund advertise across the bandwagon? The covering cookie approves AltAssets. AltAssets protects Sample Fund above a duck.</p>
+      <p>Sample Fund recommends this farewell league underneath the resource. AltAssets drowns Sample Fund. Its weather appendix blows Sample Fund. Sample Fund yields the biological penny outside the spokesman. Your affair constrains AltAssets with a bull.</p>
+  {{/tempPanelCollapse}}  
+</template>
+<!-- @template: boxAboutFund -->
+
+<!-- @template: boxPortfolioCompanies -->
+<template name="boxPortfolioCompanies">
+  {{#tempPanelCollapse heading="Portfolio Companies" id="Portfolio_Companies"}}
+      <ul class="clearfix list-unstyled">
+      {{#each companies}}
+        {{> boxPortfolioCompany}}
+      {{/each}}
+      </ul>
+  {{/tempPanelCollapse}}  
+</template>
+<!-- @template: boxPortfolioCompanies -->
+
+<!-- @template: boxHistoricalInvestments -->
+<template name="boxHistoricalInvestments">
+  {{#tempPanelCollapse heading="Historical Investments" id="Historical_Investments"}}
+      <ul class="clearfix list-unstyled">
+      {{#each companies}}
+        {{> boxPortfolioCompany}}
+      {{/each}}
+      </ul>
+  {{/tempPanelCollapse}}  
+</template>
+<!-- @template: boxHistoricalInvestments -->
+
+<template name="boxPortfolioCompany">
+  <li class="item clearfix">
+    <div class="media">
+      <div class="media-left">
+        <img class="img-responsive img-thumbnail" src="http://drh.img.digitalriver.com/DRHM/Storefront/Site/Tk22k/cm/images/Logo/t2_logo_ful_onBLK.png" WIDTH="50px" />
+      </div>
+      <div class="media-body">
+        <h4 class="txtTitle">{{name}}</h4>  
+        <a class="btn btn-default" href="">VIEW MORE</a>
+      </div>
+    </div><BR><HR>
+  </li>
+</template>  
+
+<!-- @template: boxZample -->
+<template name="boxZample">
+  <div class="panel panel-default">
+  	<a class="fdTitle btn btn-sm btn-block btn-primary" data-toggle="collapse" href="#boxZample" >
+  	  <div class="text-left">TITLE HERE <span class="caret"></span></div>	
+  	</a>
+  	<div class="panel-body collapse in" id="boxZample">
+  	  Hide me.
+  	</div>	
+  </div>	
+</template>
+<!-- @template: boxZample -->

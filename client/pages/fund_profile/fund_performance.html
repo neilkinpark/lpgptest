@@ -1,0 +1,137 @@
+<template name="pageFundPerformance">
+  <div class="container-fluid regionFilter">
+    <div class="clearfix visible-xs-block">
+      <h1 class="pageTitle visible-xs-inline">Fund Performance</h1>
+      <a class="pull-right text-muted" data-toggle="collapse" href="#boxFilters">Filters &raquo;</a>
+    </div>
+    <form id="boxFilters" class="collapse mobile-collapse">
+      <br class="visible-xs-inline">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <label>Fund name</label><input type="text" class="form-control mobile-marginBottom" placeholder="filter by fund name">
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <label>Fund type</label>
+          <select class="form-control mobile-marginBottom">
+            <option>All types</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <label>Fund status</label>
+          <select class="form-control mobile-marginBottom">
+            <option>All</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>          
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <label>Vintage year</label><input type="text" class="form-control mobile-marginBottom" placeholder="1999">
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <br>
+          <button class="btn btn-default btn-block btn-lg">SEARCH</button>
+        </div>       
+      </div>
+    </form>
+  </div>
+ 	
+  <div class="container-fluid pageFundPerformance">
+    <div class="row">
+      <div class="col-sm-6 col-lg-3"><h1 class="pageTitle hidden-xs">Fund Performance</h1></div>
+      <div class="col-sm-6 col-lg-9 pageTitleNav">  
+      	<ul class="nav nav-pills pull-right hidden-xs hidden-sm hidden-md">
+      	  <li class="active"><a id="linkCardView" href="#cardView" role="tab" data-toggle="pill"><span aria-hidden="true" class="glyphicon glyphicon-th-large"></span></a></li>
+      	  <li><a id="linkTableView" href="#tableView" role="tab" data-toggle="pill"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a></li>		
+      	</ul>
+        <ul class="nav nav-pills pull-right hidden-xs hidden-sm hidden-md">
+          <li><a href="">Buyout</a></li>
+          <li><a href="">Venture</a></li>
+          <li><a href="">Growth Capital</a></li>
+          <li><a href="">Secondaries</a></li>
+          <li><a href="">FoF</a></li>
+          <li><a href="">Infrastructure</a></li>
+        </ul>
+        <div class="dropdown mobile-marginBottom margin-sm margin-xs visible-xs visible-sm visible-md">
+          <button id="" class="btn btn-block btn-info lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Buyout
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="btnWWYLTD">
+            <li><a href="">Venture</a></li>
+            <li><a href="">Growth Capital</a></li>
+            <li><a href="">Secondaries</a></li>
+            <li><a href="">FoF</a></li>
+            <li><a href="">Infrastructure</a></li>
+          </ul>
+        </div>                
+      </div> 
+    </div>
+    
+    <div class="tab-content">
+      <div id="cardView" class="tab-pane active">
+      	<div class="row">
+      	  {{#each items}}
+      	  	{{>boxFundPerformanceItem}}
+      	  {{/each}}
+          <div class="col-xs-12">
+            <div class="linkLoadMore">
+              <a href="" class="">load more</a>
+            </div>
+          </div>      	  
+      	</div>
+      </div>
+      <div id="tableView" class="tab-pane">
+      	<p>TABLE VIEW</p>
+      </div>
+    </div>
+  </div>  	
+</template>
+
+<template name="boxFundPerformanceItem">
+  <div class="item boxFundPerformanceItem col-xs-12 col-sm-6 col-lg-4">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <h4 class="block-title-responsive text-inline">
+          <a href="/fund-profile">{{name}}</a>
+          <a class="visible-xs-block pull-right" href="#collapse-{{id}}" data-toggle="collapse"><span class="fakeCaret">&raquo;</span></a>
+        </h4>
+      </div>
+      <div id="collapse-{{id}}" class="panel-body collapse mobile-collapse">
+        <div class="row">
+          <div class="col-xs-6"><img class="thumbnail img-responsive" src="http://www.icvillar.es/img/logo_villar.gif" width="80px"></div>
+          <div class="col-xs-6">
+            <ul class="list-unstyled listDetails">
+               <li><span class="text-muted txtLabel">IRR:</span> <span class="txtVal">92%</span></li>
+               <li><span class="text-muted txtLabel">Multiple:</span> <span class="txtVal">3x</span></li>            
+            </ul>
+          </div>
+        </div>
+        <hr class="visible-xs">
+        <div class="row visible-xs">
+          <div class="col-xs-6">
+            <span class="text-muted txtLabel">TYPE: </span> <span class="txtVal">Buyout</span><br>
+            <span class="text-muted txtLabel">SIZE: </span> <span class="txtVal">$ 120m</span>
+          </div>
+          <div class="col-xs-6">
+            <span class="text-muted txtLabel">YEAR: </span> <span class="txtVal">1999</span><br>
+            <span class="text-muted txtLabel">VAL. DATE: </span> <span class="txtVal">Dec 2016</span>
+          </div>
+        </div>
+      </div>
+      <table class="table boxMoreDetails hidden-xs">
+        <tr>
+          <td><div class="text-muted txtLabel">TYPE:</div><span class="txtVal">Buyout</span></td>
+          <td><div class="text-muted txtLabel">YEAR:</div><span class="txtVal">1999</span></td>
+          <td><div class="text-muted txtLabel">SIZE:</div><span class="txtVal">$ 120m</span></td>
+          <td><div class="text-muted txtLabel">VAL. DATE:</div><span class="txtVal">Dec 2016</span></td>
+        </tr>
+      </table>      
+    </div>
+  </div> 
+</template>

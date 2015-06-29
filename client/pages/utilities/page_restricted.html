@@ -1,0 +1,86 @@
+<template name="pageRestricted">
+  <div class="container-fluid pageRestricted">
+    <h1 class="pageTitle text-center">Restricted Content</h1>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="jumbotron text-center">
+              <span class="lead">Sorry, to access this page you must be a subscriber or you need to log in. </span>
+            </div>
+            <div class="row">
+              <div class="col-sm-4"><a class="btn btn-info btn-block btn-lg" href="/registerlp">I am a Limited Partner</a></div>
+              <div class="col-sm-4"><a class="btn btn-info btn-block btn-lg" href="/registergp">I am a General Partner</a></div>
+              <div class="col-sm-1"><br class="visible-xs-inline" /><p class="lead text-center text-muted">Or</p></div>
+              <div class="col-sm-3"><a class="btn btn-default btn-block btn-lg" href="/login"> <span>LOGIN HERE</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>  	
+</template>
+
+<template name="pageNotFound">
+  <div class="container-fluid page404">
+    <h1 class="pageTitle text-center">Page not found.</h1>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Error (404)</h4>
+          </div>
+          <div class="panel-body">
+            <div class="jumbotron text-center">
+              <span class="lead">Sorry, the requested page "{{url}}" could not be found.</span>
+            </div>
+            <a class="btn btn-default btn-block btn-lg" href="/"> <span>RETURN TO HOME PAGE.</span></a>            
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>    
+</template>
+
+<template name="pageRestrictedUser">
+  <div class="container-fluid pageRestrictedUser">
+    <h1 class="pageTitle text-center">Restricted Content</h1>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="jumbotron text-center">
+              <span class="lead">Sorry, but you are not connected to <a href="/user-profile">GP Pro User</a>. You can however:</span>
+            </div>
+            <div class="row">
+              <div class="col-sm-6"><a class="btn btn-info btn-block btn-lg" href="/registerlp">Connect to this user</a></div>
+              <div class="col-sm-1"><br class="visible-xs-inline" /><p class="lead text-center text-muted">Or</p></div>
+              <div class="col-sm-5"><a class="btn btn-default btn-block btn-lg" href="/members"> <span>GO TO MEMBERS PAGE.</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>    
+</template>
+
+<template name="pageAccountVerification">
+  <div class="container-fluid pageAccountVerification">
+    <h1 class="pageTitle text-center">Verifying Account</h1>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="jumbotron text-center">
+              <span class="lead">We are currently verifying your account to make sure you are suitable for the network. Please come back soon and your account will be fully working. Email up to <span class="text-info">lpgp@altassets.com</span> if you have any questions about this.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>    
+</template>

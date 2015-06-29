@@ -1,0 +1,98 @@
+<template name="pageFundProfile">
+
+  <div class="container-fluid pageFundProfile">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4"><h1 class="pageTitle text-inline">Sample Fund</h1></div>
+      <div class="col-xs-12 col-sm-8">
+        <ul class="nav nav-pills pull-right hidden-xs">
+          <li role="presentation" class="active"><a role="tab" data-toggle="tab" href="#boxSummary">Summary</a></li>
+          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxDetails">Details</a></li>
+          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxNews">News</a></li>
+          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxMore">More Info</a></li>      
+        </ul>
+        <div class="dropdown margin-sm margin-xs visible-xs">
+          <button id="" class="btn btn-block btn-info lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Summary
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="">
+            <li><a data-toggle="tab" href="#boxSummary">Summary</a></li>
+            <li><a data-toggle="tab" href="#boxDetails">Details</a></li>
+            <li><a data-toggle="tab" href="#boxNews">News</a></li>
+            <li><a data-toggle="tab" href="#boxMore">More Info</a></li>
+          </ul>
+        </div>       
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid pageFundProfile">
+    <div class="row">
+      <div class="col-md-12">
+	    <div class="tab-content">
+	      <div role="tabpanel" class="tab-pane active" id="boxSummary">{{> boxFundMainSummary }}</div>
+	      <div role="tabpanel" class="tab-pane" id="boxDetails">{{> boxFundDetails }}</div>
+	      <div role="tabpanel" class="tab-pane" id="boxNews">{{> boxFundNews }}</div>
+	      <div role="tabpanel" class="tab-pane" id="boxMore">{{> boxFundMore }}</div>
+	    </div>
+      </div>
+    </div>
+   </div>
+	
+</template>
+
+<template name="boxFundMainSummary">
+  <div class="row">
+    <div class="col-md-5 col-sm-7">
+      {{> boxFundSummary}}
+      {{> boxFirmAddress}} 
+    </div>
+
+    <div class="col-md-7 col-sm-5">
+      {{> boxKeyContacts}}
+      {{> boxTeamBios}}
+    </div>
+
+  </div>
+</template>
+
+<template name="boxFundDetails">
+  <div id="boxFundDetails" class="row">
+    <div class="col-sm-4">
+      {{> boxFundSizeandClosings}}  
+    </div>
+    <div class="col-sm-4">
+      {{> boxInvestmentStrategy}}   
+    </div>
+    <div class="col-sm-4">
+      {{> boxOtherFunds}}   
+    </div>
+  </div>
+</template>
+
+<template name="boxFundNews">
+  <div class="row">
+    <div class="col-md-6">
+      {{> boxFundLatestNews}}
+      {{> boxVideos }}
+    </div>
+
+    <div class="col-md-6">
+      {{> boxFundBroadcasts}}
+      {{> boxFundPR}}
+    </div>  
+  </div>  
+</template>
+
+<template name="boxFundMore">
+  <div class="row">
+    <div class="col-md-6">
+      {{> boxAboutFund}}
+    </div>
+
+    <div class="col-md-6">
+      {{> boxPortfolioCompanies}}
+      {{> boxHistoricalInvestments}}
+    </div>  
+  </div>  
+</template>

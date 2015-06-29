@@ -1,0 +1,103 @@
+<template name="pageNews">
+  <div class="container-fluid regionFilter">
+    <div class="clearfix visible-xs-block">
+      <h1 class="pageTitle visible-xs-inline">News</h1>
+      <a class="pull-right text-muted" data-toggle="collapse" href="#boxFilters">Search &raquo;</a>
+    </div>
+    <form id="boxFilters" class="collapse mobile-collapse">
+      <br class="visible-xs-inline">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10">
+          <input type="text" class="form-control margin-xs" placeholder="Search News from AltAssets">
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <button class="btn btn-default btn-block btn-lg">SEARCH</button>
+        </div>       
+      </div>
+    </form>
+  </div>
+    
+  <div class="container-fluid pageNews">
+    {{>boxRowNews}}
+  </div>
+</template>
+
+<template name="tabNews">
+  <ul class="nav nav-pills pull-right">
+    {{#each items}}
+    <li class="{{cssclass}}"><a id="link{{id}}" href="#{{id}}News" role="tab" data-toggle="pill">{{title}}</a></li>
+    {{/each}}
+  </ul>
+</template>
+
+<!-- NOT USED! -->
+<template name="boxTabNewsContent">
+  <div class="tab-content boxTabNewsContent">
+    {{#each items}}
+    <div role="tabpanel" class="tab-pane {{cssclass}}" id="{{id}}News">
+      <div class="row">
+        {{#each news}}  
+          {{>boxNewsTeaser}}
+        {{/each}}
+        <div class="col-xs-12">
+          <div class="linkLoadMore">
+            <a href="" class="">load more</a>
+          </div>
+        </div>
+      </div>   
+    </div>
+    {{/each}}
+  </div>  
+</template>
+<!-- NOT USED! -->
+
+<template name="boxRowNews">
+  {{#each items}}
+  <a class="text-muted" href="#box{{id}}Collapsible" data-toggle="collapse">
+    <h3 class="text-inline">
+      {{title}}
+      <span class="fakeCaret">&raquo;</span>
+    </h3>
+  </a>
+
+  <div id="box{{id}}Collapsible" class="collapse in">
+    <div id="owl{{id}}" class="owl-news owl-carousel">
+      {{#each news}}
+        {{>boxNewsTeaser}}
+      {{/each}}
+    </div> 
+  </div>
+  {{/each}} 
+</template> 
+
+<template name="boxNewsTeaser">
+  <div class="item thumbnail boxNewsTeaser">
+    <div class="inner" style="background-image: url('{{img}}')">
+      <div class="box-title"><a href="/news-article">{{title}}</a></div>
+    </div>
+  </div>
+</template>
+
+<template name="widgetNewsList">
+  <div class="clearfix"><i class="pull-right">from AltAssets</i></div><br>
+  <ul class="list-unstyled clearfix">
+    {{#each news}}
+      {{> boxNews}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="boxNews">
+  <li>
+    <div class="media">
+      <div class="media-left">
+        <img src="https://www.altassets.net/wp-content/uploads/2015/06/chair-89156_640-e1435164690441-70x70.jpg">
+      </div>
+      <div class="media-body">
+        <a class="text-info" href="#">{{title}}</a>
+        <small class="text-muted">- 04 May 2014</small>        
+      </div>
+    </div>
+    <hr />
+  </li>
+</template>

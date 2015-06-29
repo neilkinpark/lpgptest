@@ -1,0 +1,161 @@
+<template name="pageOfferValuations">
+  <div class="container-fluid pageOfferValuations">
+    <h1 class="pageTitle">Offer Valuations</h1>
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/secondaries">Secondaries</a></li>
+      <li class="active">Offer Valuations</li>
+    </ol>
+
+	<div class="alert alert-success alert-dismissible">
+      <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+      <h4><i class="fa fa-check-circle"></i> Save successful. </h4>Fund has been added on the list.
+    </div>
+
+    <div class="alert alert-info alert-dismissible">
+      <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+      <h4><i class="fa fa-info-circle"></i> Info. </h4>
+      <ul>
+        <li>You can express your interest in a secondary stake by filling in the form below.</li> 
+        <li>You will be automatically alerted when a fund owner would like to connect with you.</li>	
+      </ul>	
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading hidden-xs">
+        <h4 class="block-title-responsive text-inline">
+      	  Add more funds 
+      	</h4>
+      </div>
+      <div id="" class="panel-body">
+        <div class="clearfix visible-xs-block">
+          <h1 class="pageTitle visible-xs-inline">Add more funds</h1>
+          <a class="pull-right text-muted" data-toggle="collapse" href="#boxFilters">Filters &raquo;</a>
+        </div>
+        <form id="boxFilters" class="boxFilters collapse mobile-collapse">
+          <br class="visible-xs-inline">
+          <div class="row">
+          	<div class="col-sm-6 mobile-marginBottom"><input id="txtfundname" type="text" class="form-control" name="txtfundname" placeholder="Filter by Fund name"></div>
+          	<div class="col-sm-6"><a href="#" class="btn btn-default btn-block btn-search">SEARCH</a></div>
+          </div>
+        </form>
+
+        <div id="boxResults" class="boxResults">
+          <br>
+          {{#if valuations.count}}	
+          <table class="table">
+          	<thead>
+          	  <tr class="text-muted bg-info">
+          	  	<td>Fund Name</td>
+          	  	<td>Firm Name</td>
+          	  	<td>Fund Size</td>
+          	  	<td>Vintage Year</td>
+          	  	<td>Actions</td>
+          	  </tr>	
+          	</thead>
+            <tbody>
+              {{#each valuations}}
+                <tr>
+                  <td><a href="fund-profile">{{fund}}</a></td>
+                  <td>{{firm}}</td>
+                  <td>99.1M</td>
+                  <td>1984</td>
+                  <td><button class="btn btn-default btn-add">ADD FUND</button></td>	
+                </tr>
+              {{/each}}	              
+            </tbody>
+          </table>
+          {{else}}
+          	<em class="text-muted">Search to add more funds.</em>
+          {{/if}}
+
+        </div>
+      </div>
+    </div>    
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      	<h4 class="block-title-responsive text-inline">
+      		List of Funds I have valued:
+      		<a class="visible-xs-block pull-right" href="#collapse2" data-toggle="collapse"><span class="fakeCaret">&raquo;</span></a>
+      	</h4>	
+      </div>
+      <div id="collapse2" class="collapse mobile-collapse">
+	    <table class="table table-hr">
+	    	<tbody>
+	    	  {{#each companies}}	
+	    	  <tr>
+	    	  	<td>
+	    	  	  {{> rowOfferValuations}}	
+	    	  	</td>
+	    	  </tr>			
+	    	  {{/each}} 	
+	    	</tbody>
+	    </table>      	
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="rowOfferValuations">
+  <h4 class="">{{fund}}<a class=" pull-right" href="#collapse{{id}}" data-toggle="collapse"><span class="fakeCaret">&raquo;</span></a></h4>
+  <div id="collapse{{id}}" class="collapse ">
+  	<br>
+  	<table class="table hidden">
+ 	  <tbody>
+ 	  	<tr>
+ 	  	  <td><img class="img-responsive" src="http://www.icvillar.es/img/logo_villar.gif" ></td>
+ 	  	  <td>
+              <div class="text-muted">FUND SIZE:</div><hr>
+              <DIV class="txtVal">1.5B USD</DIV>
+ 	  	  </td>
+ 	  	  <td>
+              <div class="text-muted">VINTAGE YEAR:</div><hr>
+              <DIV class="txtVal">1984</DIV>
+ 	  	  </td>
+ 	  	  <td>
+ 	  	  	<div class="text-muted">PERCENTAGE OF NAV:</div><hr>
+ 	  	  </td>
+ 	  	</tr>
+ 	  </tbody>	
+  	</table>
+  	<div class="panel-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+          	<div class="col-xs-12 col-md-6"><img class="img-responsive" src="http://www.icvillar.es/img/logo_villar.gif" ></div>
+            <div class="col-xs-6 col-md-3">
+              <h5 class="text-muted">FUND SIZE:</h5><hr>
+              <DIV class="txtVal">1.5B USD</DIV>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <h5 class="text-muted">VINTAGE YEAR:</h5><hr>
+              <DIV class="txtVal">1984</DIV>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+        	<br class="visible-xs-inline">
+        	<h5 class="text-muted">PERCENTAGE OF NAV:</h5><hr>
+        	<div class="form">
+        	  <div class="form-group">
+        	  	<input type="text" class="text-slider" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-selection="after" data-slider-tooltip="hide">
+        	  	&nbsp;&nbsp;&nbsp;&nbsp;<br class="visible-xs-inline">
+        	  	<button class="btn btn-default">SAVE</button>
+        	  	<button class="btn btn-gray">REMOVE</button>
+        	  </div>
+        	  <div class="form-group">
+                <label class="control-label">What secondary transaction sizes are you interested in?</label><br>
+                <div class="checkbox"><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> $0 to $10m </label></div>
+                <div class="checkbox"><label class="checkbox"><input type="checkbox" id="inlineCheckbox2" value="option2"> $10m to $25m </label></div>
+                <div class="checkbox"><label class="checkbox"><input type="checkbox" id="inlineCheckbox3" value="option3"> $25m to $50m</label></div>
+                <div class="checkbox"><label class="checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> $50m to $100m </label></div>
+                <div class="checkbox"><label class="checkbox"><input type="checkbox" id="inlineCheckbox2" value="option2"> more than $100m </label></div>
+                <div class="checkbox"><label class="checkbox"><input type="checkbox" id="inlineCheckbox3" value="option3"> All </label></div>               
+        	  </div>
+        	</div>
+        </div>
+      </div>
+  	</div>
+  </div>  
+</template>	
