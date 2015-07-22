@@ -62,22 +62,30 @@
 </template>
 
 <template name="boxLPOrgCardView">
-  <div id="{{id}}" class="col-xs-12 col-sm-6 col-lg-4">
+  <div id="{{id}}" class="boxLPOrgCardView col-xs-12 col-sm-6 col-lg-4">
     <div class="panel panel-default">
       <a class="panel-heading btn-block" href="/lp-org">
         <h4 class="block-title-responsive">{{org}} Inc.</h4>
       </a>
       <div id="panel-{{id}}" class="panel-body">
-        <div class="row">
-          <div class="col-xs-3"><img class="img-responsive" src="http://www.icvillar.es/img/logo_villar.gif"></div>
-          <div class="col-xs-9">
+        <div class="media">
+          <div class="media-left">
+            <img class="img-responsive" src="{{img}}">
+          </div>
+          <div class="media-body">
             <ul class="list-unstyled listDetails">
               <li>
-                <span class="text-muted txtLabel">LP Type:</span> <span class="txtVal">Buyout</span>
+                <span class="text-muted txtLabel">LP Type:</span> <strong class="txtVal text-primary">Buyout</strong>
               </li>
               <li>
-                <span class="text-muted txtLabel">Activity Category:</span> <span class="txtVal">Agriculture</span>
+                <span class="text-muted txtLabel">Activity Category:</span> <strong class="txtVal text-primary">Agriculture</strong>
               </li>
+              <li>
+                <span class="text-muted txtLabel">Investment Types:</span> <strong class="txtVal text-primary">Bonds, Stocks ...</strong>
+              </li> 
+              <li>
+                <span class="text-muted txtLabel">Geographical Focus:</span> <strong class="txtVal text-primary">North America, South America ...</strong>
+              </li>                           
               <li>
                 <span class="text-muted txtLabel">Transaction Type:</span>
                 <span class="txtVal">
@@ -86,7 +94,7 @@
                   <img class="img" src="icons/investment_types/f.png" WIDTH="20PX" HEIGHT="20PX" data-toggle="tooltip" title="Co-Invest">
                 </span>
               </li>           
-            </ul>
+            </ul>            
           </div>
         </div>
       </div>

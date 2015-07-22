@@ -122,6 +122,26 @@ label {
     background-color: @brand-info;
   }  
 }
+.nav-tabs {
+  border-bottom: 2px solid @gray-dark;
+  > li > a {
+    border-top-color: @gray-light;
+    border-right-color: @gray-light;
+    border-left-color: @gray-light;
+    border-bottom-color: @gray-dark;
+    background-color: @gray-light;
+    color: #fff;
+  }
+  > li > a:hover {
+    background-color: @gray-dark;
+    border-bottom-color: @gray-dark;
+  }  
+  > li.active > a, > li.active > a:hover, > li.active > a:focus {
+    border-color: @gray-dark;
+    background-color: @gray-dark;
+    color: #fff;
+  }
+}
 .panel {
   border: none;
   box-shadow: none;
@@ -192,6 +212,9 @@ strong.lead {
     }  
   }  
 }
+.text-dark {
+  color: @text-color;
+}
 .linkLoadMore {
   border-top: 1px dashed #aaa;
   margin-top: 3em;
@@ -209,6 +232,24 @@ strong.lead {
     top: -18px;
     width: 170px;    
   }
+}
+.fs-options {
+  .fs-option {
+    line-height: 16px;
+  }
+  .fs-option-1 {
+    font-size: 8px;
+  }
+  .fs-option-2 {
+    font-size: 12px;
+  }
+  .fs-option-3 {
+    font-size: 16px;
+  }
+  .active {
+    background: lighten(@brand-info, 13.5%);
+    color: #fff;
+  }    
 }
 .formSearchBar {
   background: #fff;
@@ -338,6 +379,16 @@ strong.lead {
 }
 // PAGE > NEWS //
 .pageNews {
+  .fs-adjust-body {
+    color: #404040;
+    font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.375;    
+    p {
+      
+      margin-top: 16px;
+    }
+  }
   .boxNewsTeaser,
   .boxNewsFeature {
     position: relative;
@@ -357,10 +408,8 @@ strong.lead {
       left: 0;
       padding: @padding-xs-horizontal;
       width: 100%;
-      a {
-        color: @text-color;
-        font-weight: bold;
-      }
+      color: @text-color;
+      font-weight: bold;
     }
   }
   .boxNewsFeature {
@@ -425,6 +474,24 @@ strong.lead {
         }
       }
     }      
+  }
+}
+
+// PAGE > LP ORG
+.pageLPOrg {
+  .boxLPOrgCardView {
+    .media {
+      .media-left {
+        height: 120px;
+        min-width: 120px;
+        img {
+          max-width: 120px;
+          max-height: 120px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
   }
 }
 
@@ -566,6 +633,11 @@ strong.lead {
 
 @media (max-width: 520px) {
    /* below 520px */
+  .pageDashboard {
+    .icon-title {
+      font-size: @font-size-base;
+    }
+  } 
   .boxValuationInfos {
     margin-left: 0;
     margin-right: 0;
@@ -573,5 +645,28 @@ strong.lead {
       width: 100%;
       padding: @padding-xs-vertical 0;
     }  
-  } 
+  }
+  .pageKBank .formSearch .col-xs-4 {
+      padding-left: 0;
+  }
+  .pageKBank .formSearch .col-xs-8 {
+      padding-right: 0;
+  }  
+}
+
+@media (max-width: 320px) {
+   /* below 320px */
+  .pageLPOrg {
+    .boxLPOrgCardView {
+      .media {
+        .media-left,
+        .media-body {
+          width: 100%;
+          display: block;
+          padding: @padding-base-vertical 0 0;
+          height: auto;
+        }
+      }
+    } 
+  }
 }

@@ -7,7 +7,7 @@
     <form id="boxFilters" class="collapse mobile-collapse">
       <br class="visible-xs-inline">
       <div class="row">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-2">
           <label>Fund name</label><input type="text" class="form-control mobile-marginBottom" placeholder="filter by fund name">
         </div>
         <div class="col-xs-12 col-sm-2">
@@ -21,18 +21,28 @@
           </select>
         </div>
         <div class="col-xs-12 col-sm-2">
-          <label>Fund status</label>
+          <label>Fund size</label>
           <select class="form-control mobile-marginBottom">
-            <option>All</option>
+            <option>All sizes</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>        
+        <div class="col-xs-12 col-sm-2">
+          <label>Vintage year</label><input type="text" class="form-control mobile-marginBottom" placeholder="1999">
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <label>Geographical focus</label>
+          <select class="form-control mobile-marginBottom">
+            <option>All Regions</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
             <option>5</option>
           </select>          
-        </div>
-        <div class="col-xs-12 col-sm-2">
-          <label>Vintage year</label><input type="text" class="form-control mobile-marginBottom" placeholder="1999">
-        </div>
+        </div>        
         <div class="col-xs-12 col-sm-2">
           <br>
           <button class="btn btn-default btn-block btn-lg">SEARCH</button>
@@ -58,20 +68,21 @@
           <li><a href="">Infrastructure</a></li>
         </ul>
         <div class="dropdown mobile-marginBottom margin-sm margin-xs visible-xs visible-sm visible-md">
-          <button id="" class="btn btn-block btn-info lpgpDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Buyout
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="btnWWYLTD">
-            <li><a href="">Venture</a></li>
-            <li><a href="">Growth Capital</a></li>
-            <li><a href="">Secondaries</a></li>
-            <li><a href="">FoF</a></li>
-            <li><a href="">Infrastructure</a></li>
+          <ul class="pager pager-breadcrumb">
+            <li class="previous"><a data-toggle="tab" href="#boxMore"><span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span></a></li>
+            <li>Buyout</li>
+            <li class="next"><a data-toggle="tab" href="#boxDetails"><span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span></a></li>
           </ul>
         </div>                
       </div> 
     </div>
+
+    <div class="alert alert-info">
+      <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+      <h4><i class="fa fa-info-circle"></i> Information.  </h4>
+      If you cannot find a particular fund, please let us know and we will do our best to find it for you.<br>
+      If you would like to add fund performance data to our database, please email the data to <a href=""><strong>fund.data@lpgp.net</strong></a>, citing your source.
+    </div>    
     
     <div class="tab-content">
       <div id="cardView" class="tab-pane active">
@@ -96,40 +107,39 @@
 <template name="boxFundPerformanceItem">
   <div class="item boxFundPerformanceItem col-xs-12 col-sm-6 col-lg-4">
     <div class="panel panel-default">
-      <div class="panel-heading clearfix">
-        <h4 class="block-title-responsive text-inline">
-          <a href="/fund-profile">{{name}}</a>
-          <a class="visible-xs-block pull-right" href="#collapse-{{id}}" data-toggle="collapse"><span class="fakeCaret">&raquo;</span></a>
+      <a class="panel-heading clearfix btn-block" href="/fund-profile" >
+        <h4 class="block-title-responsive">
+          {{name}}
         </h4>
-      </div>
-      <div id="collapse-{{id}}" class="panel-body collapse mobile-collapse">
+      </a>
+      <div id="collapse-{{id}}" class="panel-body">
         <div class="row">
-          <div class="col-xs-6"><img class="thumbnail img-responsive" src="http://www.icvillar.es/img/logo_villar.gif" width="80px"></div>
+          <div class="col-xs-6"><img class="thumbnail img-responsive" src="http://www.icvillar.es/img/logo_villar.gif" width="120px"></div>
           <div class="col-xs-6">
             <ul class="list-unstyled listDetails">
-               <li><span class="text-muted txtLabel">IRR:</span> <span class="txtVal">92%</span></li>
-               <li><span class="text-muted txtLabel">Multiple:</span> <span class="txtVal">3x</span></li>            
+               <li><span class="text-muted txtLabel">IRR:</span> <strong class="text-primary">92%</strong></li>
+               <li><span class="text-muted txtLabel">Multiple:</span> <strong class="text-primary">3x</strong></li>
             </ul>
           </div>
         </div>
         <hr class="visible-xs">
         <div class="row visible-xs">
           <div class="col-xs-6">
-            <span class="text-muted txtLabel">TYPE: </span> <span class="txtVal">Buyout</span><br>
-            <span class="text-muted txtLabel">SIZE: </span> <span class="txtVal">$ 120m</span>
+            <span class="text-muted txtLabel">TYPE: </span> <strong class="text-primary">Buyout</strong><br>
+            <span class="text-muted txtLabel">SIZE: </span> <strong class="text-primary">$ 120m</strong>
           </div>
           <div class="col-xs-6">
-            <span class="text-muted txtLabel">YEAR: </span> <span class="txtVal">1999</span><br>
-            <span class="text-muted txtLabel">VAL. DATE: </span> <span class="txtVal">Dec 2016</span>
+            <span class="text-muted txtLabel">YEAR: </span> <strong class="text-primary">1999</strong><br>
+            <span class="text-muted txtLabel">VAL. DATE: </span> <strong class="text-primary">Dec 2016</strong>
           </div>
         </div>
       </div>
       <table class="table boxMoreDetails hidden-xs">
         <tr>
-          <td><div class="text-muted txtLabel">TYPE:</div><span class="txtVal">Buyout</span></td>
-          <td><div class="text-muted txtLabel">YEAR:</div><span class="txtVal">1999</span></td>
-          <td><div class="text-muted txtLabel">SIZE:</div><span class="txtVal">$ 120m</span></td>
-          <td><div class="text-muted txtLabel">VAL. DATE:</div><span class="txtVal">Dec 2016</span></td>
+          <td><div class="text-muted txtLabel">TYPE:</div><strong class="text-primary">Buyout</strong></td>
+          <td><div class="text-muted txtLabel">YEAR:</div><strong class="text-primary">1999</strong></td>
+          <td><div class="text-muted txtLabel">SIZE:</div><strong class="text-primary">$ 120m</strong></td>
+          <td><div class="text-muted txtLabel">VAL. DATE:</div><strong class="text-primary">Dec 2016</strong></td>
         </tr>
       </table>      
     </div>

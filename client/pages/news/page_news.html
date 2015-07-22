@@ -53,10 +53,10 @@
 
 <template name="boxRowNews">
   {{#each items}}
-  <a class="text-muted" href="#box{{id}}Collapsible" data-toggle="collapse">
+  <a class="text-dark" href="#box{{id}}Collapsible" data-toggle="collapse">
     <h3 class="text-inline">
-      {{title}}
-      <span class="fakeCaret">&raquo;</span>
+      {{title}} &nbsp;&nbsp;&nbsp;
+      <i class="fa fa-angle-double-down"></i>
     </h3>
   </a>
 
@@ -71,11 +71,11 @@
 </template> 
 
 <template name="boxNewsTeaser">
-  <div class="item thumbnail boxNewsTeaser">
+  <a href="/news-article" class="item thumbnail boxNewsTeaser">
     <div class="inner" style="background-image: url('{{img}}')">
-      <div class="box-title"><a href="/news-article">{{title}}</a></div>
+      <div class="box-title">{{title}}</div>
     </div>
-  </div>
+  </a>
 </template>
 
 <template name="widgetNewsList">

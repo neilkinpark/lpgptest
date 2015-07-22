@@ -17,6 +17,20 @@
   </div>
 </template>
 
+<!-- TOP COMMON PANEL -->
+<template name="tempPanel">
+  <div class="panel panel-default">
+    <div class="panel-heading" >
+      <h4 class="block-title-responsive">
+        {{this.heading}}
+      </h4>
+    </div>
+    <div class="panel-body">
+      {{> UI.contentBlock}}
+    </div>
+  </div>
+</template>
+
 <!-- TOP COLLAPSIBLE PANEL -->
 <template name="tempTopPanelCollapse">
   <div class="panel panel-default">
@@ -62,6 +76,7 @@
   </div>
 </template>
 
+<!-- JUST a sample for template usage  -->
 <template name="tempPanelCollapseUsage">
   {{#tempPanelCollapse heading="TITLE" id="ID"}}
     <p>CONTENT</p>

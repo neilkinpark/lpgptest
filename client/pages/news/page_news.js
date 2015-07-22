@@ -80,6 +80,18 @@ if (Meteor.isClient) {
 
   });
 
+  Template.pageNewsArticle.events({
+    "click #fs-option-1": function(event, template) {
+      template.$(".fs-adjust-body").css("font-size", "12px");
+    },    
+    "click #fs-option-2": function(event, template) {
+      template.$(".fs-adjust-body").css("font-size", "");
+    },
+    "click #fs-option-3": function(event, template) {
+      template.$(".fs-adjust-body").css("font-size", "20px");
+    },    
+  });
+
 }
 
 function lpgpFakeNews(len) {

@@ -1,12 +1,12 @@
 if (Meteor.isClient) {
   Template.pageLPOrgSearch.helpers({
   	orgs: [
-  	  { org: Fake.sentence(3) },
-  	  { org: Fake.sentence(3) },
-  	  { org: Fake.sentence(2) },
-  	  { org: Fake.sentence(3) },
-  	  { org: Fake.sentence(2) },
-  	  { org: Fake.sentence(1) }
+  	  { org: Fake.sentence(3), img: "http://www.icvillar.es/img/logo_villar.gif" },
+  	  { org: Fake.sentence(3), img: "http://images.vectorhq.com/images/previews/982/michael-jordan-nba-logo-psd-439185.png" },
+  	  { org: Fake.sentence(2), img: "http://theworkinggamer.co.uk/wp-content/uploads/2014/05/NBA2K15-logo.png" },
+  	  { org: "Smaller Than Desired Logo Org", img: "http://pbs.twimg.com/profile_images/519904806794571776/ahiBppBE_normal.png" },
+  	  { org: "Large Square Logo Inc.", img: "http://www.stratuslive.com/Media/Default/images/Icon/Excel_Icon_2013.png" },
+  	  { org: "Org No Image Uploaded Inc.", img: "http://lpgptest.meteor.com/images/default_logo.png" }
   	]
   });
 

@@ -27,9 +27,12 @@ if (Meteor.isClient) {
 
   Template.pageBetaDashboard.helpers({
     item: [
-      { url: "news-article", img: "News.png", title: "News" },
-      { url: "news", img: "News_search.png", title: "News Search" },
-      { url: "lp-org-search", img: "LP_Connections.png", title: "LP Profiles" }
+      { url: "news", img: "News.png", title: "News & Views" },
+      { url: "knowledge-bank", img: "News_search.png", title: "Knowledge Bank" },
+      { url: "lp-org-search", img: "LP_Connections.png", title: "Active LP Database" },
+      { url: "fund-performance", img: "Fund_Performance.png", title: "Fund Performance" },
+      { url: "lp-mag", img: "LP_Magazine.png", title: "LP Magazine" },
+      { url: "ir-review", img: "ir_REVIEW.png", title: "IR Review" }
     ]       
   });  
 

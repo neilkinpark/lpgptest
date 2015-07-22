@@ -24,6 +24,10 @@ Router.route('/login', function () {
   this.render('pageLogin');
 });
 
+Router.route('/signup', function () {
+  this.render('pageSignup');
+});
+
 Router.route('/lp-signup', function () {
   this.render('pageLPSignup');
 });
@@ -58,6 +62,14 @@ Router.route('/new-message', function () {
 
 Router.route('/user-profile', function () {
   this.render('pageMyProfile');
+});
+
+Router.route('/user-lpprofile-edit', function () {
+  this.render('pageUserLPEdit');
+});
+
+Router.route('/user-gpprofile-edit', function () {
+  this.render('pageUserGPEdit');
 });
 
 Router.route('/lp-profile', function () {
@@ -187,6 +199,7 @@ if (Meteor.isClient) {
   	links:[
       { link: "/beta-dashboard", page: "Beta Dashboard"},
       { link: "/dashboard", page: "LP Dashboard"},
+      { link: "/user-gpprofile-edit", page: "GP Profile Edit"},
       { link: "/lp-signup", page: "LP Signup"},
       { link: "/gp-signup", page: "GP Signup"},
   		{ link: "/secondaries", page: "Secondaries"},
