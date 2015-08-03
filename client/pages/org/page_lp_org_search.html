@@ -1,52 +1,51 @@
 <template name="pageLPOrgSearch">
   <div class="container-fluid regionFilter pageLPOrg">
-    <div class="clearfix visible-xs-block filter-title visible-sm-block">
-      <h1 class="pageTitle visible-xs-inline">Active LP Database</h1>
-      <a class="pull-right text-muted" data-toggle="collapse" href="#boxFilters">Search &raquo;</a>
+    <div class="clearfix flex-container">
+      <h1 class="region-title pageTitle text-inline">Active LP Database</h1>
+      <a class="btn btn-gray toggle-button" data-toggle="collapse" href="#boxFilters">Search for LPs <br><i class="fa fa-search"></i></a>
     </div>
-    <form id="boxFilters" class="collapse tablet-collapse">
-      <br class="visible-xs-inline">
+    <form id="boxFilters" class="collapse">
+      <br>
       <div class="row">
-      	<div class="col-sm-12 col-md-3 mobile-marginBottom">
+      	<div class="col-sm-12 col-md-3 margin-xs">
       	  <label>Organization name</label>	
       	  <input type="text" class="form-control" placeholder="filter by organization name">
       	  <br class="visible-sm-inline">
       	</div>
-      	<div class="col-sm-3 col-md-2">
+      	<div class="col-sm-3 col-md-2 margin-xs">
       	  <label>Activity Category</label>
       	  <select class="form-control">
       	  	<option>All Categories</option>
       	  </select>	
       	</div>
-      	<div class="col-sm-3 col-md-2">
-      	  <label>Geographical Focus</label>
+      	<div class="col-sm-3 col-md-2 margin-xs">
+      	  <label>Geographical Region</label>
       	  <select class="form-control">
       	  	<option>All Regions</option>
       	  </select>	
       	</div>
-      	<div class="col-sm-3 col-md-2">
+      	<div class="col-sm-3 col-md-2 margin-xs">
       	  <label>LP Type</label>
       	  <select class="form-control">
       	  	<option>All LP Types</option>
       	  </select>	
       	</div>
-      	<div class="col-sm-3 col-md-2">
+      	<div class="col-sm-3 col-md-2 margin-xs">
       	  <label>Investment Type</label>
       	  <select class="form-control">
       	  	<option>All Investment Types</option>
       	  </select>	
       	</div>      	      	      	
       	<div class="col-sm-3 col-sm-offset-9 col-md-offset-0 col-md-1">
-		  <br>
-		  <button class="btn btn-default btn-block btn-lg">SEARCH</button>
-		</div>
+		      <br>
+		      <button class="btn btn-default btn-block btn-lg">SEARCH</button>
+		    </div>
       </div>
     </form>    		
   </div>
 
   <div class="container-fluid pageLPOrg">
-  	<h1 class="pageTitle hidden-xs">Active LP Database</h1>
-
+    <h3 class="text-title">Latest Updates</h3>
     <div class="row">
       {{#each orgs}}
         {{> boxLPOrgCardView }}
@@ -84,7 +83,7 @@
                 <span class="text-muted txtLabel">Investment Types:</span> <strong class="txtVal text-primary">Bonds, Stocks ...</strong>
               </li> 
               <li>
-                <span class="text-muted txtLabel">Geographical Focus:</span> <strong class="txtVal text-primary">North America, South America ...</strong>
+                <span class="text-muted txtLabel">Geographical Regions:</span> <strong class="txtVal text-primary">North America, South America ...</strong>
               </li>                           
               <li>
                 <span class="text-muted txtLabel">Transaction Type:</span>

@@ -16,52 +16,24 @@
 <template name="pageloggedInBasic">
   <div id="regionHeader" class="navbar navbar-default navbar-fixed-top" role="banner">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
-          <span class="sr-only">Toggle navigation</span>
-          <span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span>
-        </button>
-        <a class="navbar-brand" href="../"><img src="logo.png"></a>
-      </div>
+      <a class="link-icon link-icon-back pull-left" href=""><i class="fa fa-angle-left"></i></a>
+      <a class="link-icon link-icon-home" href="/"><img src="logo.png"></a>
+      <div class="link-icon pull-right link-icon-menu dropdown">
+        <a class="" href="" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+        <ul class="dropdown-menu">
+          {{>menuBetaDashboard}}
+          <li role="separator" class="divider"></li>
+          <li><a href="/user-profile"><i class="fa fa-user"></i> My Profile</a></li>
+          <li><a href="/user-profile"><i class="fa fa-sign-out"></i> Logout</a></li>
+        </ul>    
+      </div>      
       
-      <nav class="navbar-collapse bs-navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-        <ul class="nav navbar-nav navMain">
-          <li><a href="/news"><small>NEWS & VIEWS</small></a></li>
-          <li class="link-kbank"><a href="/knowledge-bank"><small>KNOWLEDGE BANK</small></a></li>
-          <li><a href="/lp-org-search"><small>ACTIVE LP DATABASE</small></a></li>
-        </ul>        
-        <!--
-        <ul class="nav navbar-nav navMain">
-          <li class="active"><a href="/"><small>HOME</small></a></li>
-          <li class="dropdown">
-            <a href="/fund-profiles" data-toggle="dropdown"><small>FUNDS</small> <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu" >
-              <li><a href="/fund-profiles"><small>FUND PROFILES</small></a></li>
-              <li><a href="/fund-performance"><small>FUND PERFORMANCE</small></a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="/members" data-toggle="dropdown"><small>MEMBERS</small> <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu" >
-              <li><a href="/members"><small>ALL MEMBERS</small></a></li>
-              <li><a href="/connections"><small>CONNECTIONS</small></a></li>
-            </ul>
-          </li>
-          <li><a href=""><small>LP MAGAZINE</small></a></li>
-        </ul> -->
-        <ul class="nav navbar-nav navbar-right navIcons">
-          <li><a href="/user-profile"><i class="fa fa-user"></i> <small class="visible-xs-inline"> My Profile</small></a></li>
-          <li><a href="/inbox"><i class="fa fa-envelope"></i> <small class="visible-xs-inline"> Messages</small></a></li>
-          <li><a href="/news"><i class="fa fa-newspaper-o"></i> <small class="visible-xs-inline"> News</small></a></li>
-          <li><a href="/login"><i class="fa fa-sign-out"></i> <small class="visible-xs-inline"> Log out</small></a></li>
-          <li class="loggedUser"><a href="/user-profile"><img class="img-circle" src="images/baby.jpg" WIDTH="43px" /> <span class="txtName">Amour Bébé</span></a></li>
-        </ul>
-      </nav>
-
     </div>
-
     <hr>
+
   </div>
+
+
 
   <div id="regionMain" class="" role="main">
     {{ > yield }}
@@ -83,4 +55,10 @@
       </div>
     </div>
   </footer>
+</template>  
+
+<template name="menuBetaDashboard">
+  {{#each item}}
+    <li><a href="{{url}}">{{title}}</a></li>
+  {{/each}}  
 </template>  

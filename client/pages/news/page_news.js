@@ -13,12 +13,13 @@ var newsDummy = [
 if (Meteor.isClient) {
   Template.boxRowNews.helpers({
     items: [
-      { id: "Fund", title: "Fund News", news: lpgpFakeNews(18)},
-      { id: "Deal", title: "Deal News", news: lpgpFakeNews(25), cssclass: "active"},  
-      { id: "LP", title: "LP Profiles", news: lpgpFakeNews(6)},
-      { id: "People", title: "People News", news: lpgpFakeNews(16)},
-      { id: "Features", title: "Features", news: lpgpFakeNews(12)},
-      { id: "Knowledge", title: "Knowledge Bank", news: lpgpFakeNews(3)}
+      { id: "Latest", title: "Latest News", news: lpgpFakeNews(20)},
+      { id: "Fund", title: "Fund News", news: lpgpFakeNews(20)},
+      { id: "Deal", title: "Deal News", news: lpgpFakeNews(20), cssclass: "active"},  
+      { id: "LP", title: "LP Profiles", news: lpgpFakeNews(20)},
+      { id: "People", title: "People News", news: lpgpFakeNews(20)},
+      { id: "Features", title: "Features", news: lpgpFakeNews(20)},
+      { id: "Knowledge", title: "Knowledge Bank", news: lpgpFakeNews(20)}
     ]
   });
 
@@ -59,7 +60,7 @@ if (Meteor.isClient) {
 
     owl.owlCarousel({
         stagePadding: 12,
-        loop:true,
+        loop:false,
         nav: false,
         dots: false,
         responsive:{

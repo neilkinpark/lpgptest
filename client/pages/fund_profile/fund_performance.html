@@ -1,16 +1,16 @@
 <template name="pageFundPerformance">
   <div class="container-fluid regionFilter">
-    <div class="clearfix visible-xs-block">
-      <h1 class="pageTitle visible-xs-inline">Fund Performance</h1>
-      <a class="pull-right text-muted" data-toggle="collapse" href="#boxFilters">Filters &raquo;</a>
+    <div class="clearfix flex-container">
+      <h1 class="region-title pageTitle text-inline">Fund Performance</h1>
+      <a class="btn btn-gray toggle-button" data-toggle="collapse" href="#boxFilters">Search <br><i class="fa fa-search"></i></a>
     </div>
-    <form id="boxFilters" class="collapse mobile-collapse">
-      <br class="visible-xs-inline">
+    <form id="boxFilters" class="collapse">
+      <br>
       <div class="row">
-        <div class="col-xs-12 col-sm-2">
-          <label>Fund name</label><input type="text" class="form-control mobile-marginBottom" placeholder="filter by fund name">
+        <div class="col-xs-12 col-sm-2 margin-xs">
+          <label>Fund name</label><input type="text" class="form-control mobile-marginBottom" placeholder="search by fund name">
         </div>
-        <div class="col-xs-12 col-sm-2">
+        <div class="col-xs-6 col-sm-2 margin-xs">
           <label>Fund type</label>
           <select class="form-control mobile-marginBottom">
             <option>All types</option>
@@ -20,7 +20,7 @@
             <option>5</option>
           </select>
         </div>
-        <div class="col-xs-12 col-sm-2">
+        <div class="col-xs-6 col-sm-2 margin-xs">
           <label>Fund size</label>
           <select class="form-control mobile-marginBottom">
             <option>All sizes</option>
@@ -30,17 +30,22 @@
             <option>5</option>
           </select>
         </div>        
-        <div class="col-xs-12 col-sm-2">
-          <label>Vintage year</label><input type="text" class="form-control mobile-marginBottom" placeholder="1999">
+        <div class="col-xs-6 col-sm-2 margin-xs">
+          <label>Vintage year</label><input type="text" class="form-control mobile-marginBottom" placeholder="Year">
         </div>
-        <div class="col-xs-12 col-sm-2">
-          <label>Geographical focus</label>
+        <div class="col-xs-6 col-sm-2 margin-xs">
+          <label>Regions</label>
           <select class="form-control mobile-marginBottom">
             <option>All Regions</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>Africa</option>
+            <option>Asia</option>
+            <option>Australasia</option>
+            <option>Central Europe </option>
+            <option>Eastern Europe</option>
+            <option>Latin America</option>
+            <option>Middle East</option>
+            <option>North America</option>
+            <option>West Europe</option>
           </select>          
         </div>        
         <div class="col-xs-12 col-sm-2">
@@ -52,55 +57,29 @@
   </div>
  	
   <div class="container-fluid pageFundPerformance">
-    <div class="row">
-      <div class="col-sm-6 col-lg-3"><h1 class="pageTitle hidden-xs">Fund Performance</h1></div>
-      <div class="col-sm-6 col-lg-9 pageTitleNav">  
-      	<ul class="nav nav-pills pull-right hidden-xs hidden-sm hidden-md">
-      	  <li class="active"><a id="linkCardView" href="#cardView" role="tab" data-toggle="pill"><span aria-hidden="true" class="glyphicon glyphicon-th-large"></span></a></li>
-      	  <li><a id="linkTableView" href="#tableView" role="tab" data-toggle="pill"><span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span></a></li>		
-      	</ul>
-        <ul class="nav nav-pills pull-right hidden-xs hidden-sm hidden-md">
-          <li><a href="">Buyout</a></li>
-          <li><a href="">Venture</a></li>
-          <li><a href="">Growth Capital</a></li>
-          <li><a href="">Secondaries</a></li>
-          <li><a href="">FoF</a></li>
-          <li><a href="">Infrastructure</a></li>
-        </ul>
-        <div class="dropdown mobile-marginBottom margin-sm margin-xs visible-xs visible-sm visible-md">
-          <ul class="pager pager-breadcrumb">
-            <li class="previous"><a data-toggle="tab" href="#boxMore"><span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span></a></li>
-            <li>Buyout</li>
-            <li class="next"><a data-toggle="tab" href="#boxDetails"><span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span></a></li>
-          </ul>
-        </div>                
-      </div> 
+    <div class="pageTitleNav">
+      <h3 class="text-title">TOP PERFORMING FUNDS BY TYPE</h3>
+      <div id="nav-by-types" class="main-nav-pills">
+        <div><a class="btn btn-default btn-block active" href="">Buyout</a></div>
+        <div><a class="btn btn-default btn-block" href="">Venture</a></div>
+        <div><a class="btn btn-default btn-block" href="">Growth Capital</a></div>
+        <div><a class="btn btn-default btn-block" href="">Secondaries</a></div>
+        <div><a class="btn btn-default btn-block" href="">FoF</a></div>
+        <div><a class="btn btn-default btn-block" href="">Infrastructure</a></div>
+      </div>
     </div>
 
-    <div class="alert alert-info">
-      <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
-      <h4><i class="fa fa-info-circle"></i> Information.  </h4>
-      If you cannot find a particular fund, please let us know and we will do our best to find it for you.<br>
-      If you would like to add fund performance data to our database, please email the data to <a href=""><strong>fund.data@lpgp.net</strong></a>, citing your source.
+    <div class="row">
+      {{#each items}}
+        {{>boxFundPerformanceItem}}
+      {{/each}}
+      <div class="col-xs-12">
+        <div class="linkLoadMore">
+          <a href="" class="">load more</a>
+        </div>
+      </div>          
     </div>    
-    
-    <div class="tab-content">
-      <div id="cardView" class="tab-pane active">
-      	<div class="row">
-      	  {{#each items}}
-      	  	{{>boxFundPerformanceItem}}
-      	  {{/each}}
-          <div class="col-xs-12">
-            <div class="linkLoadMore">
-              <a href="" class="">load more</a>
-            </div>
-          </div>      	  
-      	</div>
-      </div>
-      <div id="tableView" class="tab-pane">
-      	<p>TABLE VIEW</p>
-      </div>
-    </div>
+
   </div>  	
 </template>
 

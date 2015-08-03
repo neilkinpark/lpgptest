@@ -160,5 +160,27 @@ if (Meteor.isClient) {
       { id:Fake.word(), name: "Advanced Micro Devices, Inc." },
       { id:Fake.word(), name: "Gonzaga Capital Prime XIV" }
     ]
-  });     
+  });
+
+  Template.pageFundPerformance.onRendered(function() {
+    $('#nav-by-types').owlCarousel({
+        margin: 5,
+        dots: false,
+        responsive:{
+          0:{
+            items:2,
+            stagePadding: 15,          
+          },
+          400: {
+            items:3,
+            stagePadding: 15,
+          },
+          768: {
+            items: 6,
+            stagePadding: 0
+          }
+        }
+    });
+
+  }); 
 }

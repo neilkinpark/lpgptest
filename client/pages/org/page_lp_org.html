@@ -1,13 +1,11 @@
 <template name="pageLPOrg">
   <div class="container-fluid pageLPOrg">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4"><h1 class="pageTitle text-inline">Sample Organisation</h1></div>
-      <div class="col-xs-12 col-sm-8">
-        <ul class="nav nav-pills pull-right hidden-xs">
-          <li role="presentation" class="active"><a role="tab" data-toggle="tab" href="#boxSummary">Summary</a></li>
-          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxDetails">Investment Strategy</a></li>
-          <li role="presentation"><a role="tab" data-toggle="tab" href="#boxMore">More Info</a></li>      
-        </ul>      
+    <div class="pageTitleNav">
+      <h1 class="pageTitle">Sample Organisation</h1>
+      <div id="nav-category" class="main-nav-pills">
+        <div><a role="tab" data-toggle="tab" href="#boxSummary" class="btn btn-default btn-block active">Summary</a></div>
+        <div><a role="tab" data-toggle="tab" href="#boxDetails" class="btn btn-default btn-block">Investment Strategy</a></div>
+        <div><a role="tab" data-toggle="tab" href="#boxMore" class="btn btn-default btn-block">More Info</a></div>    
       </div>
     </div>
   </div>
@@ -22,14 +20,7 @@
     <div class="row">
       <div class="col-md-12">
 	    <div class="tab-content">
-	      <div role="tabpanel" class="tab-pane active" id="boxSummary">
-          <nav class="visible-xs-block">
-            <ul class="pager pager-breadcrumb">
-              <li class="previous"><a data-toggle="tab" href="#boxMore"><span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span></a></li>
-              <li><h3 class="block-title-responsive visible-xs-inline">Summary</h3></li>
-              <li class="next"><a data-toggle="tab" href="#boxDetails"><span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span></a></li>
-            </ul>
-          </nav>          
+	      <div role="tabpanel" class="tab-pane active" id="boxSummary">         
           {{> boxOrgMainSummary }}
         </div>
 	      <div role="tabpanel" class="tab-pane" id="boxDetails">

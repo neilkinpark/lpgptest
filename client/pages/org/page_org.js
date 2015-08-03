@@ -27,8 +27,24 @@ if (Meteor.isClient) {
     checkForViewportChange();
     window.addEventListener('resize', function() {
       checkForViewportChange();
-    }, false);    
-  });
+    }, false); 
+
+    $('#nav-category').owlCarousel({
+        margin: 5,
+        dots: false,
+        responsive:{
+          0:{
+            items:2,
+            stagePadding: 15,          
+          },
+          400: {
+            items:3,
+            stagePadding: 0,
+            autoWidth: true
+          }
+        }
+    });       
+  });  
 }	
 
 

@@ -27,6 +27,18 @@ if (Meteor.isClient) {
 
   Template.pageBetaDashboard.helpers({
     item: [
+      { url: "news", img: "news.png", imgh: "news_hover.png", title: "News & Views" },
+      { url: "knowledge-bank", img: "knowledge_bank.png", imgh: "knowledge_bank_hover.png", title: "Knowledge Bank" },
+      { url: "lp-org-search", img: "lp_directory.png", imgh: "lp_directory_hover.png", title: "Active LP Database" },
+      { url: "fund-performance", img: "fund_performance.png", imgh: "fund_performance_hover.png", title: "Fund Performance" },
+      { url: "lp-mag", img: "lp_magazine.png", imgh: "lp_magazine_hover.png", title: "LP Magazine" },
+      { url: "ir-review", img: "ir_review.png", imgh: "ir_review_hover.png", title: "IR Review" }
+    ]       
+  }); 
+
+  Template.menuBetaDashboard.helpers({
+    item: [
+      { url: "/", img: "News.png", title: "Home" },
       { url: "news", img: "News.png", title: "News & Views" },
       { url: "knowledge-bank", img: "News_search.png", title: "Knowledge Bank" },
       { url: "lp-org-search", img: "LP_Connections.png", title: "Active LP Database" },
@@ -34,7 +46,7 @@ if (Meteor.isClient) {
       { url: "lp-mag", img: "LP_Magazine.png", title: "LP Magazine" },
       { url: "ir-review", img: "ir_REVIEW.png", title: "IR Review" }
     ]       
-  });  
+  });   
 
   Template.pageLogin.events({
   	"click .linkPSReset": function (event, template){
