@@ -32,15 +32,37 @@ if (Meteor.isClient) {
   });
    
   Template.pageNewsArticle.helpers({
-    img: "http://lpgp-uat.mrkt.it/sites/lpgp-uat.mrkt.it/files/euros_24.jpg",
-    title: "LBO France sell cargo handler WFS to Platinum Equity",
-    body : [
-      { p: Fake.paragraph(5)  },
-      { p: Fake.paragraph(15)  },
-      { p: Fake.paragraph(10)  },
-      { p: Fake.paragraph(7)  },
-      { p: Fake.paragraph(15)  }
+    news : [
+      {
+        img: "http://lpgp-uat.mrkt.it/sites/lpgp-uat.mrkt.it/files/euros_24.jpg",
+        title: "LBO France sell cargo handler WFS to Platinum Equity",
+        body : [
+          { p: Fake.paragraph(5)  },
+          { p: Fake.paragraph(15)  },
+          { p: Fake.paragraph(10)  },
+          { p: Fake.paragraph(7)  },
+          { p: Fake.paragraph(15)  }
+        ]        
+      },
+      {
+        img: "https://www.altassets.net/wp-content/uploads/2015/06/money-pile-e1434017478260.jpg",
+        title: "Nigeria's Verod Capital taps Fund II for Union Trustees MBO",
+        body : [
+          { p: Fake.paragraph(7)  },
+          { p: Fake.paragraph(6)  }
+        ]        
+      },
+      {
+        img: "https://www.altassets.net/wp-content/uploads/2015/06/barrels-e1435228827175-300x300.jpg",
+        title: "Pfingsten Partners offloads TPC Wire & Cable to Audax Group",
+        body : [
+          { p: Fake.paragraph(8)  },
+          { p: Fake.paragraph(3)  },
+          { p: Fake.paragraph(11)  }
+        ]        
+      }            
     ]
+
   });
 
   Template.pageLPProfileArticle.helpers({
@@ -81,6 +103,18 @@ if (Meteor.isClient) {
 
   });
 
+  Template.pageNewsArticle.onRendered(function() {
+    var owl = $(".news-carousel");
+
+    owl.owlCarousel({
+        loop:true,
+        nav: false,
+        dots: false,
+        items: 1,
+    });
+
+  });  
+
   Template.pageNewsArticle.events({
     "click #fs-option-1": function(event, template) {
       template.$(".fs-adjust-body").css("font-size", "12px");
@@ -90,7 +124,13 @@ if (Meteor.isClient) {
     },
     "click #fs-option-3": function(event, template) {
       template.$(".fs-adjust-body").css("font-size", "20px");
-    },    
+    },
+    "click .link-prev-news": function(event, template) {
+      template.$(".news-carousel").trigger('prev.owl.carousel');
+    },
+    "click .link-next-news": function(event, template) {
+      template.$(".news-carousel").trigger('next.owl.carousel');
+    },      
   });
 
 }

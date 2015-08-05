@@ -448,6 +448,12 @@ strong.lead {
       line-height: @font-size-h1;
     }
   }
+  #boxFilters {
+    label {
+      color: @brand-primary;
+      font-size: 13px;  
+    }
+  }
   .toggle-button {
     border-radius: 4px;
   }
@@ -456,16 +462,16 @@ strong.lead {
     color: #fff;
     border-color: @brand-info;
     &::-webkit-input-placeholder { /* WebKit browsers */
-        color:    #ddd;
+        color: #fff;
     }
     &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color:    #ddd;
+        color: #fff;
     }
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color:    #ddd;
+        color: #fff;
     }
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color:    #ddd;
+        color: #fff;
     }    
   }
 }
@@ -489,12 +495,12 @@ strong.lead {
 // PAGE > DASHBOARD
 .pageDashboard {
   .flex-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: space-around;
+    .flex-display(flex);
+    .flex-direction(column);
+    .justify-content(space-around);
+
     .flex-item {
-      flex: 1,
+      //flex: 1,
     }
   }
     a {
@@ -527,6 +533,11 @@ strong.lead {
 .pageNews {
   .news-category {
     text-transform: uppercase;   
+  }
+  .news-carousel {
+    .owl-item img {
+      width: auto;
+    }
   }  
   .fs-adjust-body {
     color: #404040;
@@ -711,7 +722,10 @@ strong.lead {
   }   
 }
 @media (max-width: @screen-xs-max) {
-/* RULES for mobile phones */ 
+/* RULES for mobile phones */
+  body {
+    margin-bottom: 34px;
+  } 
   body:before { content: 'xs'; display: none; }   
   .pageTitle {
     font-size: @font-size-h3;
@@ -827,6 +841,14 @@ strong.lead {
 
 @media (max-width: 320px) {
    /* below 320px */
+  .pageDashboard a {
+    img {
+      max-height: 75px;
+    }
+    .icon-title {
+      margin-top: @padding-small-vertical;
+    }  
+  }
   .pageLPOrg {
     .boxLPOrgCardView {
       .media {
@@ -843,9 +865,5 @@ strong.lead {
 }
 
 @media (max-height: 640px) {
-  .pageDashboard {
-    .wrapper-icon {
-      margin-bottom: 2em;
-    }
-  }
+
 }  

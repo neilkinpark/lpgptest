@@ -6,33 +6,26 @@
   	    {{> rowBetaDashboard}}
   	  {{/each}} 
   	</div> -->
-    <div class="flex-container">
-      <div class="flex-item">red</div>
-      <div class="flex-item">blue</div>
-      <div class="flex-item">black</div>
+    <div class="flex-container flex-dash-icons">
+      {{#each item}}
+      <div class="flex-item">
+        <div class="row">
+          {{> rowBetaDashboard}}
+        </div>
+      </div>
+      {{/each}}
     </div>
   </div>  
 </template>
 
 <template name="rowBetaDashboard">
-  <div class="text-center wrapper-icon flex-child">
-    <a href="/{{url}}" class="text-muted">
-      <img src="/icons/{{img}}" class="img img-thumbnail img-responsive img-circle img-default-state">
-      <img src="/icons/{{imgh}}" class="img img-thumbnail img-responsive img-circle img-hover">
-      <h2 class="text-dark icon-title">{{title}}</h2>
-    </a> 
-  </div>
-</template> 
-
-<!-- 
-<template name="rowBetaDashboard">
+  {{#each col}}
   <div class="col-xs-6 text-center wrapper-icon">
     <a href="/{{url}}" class="text-muted">
   	  <img src="/icons/{{img}}" class="img img-thumbnail img-responsive img-circle img-default-state">
       <img src="/icons/{{imgh}}" class="img img-thumbnail img-responsive img-circle img-hover">
       <h2 class="text-dark icon-title">{{title}}</h2>
-    </a>
-    <br> 	
+    </a> 	
   </div>
-</template>	
--->
+  {{/each}}
+</template>

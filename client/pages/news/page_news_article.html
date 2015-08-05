@@ -1,51 +1,60 @@
 <template name="pageNewsArticle">
   <div class="container pageNews">
-    <br>
-  	<h1 class="pageTitle">{{title}}</h1>
 
-    <ol class="breadcrumb">
-      <li><a href="/">Home</a></li>
-      <li><a href="/news">News</a></li>
-      <li class="active">News Article</li>
-    </ol>
+    <div class="news-carousel">
+      {{#each news}}
+        {{> newsArticle}}    
+      {{/each}}     
+    </div>
 
-
-  	<div class="row">
-      <div class="col-sm-3 col-md-2"><img class="img-responsive img-thumbnail img-featured" src="{{img}}"><br><br></div>
-      <div class="col-sm-9 col-md-10">
-        <div class="fs-adjust-options clearfix">
-          <div class="btn-group pull-right fs-options" data-toggle="buttons">
-            <label id="fs-option-1" class="btn btn-default fs-option fs-option-1">
-              <input id="option-1" type="radio" name="options" autocomplete="off" checked> A
-            </label>
-            <label id="fs-option-2" class="btn btn-default active fs-option fs-option-2">
-              <input id="option-2" type="radio" name="options" autocomplete="off"> A
-            </label>
-            <label id="fs-option-3" class="btn btn-default fs-option fs-option-3">
-              <input id="option-3" type="radio" name="options" autocomplete="off"> A
-            </label>
-          </div>
-        </div>
-        <div class="fs-adjust-body">
-          <div class="text-muted">20 March 2014</div>
-          <p><strong>Investors have been attracted to European firm Mantra Invest’s first dedicated secondaries fund after seeing the previous vehicle make a two-times return, said partner at the firm Fabrice Moyne.</strong></p>
-          {{#each body}}
-            <p>{{p}}</p>
-          {{/each}}          
-        </div>
-        <span class="text-muted">Copyright © 2015 AltAssets</span>
-      </div>
-  	</div>
-    
-  	<br><br>
-  	<div class="row btn-prevnext">
-  	  <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
-  	  	<a class="btn btn-default btn-block" href="/news-article"><i class="fa fa-angle-left"></i> PREV</a>
-  	  </div>	
-  	  <div class="col-xs-6 col-sm-4 col-md-3">
-  	  	<a class="btn btn-default btn-block" href="/news-article">NEXT <i class="fa fa-angle-right"></i></a>
-  	  </div>
-  	</div>
   	<br>
   </div>
 </template>	
+
+<template name="newsArticle">
+    <div class="article">
+      <br>
+      <h1 class="pageTitle">{{title}}</h1>
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/news">News</a></li>
+        <li class="active">News Article</li>
+      </ol>
+
+      <div class="row">
+        <div class="col-sm-3 col-md-2"><img class="img-responsive img-thumbnail img-featured" src="{{img}}"><br><br></div>
+        <div class="col-sm-9 col-md-10">
+          <div class="fs-adjust-options clearfix">
+            <div class="btn-group pull-right fs-options" data-toggle="buttons">
+              <label id="fs-option-1" class="btn btn-default fs-option fs-option-1">
+                <input id="option-1" type="radio" name="options" autocomplete="off" checked> A
+              </label>
+              <label id="fs-option-2" class="btn btn-default active fs-option fs-option-2">
+                <input id="option-2" type="radio" name="options" autocomplete="off"> A
+              </label>
+              <label id="fs-option-3" class="btn btn-default fs-option fs-option-3">
+                <input id="option-3" type="radio" name="options" autocomplete="off"> A
+              </label>
+            </div>
+          </div>
+          <div class="fs-adjust-body">
+            <div class="text-muted">20 March 2014</div><br>
+            {{#each body}}
+              <p>{{p}}</p>
+            {{/each}}          
+          </div>
+          <span class="text-muted">Copyright © 2015 AltAssets</span>
+        </div>
+      </div>
+
+      <br><br>
+      <div class="row btn-prevnext">
+        <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+          <a class="link-prev-news btn btn-default btn-block" href="/news-article"><i class="fa fa-angle-left"></i> PREV</a>
+        </div>  
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <a class="link-next-news btn btn-default btn-block" href="/news-article">NEXT <i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>      
+    </div>  
+</template>  

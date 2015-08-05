@@ -37,10 +37,9 @@ if (Meteor.isClient) {
             items:2,
             stagePadding: 15,          
           },
-          400: {
+          430: {
             items:3,
-            stagePadding: 0,
-            autoWidth: true
+            stagePadding: 0
           }
         }
     });       
