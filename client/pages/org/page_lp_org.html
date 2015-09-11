@@ -5,14 +5,14 @@
     </div>
   </div>
 
-  <div class="container-fluid pageFundProfile">
+  <div class="container-fluid pageFundProfile pageLPOrg">
     <ol class="breadcrumb">
       <li><a href="/">Home</a></li>
       <li><a href="/lp-org-search">Active LP Databse</a></li>
       <li class="active">LP Organization</li>
     </ol>
 
-    <div id="nav-category" class="main-nav-pills">
+    <div id="nav-category" class="main-nav-pills flex-container">
       <div><a role="tab" data-toggle="tab" href="#boxSummary" class="btn btn-default btn-block active">Summary</a></div>
       <div><a role="tab" data-toggle="tab" href="#boxDetails" class="btn btn-default btn-block">Investment Strategy</a></div>
       <div><a role="tab" data-toggle="tab" href="#boxMore" class="btn btn-default btn-block">More Info</a></div>    
@@ -24,24 +24,10 @@
 	      <div role="tabpanel" class="tab-pane active" id="boxSummary">         
           {{> boxOrgMainSummary }}
         </div>
-	      <div role="tabpanel" class="tab-pane" id="boxDetails">
-          <nav class="visible-xs-block">
-            <ul class="pager pager-breadcrumb">
-              <li class="previous"><a data-toggle="tab" href="#boxSummary"><span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span></a></li>
-              <li><h3 class="block-title-responsive visible-xs-inline">Investment Strategy</h3></li>
-              <li class="next"><a data-toggle="tab" href="#boxMore"><span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span></a></li>
-            </ul>
-          </nav>          
+	      <div role="tabpanel" class="tab-pane" id="boxDetails">         
           {{> boxInvestmentStrategies }}
         </div>
-	      <div role="tabpanel" class="tab-pane" id="boxMore">
-          <nav class="visible-xs-block">
-            <ul class="pager pager-breadcrumb">
-              <li class="previous"><a data-toggle="tab" href="#boxDetails"><span aria-hidden="true" class="glyphicon glyphicon-menu-left"></span></a></li>
-              <li><h3 class="block-title-responsive visible-xs-inline">More Info</h3></li>
-              <li class="next"><a data-toggle="tab" href="#boxSummary"><span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span></a></li>
-            </ul>
-          </nav>          
+	      <div role="tabpanel" class="tab-pane" id="boxMore">          
           {{> boxOrgMore }}
         </div>
 	    </div>

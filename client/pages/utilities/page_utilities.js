@@ -35,16 +35,22 @@ if (Meteor.isClient) {
       },
       {
         col: [
+          { url: "fund-profiles", img: "fund_profiles.png", imgh: "fund_profiles_hover.png", title: "Fund Profiles" },
+          { url: "fund-performance", img: "fund_performance.png", imgh: "fund_performance_hover.png", title: "Fund Performance" }     
+        ]         
+      },      
+      {
+        col: [
           { url: "lp-org-search", img: "lp_directory.png", imgh: "lp_directory_hover.png", title: "Active LP Database" },
-          { url: "fund-performance", img: "fund_performance.png", imgh: "fund_performance_hover.png", title: "Fund Performance" },        
+          { url: "lp-mag", img: "lp_magazine.png", imgh: "lp_magazine_hover.png", title: "Limited Partner Magazaine" },        
         ]       
       },
       {
         col: [
-          { url: "lp-mag", img: "lp_magazine.png", imgh: "lp_magazine_hover.png", title: "Limited Partner Magazaine" },
-          { url: "ir-review", img: "ir_review.png", imgh: "ir_review_hover.png", title: "Fundraising and IR review" }        
+          { url: "ir-review", img: "ir_review.png", imgh: "ir_review_hover.png", title: "Fundraising & IR review" },
+          { url: "about", img: "about.png", imgh: "about_hover.png", title: "About Us" }      
         ]         
-      }
+      }      
     ]      
   }); 
 
@@ -55,13 +61,10 @@ if (Meteor.isClient) {
     function resizedw(){
       // Haven't resized in 100ms!
         
-      var windowH = $(window).height();
-      if (windowH < 768) {
-        windowH = windowH - 17;
-      }
+      var windowH = $(window).outerHeight();
       var regionHeaderH = $("#regionHeader").outerHeight();
       var regionFooterH = $(".regionFooter").outerHeight();
-      var regionMainH = windowH - regionHeaderH - regionFooterH;
+      var regionMainH = windowH - regionHeaderH - regionFooterH - 20;
       $("#regionMain .flex-dash-icons").height(regionMainH);
       console.log(regionHeaderH + regionFooterH);
     }    
@@ -91,6 +94,15 @@ if (Meteor.isClient) {
   	  window.location.href = '/password-reset';
   	  //Router.go('pagePasswordReset');
   	}
+  });
+
+  Template.pageLogout.onRendered(function() {
+    setTimeout(showMainScreen,4000);
+
+    function showMainScreen() {
+      $('#splash-screen').hide();
+      $('#main-screen').fadeIn().removeClass('hidden');
+    }
   });
 
   Template.pageLPSignup.events({

@@ -14,13 +14,13 @@
 </template>
 
 <template name="boxKeyContacts">
-  {{#tempPanelCollapsed heading="Key Contacts" id="Key_Contacts"}}
+  {{#tempPanelCollapse heading="Key Contacts" id="Key_Contacts"}}
     <div class="list-carousel">
     {{#each contacts}}
       {{> boxContact}}
     {{/each}}
     </div>
-  {{/tempPanelCollapsed}}
+  {{/tempPanelCollapse}}
 </template>
 
 <template name="boxTeamBios">
@@ -34,7 +34,7 @@
 </template>
 
 <template name="boxFirmAddress">
-  {{#tempPanelCollapsed heading="Firm Address" id="Firm_Address"}}
+  {{#tempPanelCollapse heading="Fund Details" id="Firm_Address"}}
     <span class="label label-primary">Head Office:</span>
     <br />
     <br />
@@ -54,7 +54,7 @@
         <a href="http://sample.com"><span class="label label-info">website &raquo;</span></a>
       </div>
     </div>
-  {{/tempPanelCollapsed}}	
+  {{/tempPanelCollapse}}	
 </template>
 
 <template name="boxContact">
@@ -69,10 +69,6 @@
         <a class="lead" href=""><i class="fa fa-linkedin-square fa-lg"></i></a> | 
         <a href="">neil@ultro.co.uk</a>
       </div>  
-    </div>
-    <BR>
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-      <a href="#" class="btn btn-default" role="button">INVITE</a>
     </div>  
       
   </div>
@@ -83,18 +79,18 @@
       <div class="boxInner">
         <div class="row">
           <div class="field col-xs-4">
-            <div class="txtField"><small class="text-muted">SIZE:</small> <br><span>190 USD</span></div>
+            <div class="txtField"><strong>SIZE:</strong> <br><span>190 USD</span></div>
           </div>
           <div class="field col-xs-4">
-            <div class="txtField"><small class="text-muted">TARGET:</small> <br><span>320m USD</span></div>
+            <div class="txtField"><strong>TARGET:</strong> <br><span>320m USD</span></div>
           </div>
           <div class="field col-xs-4">
-            <div class="txtField"><small class="text-muted">VINTAGE:</small> <br><span>2005</span></div>
+            <div class="txtField"><strong>VINTAGE:</strong> <br><span>2005</span></div>
           </div>          
         </div>
         <BR>
         <div class="field fieldClosings">
-          <small class="text-muted">CLOSING(s):</small>
+          <strong>CLOSING(s):</strong>
           <div class="txtValue">
             <table class="table table-bordered">
               <tbody>
@@ -125,7 +121,7 @@
   {{#tempPanelCollapse heading="Investment Strategy" id="Investment_Strategy"}}
       <div class="row">
           <div class="field col-sm-4">
-            <div class="txtField"><small class="text-muted">GEOGRAPHICAL FOCUS:</small> 
+            <div class="txtField"><strong>GEOGRAPHICAL FOCUS:</strong> 
               <br><span>Africa</span>
               <br><span>Asia</span>
               <br><span>Australia</span>
@@ -136,7 +132,7 @@
             <br />
           </div>
           <div class="field col-sm-4">
-            <div class="txtField"><small class="text-muted">SECTOR FOCUS:</small> 
+            <div class="txtField"><strong>SECTOR FOCUS:</strong> 
               <br><span>Agriculture</span>
               <br><span>Business Venture</span>
               <br><span>Information Technology</span>
@@ -144,7 +140,7 @@
             <br />
           </div>
           <div class="field col-sm-4">
-            <div class="txtField"><small class="text-muted">INVESTMENT SIZE:</small> 
+            <div class="txtField"><strong>INVESTMENT SIZE:</strong> 
               <br><span>20m to 400m USD</span>
             </div>
           </div>          
@@ -155,8 +151,8 @@
 <template name="boxOtherFunds">
   {{#tempPanelCollapse heading="Other Funds" id="Other_Funds"}}
       <div class="row">
-        <div class="field col-xs-6">
-          <small class="text-muted">PREVIOUS FUNDS:</small>
+        <div class="field col-xs-12">
+          <strong>PREVIOUS FUNDS:</strong>
           <div>
             <table class="table table-striped">
               <thead>
@@ -179,8 +175,8 @@
           <br />
         </div>  
         
-        <div class="field col-xs-6">
-          <small class="text-muted">CONCURRENT FUNDS:</small>
+        <div class="field col-xs-12">
+          <strong>CONCURRENT FUNDS:</strong>
           <div>
             <table class="table table-striped">
               <thead>
@@ -275,7 +271,7 @@ frameborder="0" allowfullscreen></iframe>
 <!-- @template: boxPortfolioCompanies -->
 <template name="boxPortfolioCompanies">
   {{#tempPanelCollapse heading="Portfolio Companies" id="Portfolio_Companies"}}
-      <ul class="clearfix list-unstyled">
+      <ul class="clearfix list-unstyled listCompanies">
       {{#each companies}}
         {{> boxPortfolioCompany}}
       {{/each}}
@@ -287,7 +283,7 @@ frameborder="0" allowfullscreen></iframe>
 <!-- @template: boxHistoricalInvestments -->
 <template name="boxHistoricalInvestments">
   {{#tempPanelCollapse heading="Example Investments" id="Historical_Investments"}}
-      <ul class="clearfix list-unstyled">
+      <ul class="clearfix list-unstyled listCompanies">
       {{#each companies}}
         {{> boxPortfolioCompany}}
       {{/each}}
@@ -297,14 +293,14 @@ frameborder="0" allowfullscreen></iframe>
 <!-- @template: boxHistoricalInvestments -->
 
 <template name="boxPortfolioCompany">
-  <li class="item clearfix">
-    <div class="media">
-      <div class="media-left">
-        <img class="img-responsive img-thumbnail" src="http://drh.img.digitalriver.com/DRHM/Storefront/Site/Tk22k/cm/images/Logo/t2_logo_ful_onBLK.png" WIDTH="50px" />
+  <li class="item clearfix boxPortfolioCompany">
+    <div class="flex-container">
+      <div class="box-logo">
+        <img class="img-responsive img-thumbnail" src="images/default_logo.png" WIDTH="50px" />
       </div>
-      <div class="media-body">
+      <div class="box-image">
         <h4 class="txtTitle">{{name}}</h4>  
-        <a class="btn btn-default" href="">VIEW MORE</a>
+        <a class="btn btn-default" href="/company-profile">VIEW MORE</a>
       </div>
     </div><BR><HR>
   </li>

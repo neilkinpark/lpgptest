@@ -1,0 +1,122 @@
+<template name="pageIrReview">
+  <div class="fixed-header pageIrReview">
+    <div class="container-fluid">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <img class="img-responsive" src="icons/evercore.png">
+      </div>
+    </div>
+  </div>
+  <div class="container pageIrReview">
+  	<div class="html-pdf">
+  	  <div class="pdf-heading">
+  	  	<!--<img src="logo.png">-->
+  	  	<div class="pdf-title">
+  	  		<span class="fa-stack">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+            </span> Fundraising & IR Review
+        </div>
+        <div id="triangle-topright"></div>
+        <div class="pdf-date">
+        	WEEKLY REVIEW<br>
+        	7 September 2015	
+        </div>
+  	  </div>	
+  	  <div class="pdf-body">
+  	  	{{> pdfIrReview}}
+        <br>
+        {{> pdfEtc }}
+  	  </div>		
+  	</div>
+  </div>
+</template>	
+
+
+<template name="pdfEtc">
+  <div class="pdfEtc">
+    <a class="anchor-hack" id="chapter-appendix1"></a><h2>About AltAssets</h2>
+    <p>AltAssets serves the information and communications needs of the global private equity industry. Over the last decade, we have built trust and gained the goodwill of thousands of LPs around the world. With their support we continue to provide products and services that facilitate more efficient and effective LP-GP interactions.</p>
+    <p>The AltAssets online news service is used by 50,000 professionals each month in over 150 countries. Limited Partner magazine is the most widely read trade magazine amongst institutional investors worldwide and is distributed to over 5,000 LP organisations. </p>
+    <p>AltAssets LP-GP Forums bring together active institutional investors with leading fund managers to build long-term investment partnerships in specific sectors such as clean energy, infrastructure, real estate, venture and mid-market private equity.</p>
+
+    <span class="text-info">Contact details</span><br>
+    <span class="text-muted">AltAssets Editorial: Mike Didymus</span><br>
+    <a>mdidymus@altassets.net</a><br>
+    <span class="text-muted">+44 (0)207 749 1272</span><br>
+
+    <br>
+    <span class="text-muted">LP-GP Network: Anu Sharma</span><br>
+    <a>asharma@altassets.net</a><br>
+    <span class="text-muted">+44 (0)207 749 1293</span><br>
+
+    <a class="anchor-hack" id="chapter-appendix2"></a><h2>About Evercore Private Funds Group</h2>
+    <p>Evercore's Private Funds Group (PFG) provides comprehensive, global advisory services on capital raising for select private fund sponsors.</p>
+    <p>Our clients include General Partners pursuing a wide spectrum of alternative investment strategies and asset classes, including Leveraged Buyouts, Growth Equity, Distressed, Private Debt, Infrastructure, Real Estate, Energy and Power.</p>
+    <p>Employing a distinct and rigorous diligence process, PFG partners with the highest quality General Partners, advising and executing on all aspects of the fundraising process. Our objective is to provide superior execution and an expedited capital raise.</p>
+    <p>PFG is one of the few high-quality, globally-positioned firms in the private placement landscape, serving clients and sourcing capital across North America, Europe, and Asia from offices in London, New York, Houston, San Francisco and Hong Kong.</p>
+
+    <span class="text-info">Contact details</span><br>
+    <span class="text-muted">London: Meredith Bourne</span><br>
+    <a>meredith.bourne@evercore.com</a><br>
+    <span class="text-muted">+44 (0)207 290 3289</span><br>
+
+    <br>
+    <span class="text-muted">New York: Anisa Javeri</span><br>
+    <a>javeri@evercore.com</a><br>
+    <span class="text-muted">+1 (646) 264 2381</span><br>
+
+    <br>
+    <span class="text-muted">Hong Kong: Manda Chan</span><br>
+    <a>manda.chan@evercore.com</a><br>
+    <span class="text-muted">(852) 9651 3161</span><br>
+
+    <br>
+    <div class="row text-muted">
+      <div class="col-xs-12">
+        <strong>London</strong><br>
+        15 Stanhope Gate<br>
+        London, W1K 1LN<br>
+        Tel: (0)207 290 3290<br>
+        <hr>
+      </div>
+      <div class="col-xs-12">
+        <strong>New York</strong><br>
+        40 East 52nd Street<br>
+        New York, NY 10022<br>
+        Tel: (646) 264 2374<br>
+        <hr>
+      </div>
+      <div class="col-xs-12">
+        <strong>Houston</strong><br>
+        909 Fannin, Suite 1750<br>
+        Houston, TX 77010<br>
+        Tel: (713) 427 5135<br>
+        <hr>
+      </div>
+      <div class="col-xs-12">
+        <strong>San Francisco</strong><br>
+        3 Embarcadero Center, Suite 1450<br>
+        San Francisco, CA 94111<br>
+        Tel: (415) 229 8096<br>
+        <hr>
+      </div>
+      <div class="col-xs-12">
+        <strong>Hong Kong</strong><br>
+        Two Exchange Square<br>
+        Central, Hong Kong<br>
+        Tel: (852) 3983 2604<br>
+        <hr>
+      </div>
+    </div>
+
+    <a class="anchor-hack" id="chapter-appendix3"></a><h2>Disclaimer – AltAssets</h2>
+    <p>© 2015 AltAssets No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electronic, mechanical, photocopying, recording or otherwise, without the express prior permission of AltAssets. This report has been produced by AltAssets to provide general information about the private equity industry. The information in this document does not, and is not intended to, constitute investment advice, or an offer or solicitation of interest in respect of the acquisition of any securities or shares, or the provision of investment management services to any person in any jurisdiction. Whilst due care and attention has been used in compiling this report, and sources used are believed to be reliable, AltAssets makes no guarantee of the accuracy or completeness of the information and disclaims any liability including incidental or consequential damages arising from errors or omissions.</p>
+    <p>AltAssets is a registered trademark and trading name of Investor Networks Ltd (INL), a company registered in England, company number 06695690. Registered Office: Zetland House, 5-25 Scrutton Street, London, EC2A 4HJ, UK</p>
+
+    <a class="anchor-hack" id="chapter-appendix4"></a><h2>Disclaimer – Evercore</h2>
+    <p>Evercore Group L.L.C. is a registered broker-dealer in the United States. Evercore Partners International LLP is authorized and regulated in the UK by the Financial Conduct Authority and does not deal with retail clients. Information is current as of the date of publication and is subject to change without notice. This commentary is furnished on a confidential basis only for the use of the intended recipient and only for informational and discussion purposes, and may be amended and/or supplemented without notice. This commentary does not constitute an offer to sell or a solicitation of an offer to purchase any security. The information set forth herein does not purport to be complete and is subject to change. Nothing in this commentary is to be taken as investment advice, and we are not soliciting or attempting to solicit any action with or by this commentary. The information presented herein will be deemed to be superseded by any subsequent versions of this commentary. This document has been prepared using information or data from publicly available sources, without independent verification of such information or data. No representation or warranty, express or implied, is made as to the accuracy or completeness or sufficiency of such information or data and nothing contained herein is, or shall be relied upon as, a representation, whether as to the past, the present or the future. This document is not intended for retail persons / investors. No part of this commentary or its subject matter may be reproduced, disseminated or disclosed without our prior written approval. We assume no obligation to update or otherwise revise this document and it may not reflect information known to other professionals in other business areas of Evercore and its affiliates.</p>
+
+    <br><hr>
+    <span class="text-muted">Copyright © AltAssets Limited.</span>
+  </div>
+</template>

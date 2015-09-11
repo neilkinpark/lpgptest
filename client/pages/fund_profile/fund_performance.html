@@ -3,13 +3,14 @@
     <div class="clearfix flex-container">
       <h1 class="region-title pageTitle text-inline">Fund Performance</h1>
     </div>
+    <br><a class="btn btn-info toggle-button btn-block" data-toggle="collapse" href="#boxFilters">Search <i class="fa fa-search"></i></a>
     <form id="boxFilters" class="collapse">
       <br>
       <div class="row">
         <div class="col-xs-12 col-sm-2 margin-xs">
           <label>Fund name</label><input type="text" class="form-control mobile-marginBottom" placeholder="search by fund name">
         </div>
-        <div class="col-xs-6 col-sm-2 margin-xs">
+        <div class="col-xs-12 col-sm-2 margin-xs">
           <label>Fund type</label>
           <select class="form-control mobile-marginBottom">
             <option>All types</option>
@@ -19,7 +20,7 @@
             <option>5</option>
           </select>
         </div>
-        <div class="col-xs-6 col-sm-2 margin-xs">
+        <div class="col-xs-12 col-sm-2 margin-xs">
           <label>Fund size</label>
           <select class="form-control mobile-marginBottom">
             <option>All sizes</option>
@@ -29,10 +30,17 @@
             <option>5</option>
           </select>
         </div>        
-        <div class="col-xs-6 col-sm-2 margin-xs">
-          <label>Vintage year</label><input type="text" class="form-control mobile-marginBottom" placeholder="Year">
+        <div class="col-xs-12 col-sm-2 margin-xs">
+          <label>Vintage year</label>
+          <select class="form-control mobile-marginBottom">
+            <option>All years</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>          
         </div>
-        <div class="col-xs-6 col-sm-2 margin-xs">
+        <div class="col-xs-12 col-sm-2 margin-xs">
           <label>Regions</label>
           <select class="form-control mobile-marginBottom">
             <option>All Regions</option>
@@ -56,10 +64,6 @@
   </div>
  	
   <div class="container-fluid pageFundPerformance">
-
-    <div class="block-filter">
-      <a class="btn btn-info toggle-button btn-block" data-toggle="collapse" href="#boxFilters">Search <i class="fa fa-search"></i></a>
-    </div>
 
     <div class="pageTitleNav">
       <h3 class="text-title">TOP PERFORMING FUNDS BY TYPE</h3>

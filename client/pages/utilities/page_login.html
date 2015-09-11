@@ -29,10 +29,10 @@
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-5 col-xs-6">
-                      <a href="#" id="btnSignIn" type="submit" class="btn btn-info btn-block btn-lg" data-toggle="modal" data-target="#modalError">SIGN IN</a>
+                      <a href="#" id="btnSignIn" type="submit" class="btn btn-info btn-block" data-toggle="modal" data-target="#modalError">SIGN IN</a>
                     </div>
                     <div class="col-sm-5 col-xs-6">  
-                      <a href="/signup" type="submit" class="btn btn-gray btn-block btn-lg">SIGN UP HERE</a>
+                      <a href="/signup" type="submit" class="btn btn-gray btn-block">SIGN UP HERE</a>
                     </div>  
                   </div>
                 </form>
@@ -97,4 +97,32 @@
       </div>
     </div>    
   </div>
-</template>  
+</template> 
+
+<template name="pageLogout">
+  <div id="splash-screen" class="container">
+    <br><br><br>
+    <p class="text-center lead"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i><br> Please wait while you are being logged out..</p>   
+  </div>
+
+  <div id="main-screen" class="container-fluid pageRestricted hidden">
+      <h1 class="pageTitle text-center">Logout</h1>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="jumbotron text-center">
+                <span class="lead">You have been logged out. To access this app you must be a subscriber or you need to login.</span>
+              </div>
+              <div class="row">
+                <div class="col-sm-4"><a href="/registerlp" class="btn btn-info btn-block btn-lg">I am a Limited Partner</a></div>
+                <div class="col-sm-4"><a href="/registergp" class="btn btn-info btn-block btn-lg">I am a General Partner</a></div>
+                <div class="col-sm-1"><br class="visible-xs-inline"><p class="lead text-center text-muted">Or</p></div>
+                <div class="col-sm-3"><a href="/login" class="btn btn-default btn-block btn-lg"> <span>LOGIN HERE</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>  
+</template> 

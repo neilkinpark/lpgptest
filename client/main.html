@@ -17,14 +17,14 @@
   <div id="regionHeader" class="navbar navbar-default navbar-fixed-top" role="banner">
     <div class="container-fluid">
       <a class="link-icon link-icon-back pull-left" href=""><i class="fa fa-angle-left"></i></a>
-      <a class="link-icon link-icon-home" href="/"><img src="logo.png"></a>
+      <a class="link-icon link-icon-home" href="/beta-dashboard"><img src="logo.png" width="160px" height="29px"></a>
       <div class="link-icon pull-right link-icon-menu dropdown">
         <a class="" href="" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
         <ul class="dropdown-menu">
           {{>menuBetaDashboard}}
           <li role="separator" class="divider"></li>
           <li><a href="/user-profile"><i class="fa fa-user"></i> My Profile</a></li>
-          <li><a href="/user-profile"><i class="fa fa-sign-out"></i> Logout</a></li>
+          <li><a href="/user-logout"><i class="fa fa-sign-out"></i> Logout</a></li>
         </ul>    
       </div>      
       
@@ -47,8 +47,8 @@
           <div class="pull-right">
             <ul class="list-inline">
               <li><a href="/help">HELP</a></li>
-              <li>ABOUT</li>
-              <li>LOG OUT</li>
+              <li><a href="/about">ABOUT</a></li>
+              <li><a href="/user-logout">LOG OUT</a></li>
             </ul>
           </div>
         </div>

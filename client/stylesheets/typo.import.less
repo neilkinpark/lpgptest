@@ -291,6 +291,14 @@ strong.lead {
   > .owl-stage-outer {
     padding-left: 0 !important; // owl carousel stagePadding hack
   }
+  &.flex-container {
+    > div {
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 .linkLoadMore {
   border-top: 1px dashed #aaa;
@@ -457,10 +465,13 @@ strong.lead {
   .toggle-button {
     border-radius: 4px;
   }
-  .form-control {
+  .form-control,
+  .bootstrap-select > .btn {
     background: lighten(@brand-info, 15%);
     color: #fff;
-    border-color: @brand-info;
+    border-color: @brand-info;    
+  }
+  .form-control {
     &::-webkit-input-placeholder { /* WebKit browsers */
         color: #fff;
     }
@@ -491,6 +502,15 @@ strong.lead {
     }
   }
 } 
+
+// PAGE > PAGEBETADASHBOARD
+.pageBetaDashboard {
+  padding-top: 55px;
+  margin-bottom: 0;
+  #regionHeader {
+    margin-bottom: 0;
+  }
+}
 
 // PAGE > DASHBOARD
 .pageDashboard {
@@ -562,7 +582,7 @@ strong.lead {
     position: relative;
     padding-bottom: 0;
     .box-title {
-      background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
+      background: rgba(255, 255, 255, 0.75) none repeat scroll 0 0;
       position: absolute;
       bottom: 0px;
       left: 0;
@@ -590,7 +610,7 @@ strong.lead {
   .more-news-link {
     .inner {
         color: @brand-info;
-        font-size: 1.25em;
+        font-size: 2em;
         line-height: 148px;
         text-align: center;
         text-transform: uppercase;
@@ -613,6 +633,11 @@ strong.lead {
 .pageFundProfile {
   .panel-default > .btn.btn-sm.btn-block.btn-primary {
     border-radius: 0;
+  }
+  .boxPortfolioCompany {
+    .box-logo {
+      padding-right: @padding-base-vertical;
+    }
   }
 }
 // PAGE > FUND PROFILES
@@ -714,6 +739,129 @@ strong.lead {
   }
 }  
 
+// PAGE > IR REVIEW
+.pageIrReview {
+  &.fixed-header {
+    position: fixed;
+    width: 100%;
+    background: #002060;
+    .box-shadow(0px 7px 7px rgba(0, 0, 0, 0.25));
+    margin-top: -17px;
+    z-index: 10;
+    .container-fluid {
+      padding: 0;
+    }
+    img {
+      max-height: 70px;
+      margin: 10px auto;
+      display: block;
+    }
+  }
+}
+.html-pdf {
+  margin-top: 100px;
+  background: #fff;
+  color: #333;
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+  margin-bottom: @padding-large-vertical*3;
+  font-size: @font-size-large;
+  .box-shadow(0px 7px 7px rgba(0, 0, 0, 0.25));
+  .pdf-heading {
+    background: #dbe5f1;
+    padding: @grid-gutter-width @grid-gutter-width;
+    position: relative;
+    overflow: hidden;
+    .pdf-title {
+      color: #355e91;
+      font-family: @font-family-gillsans;
+      font-size: 2.5em;
+    }
+    #triangle-topright { 
+      border-left: 30px solid transparent;
+      border-right: 150px solid #001f5f;
+      border-top: 60px solid #001f5f;
+      height: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 0;
+    }
+    .pdf-date {
+        color: #fff;
+        font-family: Gill Sans MT;
+        position: absolute;
+        right: 1em;
+        top: .65em;
+    }     
+  }
+  .pdf-body {
+    padding: @grid-gutter-width @grid-gutter-width;
+  }
+  h2 {
+    color: #355e91;
+    border-bottom: 2px solid #355e91;
+    margin-bottom: 0.75em;
+    margin-top: 1.25em;
+    padding-bottom: 0.25em;
+    font-weight: bold;
+    font-size: @font-size-h3;    
+  }
+  .anchor-hack {
+    display: block;
+    position: relative;
+    top: -150px;
+    visibility: hidden;    
+  }
+}
+
+// PAGE > ABOUT US
+.pageAbout {
+  background: #fff;
+  #regionHeader {
+    margin-bottom: 0;
+  }
+  #regionMain {
+    color: #25457a;
+    p {
+      font-size: 18px;
+      line-height: 1.5em;
+      padding-left: 16px;
+      margin-top: -20px;
+      &:before {
+        content: ">";
+        display: block;
+        left: -16px;
+        position: relative;
+        top: 26px;
+        clear: both;    
+      }
+    }
+    .img-screenshot {
+      margin: @padding-large-vertical*2  0 @padding-large-vertical;
+      .box-shadow(1px 1px 5px rgba(0, 0, 0, 0.75));
+    }
+  }
+  .section-title {
+    margin-top: @padding-large-vertical*3;
+    h2 { 
+      font-weight: bold;
+      margin: 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      .align-self(center);
+    }  
+    .boxicon {
+      width: 70px;
+      .flex-shrink(0);
+      padding-right: 10px;
+      img {
+        border: none;
+      }
+    }
+  }
+
+}
+
 // MEDIA QUERIES
 @media (max-width: @screen-sm-max) {
    /* rules for tablet and phones */
@@ -731,7 +879,7 @@ strong.lead {
     font-size: @font-size-h3;
   }
   .footer {
-    height: auto;
+    height: 34px;
     .container {
       padding: @padding-small-vertical @padding-small-horizontal;
     }
@@ -760,7 +908,8 @@ strong.lead {
     }
   }
   .pageDashboard a img {
-    max-height: 90px;
+    max-height: 70px;
+    padding: 0;
   }
   .pageNews {
     .boxNewsFeature {
@@ -775,7 +924,14 @@ strong.lead {
       }
     }
   }
-
+  .html-pdf .pdf-heading,
+  .html-pdf .pdf-body {
+    padding: @padding-small-horizontal;
+  }
+  .html-pdf .pdf-heading .pdf-title {
+    font-size: 1.25em;
+    margin-top: 0;
+  }
 }
 @media (min-width: @screen-xs-max) {
 /* RULES for all except mobile screens */  
@@ -836,6 +992,9 @@ strong.lead {
   }
   .pageKBank .formSearch .col-xs-8 {
       padding-right: 0;
+  }
+  .html-pdf .pdf-heading .pdf-title {
+    margin-top: 50px;
   }  
 }
 
@@ -843,10 +1002,12 @@ strong.lead {
    /* below 320px */
   .pageDashboard a {
     img {
-      max-height: 75px;
+      max-height: 55px;
+      padding: 0;
     }
     .icon-title {
       margin-top: @padding-small-vertical;
+      font-size: @font-size-small;
     }  
   }
   .pageLPOrg {
@@ -860,10 +1021,48 @@ strong.lead {
           height: auto;
         }
       }
-    } 
+    }
+  }
+  .html-pdf .pdf-heading .pdf-title {
+    margin-top: 50px;
+  }  
+}
+
+@media (max-width: 360px) {
+   /* below 360px */
+  .pageFundProfile,
+  .pageLPOrg {
+    .main-nav-pills.flex-container {
+      > div {
+        .flex(1 1 auto);
+        a {
+          padding-left: 2px;
+          padding-right: 2px;
+        }
+      }
+    }
   }
 }
 
-@media (max-height: 640px) {
-
-}  
+/* phone Landscape */
+@media (max-height: 479px) { 
+    .pageDashboard a  {
+      .flex-display(flex);
+      .align-items(flex-start);
+      img {
+        .flex-shrink(0); 
+        padding: 1px;
+        max-height: 70px;
+        max-width: 70px;
+        width: 20%;
+      }
+      .icon-title {
+        text-align: left;
+        padding-left: @padding-base-horizontal;
+        margin: 0;
+        font-size: @font-size-h4;
+        .flex(1);
+        .align-self(center);
+      }
+    }
+}

@@ -4,16 +4,23 @@ Router.configure({
   layoutTemplate: 'pageloggedInBasic'
 });
 
-Router.route('/', function () {
-  this.render('pageUnderCons');
-});
-
 Router.route('/dashboard', function () {
   this.render('pageLPDirectory');
 });
 
-Router.route('/beta-dashboard', function () {
-  this.render('pageBetaDashboard');
+Router.map( function () {
+  this.route('pageBetaDashboard', {
+    path: ['/beta-dashboard', '/'],
+
+    onBeforeAction: function (pause) {
+      this.render('pageBetaDashboard');
+      $('body').addClass('pageBetaDashboard');
+    },
+
+    onStop: function() {
+      $('body').removeClass('pageBetaDashboard');
+    }        
+  });
 });
 
 Router.route('/temp-filter', function () {
@@ -22,6 +29,10 @@ Router.route('/temp-filter', function () {
 
 Router.route('/login', function () {
   this.render('pageLogin');
+});
+
+Router.route('/user-logout', function () {
+  this.render('pageLogout');
 });
 
 Router.route('/signup', function () {
@@ -180,6 +191,19 @@ Router.map( function () {
       console.log('k bye');
     }        
   });
+
+  this.route('pageAbout', {
+    path: '/about',
+
+    onBeforeAction: function (pause) {
+      this.render('pageAbout');
+      $('body').addClass('pageAbout');
+    },
+
+    onStop: function() {
+      $('body').removeClass('pageAbout');
+    }        
+  });  
 });
 
 Router.route('/news-article', function(){
@@ -190,8 +214,16 @@ Router.route('/lp-profile-article', function(){
   this.render('pageLPProfileArticle');  
 });
 
+Router.route('/ir-review', function(){
+  this.render('pageIrReview');  
+});
+
 Router.route('/help', function(){
   this.render('pageHelp'); 
+});
+
+Router.route('/company-profile', function(){
+  this.render('pageCompProfile'); 
 });
 
 if (Meteor.isClient) {

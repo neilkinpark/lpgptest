@@ -162,6 +162,10 @@ if (Meteor.isClient) {
     ]
   });
 
+  Template.pageFundProfiles.onRendered(function() {
+    $('select').selectpicker();
+  });
+
   Template.pageFundPerformance.onRendered(function() {
     $('#nav-by-types').owlCarousel({
         margin: 5,
@@ -181,6 +185,8 @@ if (Meteor.isClient) {
           }
         }
     });
+
+    $('select').selectpicker();
 
   }); 
 }

@@ -22,27 +22,27 @@ if (Meteor.isClient) {
     ]    
   });
 
+  Template.pageLPOrgSearch.onRendered(function(){
+    $('select').selectpicker();
+  });  
+
   Template.pageLPOrg.onRendered(function(){
     // Listen for resize changes
     checkForViewportChange();
     window.addEventListener('resize', function() {
       checkForViewportChange();
-    }, false); 
+    }, false);
 
+    /*
     $('#nav-category').owlCarousel({
         margin: 5,
         dots: false,
         responsive:{
           0:{
-            items:2,
-            stagePadding: 15,          
-          },
-          430: {
-            items:3,
-            stagePadding: 0
+            items:3
           }
         }
-    });       
+    }); */      
   });  
 }	
 
