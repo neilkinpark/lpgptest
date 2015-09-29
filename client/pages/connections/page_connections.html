@@ -1,28 +1,36 @@
 <template name="pageConnections">
   <div class="container-fluid regionFilter">
-    <form>
+    <div class="clearfix flex-container">
+      <h1 class="region-title pageTitle text-inline">CONNECTIONS</h1>
+    </div>
+    <br><a class="btn btn-info toggle-button btn-block" data-toggle="collapse" href="#boxFilters">Search <i class="fa fa-search"></i></a>
+    <form id="boxFilters" class="collapse">
+      <br>
       <div class="row">
-        <div class="col-xs-12 col-md-3">
-          <label>Connection's name</label><input type="text" class="form-control" placeholder="Enter name">
-        </div>
-        <div class="col-xs-12 col-md-3">
-          <label>Firm Name</label><input type="text" class="form-control" placeholder="Enter firm">
-        </div>
-        <div class="col-xs-12 col-md-3">
+        <div class="col-xs-12 col-sm-6 margin-xs">
+          <label>Connection's name</label><input type="text" class="form-control mobile-marginBottom" placeholder="search by Connection's name">
+        </div>                      
+        <div class="col-xs-12 col-sm-6">
           <br>
           <button class="btn btn-default btn-block btn-lg">SEARCH</button>
-        </div>              
+        </div>       
       </div>
     </form>
-  </div>  
+  </div>
+
   <div class="container-fluid pageConnections">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4"><h1 class="pageTitle">CONNECTIONS</h1></div>
-      <div class="col-xs-12 col-sm-8">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a id="linkCardView" href="#tabPaneGPMembers" role="tab" data-toggle="pill">GP Connections <span class="hidden-xs">(20 connections)</span></a></li>
-          <li><a id="linkTableView" href="#tabPaneLPMembers" role="tab" data-toggle="pill">LP Connections <span class="hidden-xs">(75 connections)</span></a></li>    
-        </ul> 
+
+    <ul class="nav nav-tabs nav-xs">
+      <li role="presentation" class="active"><a href="/connections">Connections</a></li>
+      <li role="presentation"><a href="/members">Members</a></li>
+    </ul>
+    <br>    
+
+    <div class="pageTitleNav">
+      <div id="nav-by-types" class="main-nav-pills">
+        <div><a class="btn btn-default btn-block active" href="">GP Connections</a></div>
+        <div><a class="btn btn-default btn-block" href="">LP Connections</a></div>
+        <div><a class="btn btn-default btn-block" href="">SP Connections</a></div>
       </div>
     </div>
     
@@ -60,7 +68,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <div class="row">
-          <div class="col-xs-8 col-xs-offset-4"><h4><a href="/gp-profile">{{fullname}}</a></h4><h6>Global Cheif Marketing,</h6></div>
+          <div class="col-xs-8 col-xs-offset-4"><h4><a href="/gp-profile">{{fullname}}</a></h4><h6>Global Cheif Marketing</h6></div>
         </div>
       </div>
       <div class="panel-body">
@@ -83,9 +91,9 @@
         </div>
         
       </div>
-      <div class="btn-group btn-group-justified">
+      <div class="btn-conn-action">
         <a class="btn btn-default btn-lg btnFirst" href="/gp-profile">PROFILE</a>
-        <a class="btn btn-default btn-lg" href="">REMOVE</a>
+        <a class="btn btn-default btn-lg" href="">DISCONNECT</a>
         <a class="btn btn-default btn-lg btnLast" href=""><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span></a>
       </div>      
     </div>

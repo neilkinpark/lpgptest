@@ -6,7 +6,7 @@
   	    {{> rowBetaDashboard}}
   	  {{/each}} 
   	</div> -->
-    <div class="flex-container flex-dash-icons">
+    <div class="flex-container flex-dash-icons dash-icons">
       {{#each item}}
       <div class="flex-item">
         <div class="row">
@@ -15,17 +15,32 @@
       </div>
       {{/each}}
     </div>
+
+    <div id="modalSoon" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalError" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content panel panel-default">
+          <div class="panel-heading">
+            <i class="fa fa-exclamation-circle fa-2x text-success"></i>&nbsp;&nbsp;&nbsp;<span class="lead">Coming Soon</span>
+            <a href="" class="pull-right" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></a>
+          </div>
+          <div class="panel-body">
+            Sorry, this section is not available yet.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>  
 </template>
 
 <template name="rowBetaDashboard">
   {{#each col}}
-  <div class="col-xs-6 text-center wrapper-icon">
-    <a href="/{{url}}" class="text-muted">
+  <div class="col-xs-4 text-center wrapper-icon {{cssclass}}">
+    <a href="/{{url}}" class="text-muted" >
   	  <img src="/icons/dashboard_icons/{{img}}" class="img img-thumbnail img-responsive img-circle img-default-state">
       <img src="/icons/dashboard_icons/{{imgh}}" class="img img-thumbnail img-responsive img-circle img-hover">
       <h2 class="text-dark icon-title">{{title}}</h2>
-    </a> 	
+    </a>
   </div>
   {{/each}}
 </template>

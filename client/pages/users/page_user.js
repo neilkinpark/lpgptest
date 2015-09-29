@@ -3,7 +3,7 @@ if (Meteor.isClient) {
   Template.pageGPProfile.helpers({ 
     contacts:[
       { name: "Stephanie Plarizan", img: "https://s3.amazonaws.com/uifaces/faces/twitter/madysondesigns/128.jpg" },
-      { name: "Jeter Arce", img: "https://s3.amazonaws.com/uifaces/faces/twitter/gerrenlamson/128.jpg" },
+      { name: "Jeter Arce", img: "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" },
       { name: "Jim Croce", img: "https://s3.amazonaws.com/uifaces/faces/twitter/jlantunez/128.jpg" },
       { name: "Desond Miles", img: "https://s3.amazonaws.com/uifaces/faces/twitter/ryanbattles/128.jpg" },
       { name: "Bordan Bognanovic", img: "https://s3.amazonaws.com/uifaces/faces/twitter/davidburlton/128.jpg" },

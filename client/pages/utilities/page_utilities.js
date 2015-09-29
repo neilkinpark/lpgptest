@@ -30,29 +30,37 @@ if (Meteor.isClient) {
       {
         col: [
           { url: "news", img: "news.png", imgh: "news_hover.png", title: "News & Views" },
-          { url: "knowledge-bank", img: "knowledge_bank.png", imgh: "knowledge_bank_hover.png", title: "Knowledge Bank" },        
+          { url: "knowledge-bank", img: "knowledge_bank.png", imgh: "knowledge_bank_hover.png", title: "Knowledge Bank" },
+          { url: "ir-review", img: "ir_review.png", imgh: "ir_review_hover.png", title: "Fundraising & IR review" }  
         ]
       },
       {
         col: [
+          { url: "fund-performance", img: "fund_performance.png", imgh: "fund_performance_hover.png", title: "Fund Performance" },
           { url: "fund-profiles", img: "fund_profiles.png", imgh: "fund_profiles_hover.png", title: "Fund Profiles" },
-          { url: "fund-performance", img: "fund_performance.png", imgh: "fund_performance_hover.png", title: "Fund Performance" }     
+          { url: "connections", img: "connections.png", imgh: "connections_hover.png", title: "Connections & Members", cssclass: "icon-soon" }   
         ]         
       },      
       {
         col: [
           { url: "lp-org-search", img: "lp_directory.png", imgh: "lp_directory_hover.png", title: "Active LP Database" },
-          { url: "lp-mag", img: "lp_magazine.png", imgh: "lp_magazine_hover.png", title: "Limited Partner Magazaine" },        
+          { url: "lp-mag", img: "lp_magazine.png", imgh: "lp_magazine_hover.png", title: "Limited Partner Magazine" } ,
+          { url: "inbox", img: "messages.png", imgh: "messages_hover.png", title: "Message", cssclass: "icon-soon" }      
         ]       
-      },
-      {
-        col: [
-          { url: "ir-review", img: "ir_review.png", imgh: "ir_review_hover.png", title: "Fundraising & IR review" },
-          { url: "about", img: "about.png", imgh: "about_hover.png", title: "About Us" }      
-        ]         
-      }      
+      }         
     ]      
   }); 
+
+  Template.pageBetaDashboard.events({
+    "click .icon-soon a": function (event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+      //$('.icon-soon a').popover('hide');
+      //$(this).popover('show');
+      $('#modalSoon').modal('show')
+    }
+  });
+
 
   Template.pageBetaDashboard.onRendered(function() {
 
@@ -75,6 +83,10 @@ if (Meteor.isClient) {
       doit = setTimeout(resizedw, 100);
     };
 
+    $('.icon-soon aZZZZ').popover({
+      content: 'coming soon',
+      placement: 'bottom'
+    });   
   });
 
   Template.menuBetaDashboard.helpers({
@@ -84,7 +96,7 @@ if (Meteor.isClient) {
       { url: "knowledge-bank", img: "News_search.png", title: "Knowledge Bank" },
       { url: "lp-org-search", img: "LP_Connections.png", title: "Active LP Database" },
       { url: "fund-performance", img: "Fund_Performance.png", title: "Fund Performance" },
-      { url: "lp-mag", img: "LP_Magazine.png", title: "Limited Partner Magazaine" },
+      { url: "lp-mag", img: "LP_Magazine.png", title: "Limited Partner Magazine" },
       { url: "ir-review", img: "ir_REVIEW.png", title: "Fundraising and IR review" }
     ]       
   });   

@@ -88,7 +88,8 @@ hr {
   	a {
   	  padding: 4px 6px;
   	  border-color: transparent; 
-  	  border-radius: 0;
+  	 // border-radius: 0;
+      border-color: transparent transparent darken(@brand-info, 20%);
   	}
   }	
   > li.active > {
@@ -501,6 +502,14 @@ strong.lead {
       }
     }
   }
+}
+
+// PAGE > PAGESIGNUP
+.pageSignup {
+  .radio input[type="radio"], .radio-inline input[type="radio"] {
+    margin-top: 2px;
+    margin-left: -15px;
+  }
 } 
 
 // PAGE > PAGEBETADASHBOARD
@@ -523,6 +532,11 @@ strong.lead {
       //flex: 1,
     }
   }
+  .dash-icons {
+    .col-xs-4 {
+      padding-left: @padding-xs-horizontal;
+      padding-right: @padding-xs-horizontal;
+    }
     a {
       line-height: 1em;
       display: block;
@@ -547,7 +561,8 @@ strong.lead {
           display: none;
         }
       }
-    }
+    }   
+  }
 }
 // PAGE > NEWS //
 .pageNews {
@@ -639,6 +654,13 @@ strong.lead {
       padding-right: @padding-base-vertical;
     }
   }
+  #collapseLatest_News {
+    .media-left {
+      img {
+        max-width: 70px;
+      }
+    }
+  }
 }
 // PAGE > FUND PROFILES
 .pageFundProfiles {
@@ -695,6 +717,14 @@ strong.lead {
     margin-bottom: -60px;
     position: relative;
     top: -70px;
+  }
+}
+.pageConnections, .pageMembers {
+  .btn-conn-action {
+    .flex-display();
+    > a {
+      .flex(1 1 auto);
+    }
   }
 }
 
@@ -907,7 +937,7 @@ strong.lead {
       margin-top: @font-size-h4 / 2;
     }
   }
-  .pageDashboard a img {
+  .pageDashboard .dash-icons a img {
     max-height: 70px;
     padding: 0;
   }
@@ -1000,9 +1030,9 @@ strong.lead {
 
 @media (max-width: 320px) {
    /* below 320px */
-  .pageDashboard a {
+  .pageDashboard .dash-icons a {
     img {
-      max-height: 55px;
+      max-height: 60px;
       padding: 0;
     }
     .icon-title {
@@ -1046,7 +1076,7 @@ strong.lead {
 
 /* phone Landscape */
 @media (max-height: 479px) { 
-    .pageDashboard a  {
+    .pageDashboard .dash-icons a  {
       .flex-display(flex);
       .align-items(flex-start);
       img {
