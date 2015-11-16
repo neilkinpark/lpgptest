@@ -222,6 +222,10 @@ Router.route('/help', function(){
   this.render('pageHelp'); 
 });
 
+Router.route('/invite', function(){
+  this.render('pageInvite'); 
+});
+
 Router.route('/company-profile', function(){
   this.render('pageCompProfile'); 
 });

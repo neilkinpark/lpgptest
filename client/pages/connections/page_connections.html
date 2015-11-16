@@ -1,5 +1,17 @@
 <template name="pageConnections">
   <div class="container-fluid regionFilter">
+    <div class="alert alert-info alert-conn-notif">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4><i class="fa fa-user-plus"></i> New Connection Requests.</h4>
+      <table class="table">
+      <tbody>
+        <tr><td>John Neal</td><td><a class="label label-info" href="#">ACCEPT</a>&nbsp;<a class="label label-danger" href="#">DECLINE</a> </td></tr>
+        <tr><td>John de Longname</td><td><a class="label label-info" href="#">ACCEPT</a>&nbsp;<a class="label label-danger" href="#">DECLINE</a> </td></tr>
+        <tr><td>John Zampoleneim</td><td><a class="label label-info" href="#">ACCEPT</a>&nbsp;<a class="label label-danger" href="#">DECLINE</a> </td></tr>
+      </tbody>
+      </table>
+    </div>
+
     <div class="clearfix flex-container">
       <h1 class="region-title pageTitle text-inline">CONNECTIONS</h1>
     </div>
@@ -7,10 +19,10 @@
     <form id="boxFilters" class="collapse">
       <br>
       <div class="row">
-        <div class="col-xs-12 col-sm-6 margin-xs">
+        <div class="col-xs-12 col-md-6 margin-xs">
           <label>Connection's name</label><input type="text" class="form-control mobile-marginBottom" placeholder="search by Connection's name">
         </div>                      
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-md-6">
           <br>
           <button class="btn btn-default btn-block btn-lg">SEARCH</button>
         </div>       
@@ -73,7 +85,7 @@
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-xs-4"><img class="imgProfilePic img-responsive" src="images/baby.jpg" HEIGHT="90px"></div>
+          <div class="col-xs-4"><img class="imgProfilePic img-responsive" src="{{img}}" ></div>
         </div>
         <div class="row">  
           <div class="col-xs-4"><div class="text-muted txtLabel text-right">Firm name:</div></div><div class="col-xs-8"><span class="txtVal">Micro Apple Industries</span></div>

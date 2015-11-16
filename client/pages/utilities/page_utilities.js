@@ -38,7 +38,7 @@ if (Meteor.isClient) {
         col: [
           { url: "fund-performance", img: "fund_performance.png", imgh: "fund_performance_hover.png", title: "Fund Performance" },
           { url: "fund-profiles", img: "fund_profiles.png", imgh: "fund_profiles_hover.png", title: "Fund Profiles" },
-          { url: "connections", img: "connections.png", imgh: "connections_hover.png", title: "Connections & Members", cssclass: "icon-soon" }   
+          { url: "connections", img: "connections.png", imgh: "connections_hover.png", title: "Connections & Members", notif: true  }   
         ]         
       },      
       {
@@ -91,14 +91,21 @@ if (Meteor.isClient) {
 
   Template.menuBetaDashboard.helpers({
     item: [
-      { url: "/", img: "News.png", title: "Home" },
-      { url: "news", img: "News.png", title: "News & Views" },
-      { url: "knowledge-bank", img: "News_search.png", title: "Knowledge Bank" },
-      { url: "lp-org-search", img: "LP_Connections.png", title: "Active LP Database" },
-      { url: "fund-performance", img: "Fund_Performance.png", title: "Fund Performance" },
-      { url: "lp-mag", img: "LP_Magazine.png", title: "Limited Partner Magazine" },
-      { url: "ir-review", img: "ir_REVIEW.png", title: "Fundraising and IR review" }
-    ]       
+
+          { url: "news", img: "news.png", imgh: "news_hover.png", title: "News & Views" },
+          { url: "knowledge-bank", img: "knowledge_bank.png", imgh: "knowledge_bank_hover.png", title: "Knowledge Bank" },
+          { url: "ir-review", img: "ir_review.png", imgh: "ir_review_hover.png", title: "Fundraising & IR review" },
+
+
+          { url: "fund-performance", img: "fund_performance.png", imgh: "fund_performance_hover.png", title: "Fund Performance" },
+          { url: "fund-profiles", img: "fund_profiles.png", imgh: "fund_profiles_hover.png", title: "Fund Profiles" },
+          { url: "connections", img: "connections.png", imgh: "connections_hover.png", title: "Connections & Members"}, 
+      
+
+          { url: "lp-org-search", img: "lp_directory.png", imgh: "lp_directory_hover.png", title: "Active LP Database" },
+          { url: "lp-mag", img: "lp_magazine.png", imgh: "lp_magazine_hover.png", title: "Limited Partner Magazine" },
+          { url: "inbox", img: "messages.png", imgh: "messages_hover.png", title: "Message", cssclass: "icon-soon" }               
+    ]      
   });   
 
   Template.pageLogin.events({
@@ -127,5 +134,55 @@ if (Meteor.isClient) {
       $(".alert-danger").toggleClass("hidden").find("p.msg").append("Your passwords don't match.");
     }
   });
+
+  Template.pageInvite.onRendered(function() {
+  $('#tokenfield')
+
+    .on('tokenfield:createtoken', function (e) {
+      var data = e.attrs.value.split('|')
+      e.attrs.value = data[1] || data[0]
+      e.attrs.label = data[1] ? data[0] + ' (' + data[1] + ')' : data[0]
+    })
+
+    .on('tokenfield:createdtoken', function (e) {
+      // Über-simplistic e-mail validation
+      var re = /\S+@\S+\.\S+/
+      var valid = re.test(e.attrs.value)
+      if (!valid) {
+        $(e.relatedTarget).addClass('invalid');
+      }
+    })
+
+    .on('tokenfield:edittoken', function (e) {
+      if (e.attrs.label !== e.attrs.value) {
+        var label = e.attrs.label.split(' (');
+        e.attrs.value = label[0] + '|' + e.attrs.value;
+      }
+    })
+
+    .on('tokenfield:removedtoken', function (e) {
+      alert('Item removed! Entered item (' + e.attrs.value + ') is not a valid email');
+    })
+
+    .tokenfield();
+  });  
+
+  Template.pageInvite.events({
+    "submit form" : function(event, t) {
+      event.preventDefault();
+      val = $('#tokenfield').tokenfield('getTokens');
+      $.each(val, function(index, token) {
+        sendTo = token.value;
+
+          Meteor.call('sendEmail',
+            sendTo,
+            'neil@ultro.co.uk',
+            'Hello from Meteor!',
+            'This is a test of Email.send.');        
+      });
+
+      alert("email sent!");
+    }
+  });  
 
 }

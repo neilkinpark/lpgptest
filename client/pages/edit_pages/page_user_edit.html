@@ -1,26 +1,56 @@
 <template name="pageUserLPEdit">
-  <div class="container-fluid pageProfile">
-  	<h1 class="pageTitle">My Profile</h1>
-  </div>	
+  <div class="container-fluid pageProfileEdit regionAdmin">
+    <h1 class="pageTitle">Edit Profile</h1><hr>
+
+    <div class="row">
+      <div class="regionSidebar col-sm-12">
+
+        <!-- Nav tabs -->
+        <div id="nav-category" class="main-nav-pills">
+          <div><a class="btn btn-default btn-block active" href="#page-one" role="tab" data-toggle="tab" id="page-one-mainlink">Basic Info</a></div>
+          <div><a class="btn btn-default btn-block" href="#page-mi" role="tab" data-toggle="tab" id="page-mi-mainlink">More Info</a></div>
+          <div><a class="btn btn-default btn-block" href="#page-cp" role="tab" data-toggle="tab" id="page-cp-mainlink">Connection Prefrences</a></div>
+          <div><a class="btn btn-default btn-block" href="#page-fi" role="tab" data-toggle="tab" id="page-fi-mainlink">Fund Interests</a></div>
+          <div><a class="btn btn-default btn-block" href="#page-as" role="tab" data-toggle="tab" id="page-as-mainlink">Account Settings</a></div>
+        </div><br>           
+
+      </div>
+      <div class="regionBody col-sm-12">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="page-one">
+            {{> userEditPageOne}}
+          </div>
+          <div role="tabpanel" class="tab-pane" id="page-mi">
+            {{> userEditPageMore}}
+          </div>
+          <div role="tabpanel" class="tab-pane" id="page-cp">
+            {{> userEditPageCp}}
+          </div>
+          <div role="tabpanel" class="tab-pane" id="page-fi">
+            {{> userEditPageFi}}
+          </div>                       
+          <div role="tabpanel" class="tab-pane" id="page-as">
+            {{> userEditPageAcctSettings}}
+          </div>  
+        </div>
+      
+      </div>
+    </div>
+  </div>  	
 </template>	
 
 <template name="pageUserGPEdit">
-  <div class="container-fluid pageProfile regionAdmin">
+  <div class="container-fluid pageProfileEdit regionAdmin">
   	<h1 class="pageTitle">Edit Profile</h1><hr>
 
   	<div class="row">
   	  <div class="regionSidebar col-sm-12">
-        <!--
-		    <ul class="nav nav-stacked">
-          <li class="active"><a href="#">Basic Info</a></li>
-          <li><a href="#">Account Settings</a></li>
-        </ul> -->	
 
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#page-one" role="tab" data-toggle="tab" id="page-one-mainlink">Basic Info</a></li>
-          <li role="presentation" >              <a href="#page-two" role="tab" data-toggle="tab" id="page-two-mainlink">Account Settings</a></li>
-        </ul>
+        <div id="nav-category" class="main-nav-pills flex-container">
+          <div><a class="btn btn-default btn-block active" href="#page-one" role="tab" data-toggle="tab" id="page-one-mainlink">Basic Info</a></div>
+          <div><a class="btn btn-default btn-block" href="#page-mi" role="tab" data-toggle="tab" id="page-mi-mainlink">More Info</a></div>
+        </div><br> 
 
   	  </div>
   	  <div class="regionBody col-sm-12">
@@ -28,7 +58,7 @@
           <div role="tabpanel" class="tab-pane active" id="page-one">
             {{> userEditPageOne}}
           </div>
-          <div role="tabpanel" class="tab-pane" id="page-two">
+          <div role="tabpanel" class="tab-pane" id="page-mi">
             {{> userEditPageAcctSettings}}
           </div>  
         </div>
@@ -47,20 +77,30 @@
   </div> 
 </template>
 
+<template name="fieldProfilepicFancy">
+  <a id="field-profilepic-ui" class="img-upload-field" href="">
+    <img src="{{img}}" class="img-responsive img-circle img-thumbnail" />
+  </a>
+  <input id="field-profilepic-real" type="file" class="sr-only sr-only-focusable">  
+</template>  
+
 <template name="userEditPageOne">
   <div class="panel">
     <div class="panel-body">
-      <h4>
-        <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse">1</i></span>              
-        Tell us more about yourself. Complete your profile to increase visibility
+      <h4>      
+        Complete your profile to increase visibility
       </h4>
-      <form class="form-horizontal">  
+      <form class="form-horizontal">
 
-      {{#frmGroupUserEdit label="Profile Picture"}}<input type="file" id="exampleInputFile">{{/frmGroupUserEdit}}  
+        {{#frmGroupUserEdit label=""}}
+          {{>fieldProfilepicFancy}}
+        {{/frmGroupUserEdit}}            
 
-      {{#frmGroupUserEdit label="Title"}}
-          <select class="form-control">
+        {{#frmGroupUserEdit label="Title"}}
+          <select class="form-control" multiple title='Title'>
             <option>Mr</option>
+            <option>Mrs</option>
+            <option>Duke</option>
           </select>
         {{/frmGroupUserEdit}}  
 
@@ -68,30 +108,14 @@
         
         {{#frmGroupUserEdit label="Last Name"}}<input type="text" placeholder="Enter last name" class="form-control">{{/frmGroupUserEdit}}
         
-        {{#frmGroupUserEdit label="Email"}} <input type="text" placeholder="Enter email" class="form-control"> {{/frmGroupUserEdit}}  
+        {{#frmGroupUserEdit label="Company"}} <input type="text" placeholder="Enter company" class="form-control"> {{/frmGroupUserEdit}}  
 
         {{#frmGroupUserEdit label="Job Title"}} <input type="text" placeholder="Enter job title" class="form-control" > {{/frmGroupUserEdit}}
         
         {{#frmGroupUserEdit label="Bio"}} <textarea placeholder="Enter bio" class="form-control" ></textarea> {{/frmGroupUserEdit}}
 
-        {{#frmGroupUserEdit label=""}}
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Responsible for IR
-          </label>
-        </div>
-        {{/frmGroupUserEdit}}
-        
-        {{#frmGroupUserEdit label="Telephone"}} <input type="text" placeholder="Enter telephone number" class="form-control"> {{/frmGroupUserEdit}}
-        
-        {{#frmGroupUserEdit label="Fund Name"}} <input type="text" placeholder="Enter fund name" class="form-control"> {{/frmGroupUserEdit}}
-
         {{#frmGroupUserEdit label=""}} 
-        <div class="row">
-          <div class="col-xs-offset-6 col-xs-6">
-            <button id="btn-next-1" class="btn btn-default btn-lg btn-block" >NEXT <i class="fa fa-angle-right fa-lg"></i> </button>
-          </div>
-        </div>
+        <button id="btn-save" class="btn btn-info btn-lg btn-block" >SAVE </button>
         {{/frmGroupUserEdit}}
 
     </form>            
@@ -99,29 +123,106 @@
   </div>
 </template>
 
+<template name="userEditPageMore">
+  <div class="panel">
+    <div class="panel-body">
+      <h4>      
+        Tell us more about yourself and your organization
+      </h4>
+      <form class="form-horizontal">
+        
+        {{#frmGroupUserEdit label="Organization Name"}} <input type="text" placeholder="Enter organization name" class="form-control" > {{/frmGroupUserEdit}}
+
+        {{#frmGroupUserEdit label="Organization Type"}} 
+          <select class="form-control" multiple title='Select organization type'>
+            <option>Type 1</option>
+            <option>Type 2</option>
+            <option>Type 3</option>
+          </select>
+        {{/frmGroupUserEdit}}
+
+        {{#frmGroupUserEdit label="Organization Type"}} 
+          <select class="form-control" multiple title='Select country'>
+            <option>UAE</option>
+            <option>UK</option>
+            <option>US</option>
+          </select>
+        {{/frmGroupUserEdit}}
+
+        {{#frmGroupUserEdit label="Anticipated Annual Commitments to Alternatives"}} <input type="text" placeholder="Enter Anticipated Annual Commitments to Alternatives (US$ m)" class="form-control" > {{/frmGroupUserEdit}}
+
+        {{#frmGroupUserEdit label="Organization Website"}} <input type="text" placeholder="Enter organization website" class="form-control" > {{/frmGroupUserEdit}}
+
+        {{#frmGroupUserEdit label="Telephone"}} <input type="text" placeholder="Enter Telephone" class="form-control" > {{/frmGroupUserEdit}}
+
+        {{#frmGroupUserEdit label="Organization Description"}} <textarea placeholder="Enter organization description" class="form-control" ></textarea> {{/frmGroupUserEdit}}
+
+        {{#frmGroupUserEdit label=""}} 
+        <button id="btn-save" class="btn btn-info btn-lg btn-block" >SAVE </button>
+        {{/frmGroupUserEdit}}
+
+    </form>            
+    </div>
+  </div>
+</template>
+
+<template name="userEditPageCp">
+  <div class="panel">
+    <div class="panel-body">
+      <h4>      
+        Define which LP Organizations you can connect with
+      </h4>
+      <form class="">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> All
+          </label>
+        </div>
+
+        <div class="form-group">
+          <strong>End User LPs - investing own assets under management</strong>
+          {{#each checkBOne}}
+            <div class="checkbox">
+              <label><input type="checkbox" value="">{{ text }}</label>
+            </div>
+          {{/each}}          
+        </div>
+      </form>            
+    </div>
+  </div>
+</template>
+
+<template name="userEditPageFi">
+  <div class="panel">
+    <div class="panel-body">
+      <h4>      
+        Specifying what kind of funds you are interested in will make finding relevant funds easier
+      </h4>
+      <form class="form-horizontal">
+        {{#frmGroupUserEdit label="By Region: "}} <input type="text" class="form-control tokenfield" id="tokenfield" name="regionInput" placeholder="type a country then hit enter to add" /> {{/frmGroupUserEdit}}
+        {{#frmGroupUserEdit label="By Type: "}} <input type="text" class="form-control tokenfield" name="typeInput" placeholder="type a fund type then hit enter to add" /> {{/frmGroupUserEdit}}
+        {{#frmGroupUserEdit label="By Fund Size: "}} <input type="text" class="form-control tokenfield" id="tokenfield" name="fundsizeInput" placeholder="type a country then hit enter to add" /> {{/frmGroupUserEdit}}        
+        {{#frmGroupUserEdit label=""}} 
+        <button id="btn-save" class="btn btn-info btn-lg btn-block" >SAVE </button>
+        {{/frmGroupUserEdit}}        
+      </form>            
+    </div>
+  </div>
+</template>
+
 <template name="userEditPageAcctSettings">
   <div class="panel">
     <div class="panel-body">
-      <h4>
-        <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse">2</i></span>              
+      <h4>          
         Edit your account settings and Linkedin URL
       </h4>
       <form class="form-horizontal">  
         
-        {{#frmGroupUserEdit label="Email"}} <input type="text" placeholder="Enter email" class="form-control"> {{/frmGroupUserEdit}}
-        {{#frmGroupUserEdit label="Password"}} <input type="password" placeholder="Enter password" class="form-control"> {{/frmGroupUserEdit}}
-        {{#frmGroupUserEdit label="Confirm Password"}} <input type="password" placeholder="Confirm password" class="form-control"> {{/frmGroupUserEdit}}
-        {{#frmGroupUserEdit label="LinkedIn URL"}} <input type="text" placeholder="Enter LinkedIn URL" class="form-control"> {{/frmGroupUserEdit}}
+        <div class="row">
+        </div>  
 
         {{#frmGroupUserEdit label=""}} 
-        <div class="row">
-          <div class="col-xs-6">
-            <button id="btn-prev-2" class="btn btn-default btn-lg btn-block" > <i class="fa fa-angle-left fa-lg"></i> PREV</button>
-          </div>          
-          <div class="col-xs-6">
-            <button id="btn-save" class="btn btn-info btn-lg btn-block" >SAVE </button>
-          </div>
-        </div>
+        <button id="btn-save" class="btn btn-info btn-lg btn-block" >SAVE </button>
         {{/frmGroupUserEdit}}
 
     </form>            
