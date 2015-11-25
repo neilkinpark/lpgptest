@@ -81,24 +81,24 @@ body {
 }
 hr {
   margin-top: 0.5em;
-  margin-bottom: 0.5em;	
+  margin-bottom: 0.5em; 
 }
 .nav-tabs.nav-xs {
   > li > {
-  	a {
-  	  padding: 4px 6px;
-  	 // border-color: transparent; 
-  	 // border-radius: 0;
+    a {
+      padding: 4px 6px;
+     // border-color: transparent; 
+     // border-radius: 0;
       //border-color: transparent transparent darken(@brand-info, 20%);
       //background-color: lighten(@brand-info, 20%);
-  	}
-  }	
+    }
+  } 
   > li.active > {
-  	a {
-  	  //background-color: @brand-info;
-  	  //color: #fff;
-  	 // border-color: transparent transparent darken(@brand-info, 20%);  	  
-  	}
+    a {
+      //background-color: @brand-info;
+      //color: #fff;
+     // border-color: transparent transparent darken(@brand-info, 20%);     
+    }
   }
 }
 .navbar-toggle.collapsed {
@@ -469,9 +469,17 @@ strong.lead {
   }
 }
 .img-upload-field {
-  max-height: 75px;
-  max-width: 75px;
-  display: block; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border: 3px solid #e9eef3;
+  display: block;
+  height: 75px;
+  margin: 0 auto;
+  width: 75px;
 }
 
 // REGION > FILTER
@@ -684,7 +692,10 @@ strong.lead {
 // PAGE > KNOWLEDGE BANK
 .pageKBank {
   background-image: url('/images/kbank_bg2.jpg');
-  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
   background-position: center 50px;
   .formSearch {
     background-color: rgba(255, 255, 255, 0.3);
@@ -779,6 +790,20 @@ strong.lead {
 .pageProfile {
   .thumbnail.boxProfilePic {
     padding: @padding-large-horizontal;
+  }
+}
+.user_profile {
+  .pageTitleNav {
+    .btn {
+      border-radius: @border-radius-base;
+      padding: 6px 12px;
+      .glyphicon {
+        margin-left: 10px;
+      }
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+      background-color: #217dbb;
+    }    
   }
 }
 
@@ -1009,6 +1034,9 @@ strong.lead {
     font-size: 1.25em;
     margin-top: 0;
   }
+  .img-upload-field {
+    background-attachment: scroll;
+  }  
 }
 @media (min-width: @screen-xs-max) {
 /* RULES for all except mobile screens */  

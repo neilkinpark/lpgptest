@@ -12,7 +12,7 @@ Template.userEditPageOne.events({
     $("#field-profilepic-real").click();
   },
   "change #field-profilepic-real": function (event, template) {
-    $("#field-profilepic-ui img").attr("src", "https://s3.amazonaws.com/uifaces/faces/twitter/uxceo/128.jpg");
+    $("#field-profilepic-ui").css('background-image', "url('http://www.canada.com/cms/binary/6385311.jpg')");
   }   
 });
 

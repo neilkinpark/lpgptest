@@ -49,7 +49,7 @@
         <!-- Nav tabs -->
         <div id="nav-category" class="main-nav-pills flex-container">
           <div><a class="btn btn-default btn-block active" href="#page-one" role="tab" data-toggle="tab" id="page-one-mainlink">Basic Info</a></div>
-          <div><a class="btn btn-default btn-block" href="#page-mi" role="tab" data-toggle="tab" id="page-mi-mainlink">More Info</a></div>
+          <div><a class="btn btn-default btn-block" href="#page-as" role="tab" data-toggle="tab" id="page-as-mainlink">Account Settings</a></div>
         </div><br> 
 
   	  </div>
@@ -58,7 +58,7 @@
           <div role="tabpanel" class="tab-pane active" id="page-one">
             {{> userEditPageOne}}
           </div>
-          <div role="tabpanel" class="tab-pane" id="page-mi">
+          <div role="tabpanel" class="tab-pane" id="page-as">
             {{> userEditPageAcctSettings}}
           </div>  
         </div>
@@ -70,7 +70,7 @@
 
 <template name="frmGroupUserEdit">
   <div class="form-group {{this.cssc}}">
-    <label class="col-sm-3 col-md-2 col-lg-1 control-label hidden-xs">{{this.label}}</label>
+    <label class="col-sm-3 col-md-2 col-lg-1 control-label">{{this.label}}</label>
     <div class="col-sm-9 col-md-8 col-lg-7">
       {{> UI.contentBlock}}
     </div>
@@ -78,8 +78,7 @@
 </template>
 
 <template name="fieldProfilepicFancy">
-  <a id="field-profilepic-ui" class="img-upload-field" href="">
-    <img src="{{img}}" class="img-responsive img-circle img-thumbnail" />
+  <a id="field-profilepic-ui" class="img-upload-field img-circle" href="" style="background-image: url('images/pics/man2.jpg')">
   </a>
   <input id="field-profilepic-real" type="file" class="sr-only sr-only-focusable">  
 </template>  
@@ -112,7 +111,7 @@
 
         {{#frmGroupUserEdit label="Job Title"}} <input type="text" placeholder="Enter job title" class="form-control" > {{/frmGroupUserEdit}}
         
-        {{#frmGroupUserEdit label="Bio"}} <textarea placeholder="Enter bio" class="form-control" ></textarea> {{/frmGroupUserEdit}}
+        {{#frmGroupUserEdit label="Bio"}} <textarea placeholder="Enter bio" class="form-control" rows="7" ></textarea> {{/frmGroupUserEdit}}
 
         {{#frmGroupUserEdit label=""}} 
         <button id="btn-save" class="btn btn-info btn-lg btn-block" >SAVE </button>
@@ -214,12 +213,13 @@
   <div class="panel">
     <div class="panel-body">
       <h4>          
-        Edit your account settings and Linkedin URL
+        Update your account information
       </h4>
       <form class="form-horizontal">  
-        
-        <div class="row">
-        </div>  
+
+        {{#frmGroupUserEdit label="Email"}} <input type="email" placeholder="Enter Email" class="form-control" > {{/frmGroupUserEdit}}
+        {{#frmGroupUserEdit label="Password"}} <input type="password" placeholder="Enter Password" class="form-control" > {{/frmGroupUserEdit}}
+        {{#frmGroupUserEdit label="Confirm Password"}} <input type="password" placeholder="Confirm Password" class="form-control" > {{/frmGroupUserEdit}}
 
         {{#frmGroupUserEdit label=""}} 
         <button id="btn-save" class="btn btn-info btn-lg btn-block" >SAVE </button>
